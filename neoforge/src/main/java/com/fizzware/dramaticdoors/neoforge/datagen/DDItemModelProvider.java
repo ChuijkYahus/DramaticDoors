@@ -1,7 +1,7 @@
 package com.fizzware.dramaticdoors.neoforge.datagen;
 
-import com.fizzware.dramaticdoors.DDNames;
 import com.fizzware.dramaticdoors.DramaticDoors;
+import com.fizzware.dramaticdoors.registry.DDNames;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;

@@ -1,9 +1,9 @@
 package com.fizzware.dramaticdoors.neoforge.datagen;
 
-import com.fizzware.dramaticdoors.DDNames;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.blocks.ShortDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallDoorBlock;
+import com.fizzware.dramaticdoors.registry.DDNames;
 import com.fizzware.dramaticdoors.state.properties.TripleBlockPart;
 
 import net.minecraft.core.registries.BuiltInRegistries;

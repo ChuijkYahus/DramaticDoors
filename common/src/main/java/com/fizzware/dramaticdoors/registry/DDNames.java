@@ -1,4 +1,4 @@
-package com.fizzware.dramaticdoors;
+package com.fizzware.dramaticdoors.registry;
 
 public class DDNames
 {

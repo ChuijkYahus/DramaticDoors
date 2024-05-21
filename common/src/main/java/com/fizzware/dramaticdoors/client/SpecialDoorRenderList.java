@@ -1,6 +1,6 @@
 package com.fizzware.dramaticdoors.client;
 
-import com.fizzware.dramaticdoors.DDNames;
+import com.fizzware.dramaticdoors.registry.DDNames;
 import com.google.common.collect.ImmutableList;
 
 public class SpecialDoorRenderList 

@@ -1,7 +1,8 @@
 package com.fizzware.dramaticdoors.fabric.client;
 
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.client.SpecialDoorRenderList;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.renderer.RenderType;

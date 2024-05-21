@@ -2,11 +2,12 @@ package com.fizzware.dramaticdoors.neoforge;
 
 import java.util.Objects;
 
-import com.fizzware.dramaticdoors.DDNames;
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.compat.CompatChecker;
 import com.fizzware.dramaticdoors.neoforge.config.DDConfigNF;
+import com.fizzware.dramaticdoors.registry.DDCreativeTabs;
+import com.fizzware.dramaticdoors.registry.DDNames;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -117,28 +118,28 @@ public class NeoforgeUtils implements CompatChecker
     		map.putAfter(Items.OAK_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     	}
     	// Insert into Dramatic Doors tabs.
-    	if (event.getTabKey() == DDRegistry.MAIN_TAB) {
+    	if (event.getTabKey() == DDCreativeTabs.MAIN_TAB) {
 	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
 	        	if (!(pair.getA().contains("chipped") || pair.getA().contains("macaw") || pair.getA().contains("manyideas"))) {
 	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        	}
 	        }
     	}
-    	if (event.getTabKey() == DDRegistry.CHIPPED_TAB) {
+    	if (event.getTabKey() == DDCreativeTabs.CHIPPED_TAB) {
 	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
 	        	if (pair.getA().contains("chipped")) {
 	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        	}
 	        }
     	}
-    	if (event.getTabKey() == DDRegistry.MACAW_TAB) {
+    	if (event.getTabKey() == DDCreativeTabs.MACAW_TAB) {
 	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
 	        	if (pair.getA().contains("macaw")) {
 	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        	}
 	        }
     	}
-    	if (event.getTabKey() == DDRegistry.MANYIDEAS_TAB) {
+    	if (event.getTabKey() == DDCreativeTabs.MANYIDEAS_TAB) {
 	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
 	        	if (pair.getA().contains("manyideas")) {
 	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);

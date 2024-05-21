@@ -1,10 +1,11 @@
 package com.fizzware.dramaticdoors.fabric;
 
-import com.fizzware.dramaticdoors.DDNames;
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.compat.CompatChecker;
 import com.fizzware.dramaticdoors.compat.Compats;
+import com.fizzware.dramaticdoors.registry.DDCreativeTabs;
+import com.fizzware.dramaticdoors.registry.DDNames;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -34,15 +35,15 @@ public class FabricUtils implements CompatChecker
 	public static void assignItemsToTabs() {
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(FabricUtils::addBuildingBlocks);
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(FabricUtils::addRedstoneBlocks);
-		ItemGroupEvents.modifyEntriesEvent(DDRegistry.MAIN_TAB).register(FabricUtils::addMainTabEntries);
+		ItemGroupEvents.modifyEntriesEvent(DDCreativeTabs.MAIN_TAB).register(FabricUtils::addMainTabEntries);
 		if (Compats.isModLoaded("chipped", INSTANCE)) {
-			ItemGroupEvents.modifyEntriesEvent(DDRegistry.CHIPPED_TAB).register(FabricUtils::addChippedTabEntries);
+			ItemGroupEvents.modifyEntriesEvent(DDCreativeTabs.CHIPPED_TAB).register(FabricUtils::addChippedTabEntries);
 		}
 		if (Compats.isModLoaded("mcwdoors", INSTANCE)) {
-			ItemGroupEvents.modifyEntriesEvent(DDRegistry.MACAW_TAB).register(FabricUtils::addMacawTabEntries);
+			ItemGroupEvents.modifyEntriesEvent(DDCreativeTabs.MACAW_TAB).register(FabricUtils::addMacawTabEntries);
 		}
 		if (Compats.isModLoaded("manyideas_doors", INSTANCE)) {
-			ItemGroupEvents.modifyEntriesEvent(DDRegistry.MANYIDEAS_TAB).register(FabricUtils::addManyIdeasTabEntries);
+			ItemGroupEvents.modifyEntriesEvent(DDCreativeTabs.MANYIDEAS_TAB).register(FabricUtils::addManyIdeasTabEntries);
 		}
 	}
 

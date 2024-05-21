@@ -1,6 +1,6 @@
 {
   "required": true,
-  "minVersion": "0.8",
+  "minVersion": "0.8.5",
   "package": "com.fizzware.dramaticdoors.neoforge.mixin",
   "compatibilityLevel": "JAVA_21",
   "plugin": "com.fizzware.dramaticdoors.neoforge.mixin.DDMixinConfigNeoForge",

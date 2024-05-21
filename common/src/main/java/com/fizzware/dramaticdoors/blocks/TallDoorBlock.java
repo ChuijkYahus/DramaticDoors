@@ -2,10 +2,10 @@ package com.fizzware.dramaticdoors.blocks;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.fizzware.dramaticdoors.DDNames;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.compat.Compats;
 import com.fizzware.dramaticdoors.compat.registries.SupplementariesCompat;
+import com.fizzware.dramaticdoors.registry.DDNames;
 import com.fizzware.dramaticdoors.state.properties.DDBlockStateProperties;
 import com.fizzware.dramaticdoors.state.properties.TripleBlockPart;
 import com.fizzware.dramaticdoors.tags.DDBlockTags;

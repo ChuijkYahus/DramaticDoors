@@ -1,7 +1,7 @@
 package com.fizzware.dramaticdoors.compat;
 
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.compat.registries.*;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 public class Compats
 {

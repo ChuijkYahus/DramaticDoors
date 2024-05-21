@@ -3,8 +3,8 @@ package com.fizzware.dramaticdoors.blocks;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-import com.fizzware.dramaticdoors.DDNames;
 import com.fizzware.dramaticdoors.DramaticDoors;
+import com.fizzware.dramaticdoors.registry.DDNames;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;

@@ -1,15 +1,16 @@
 package com.fizzware.dramaticdoors.neoforge;
 
-import com.fizzware.dramaticdoors.DDRegistry;
-import com.fizzware.dramaticdoors.DDNames;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.blockentities.DDBlockEntities;
 import com.fizzware.dramaticdoors.blockentities.TallNetheriteDoorBlockEntity;
 import com.fizzware.dramaticdoors.compat.Compats;
 //import com.fizzware.dramaticdoors.compat.registries.CreateCompat;
 import com.fizzware.dramaticdoors.compat.registries.SupplementariesCompat;
+import com.fizzware.dramaticdoors.registry.DDCreativeTabs;
+import com.fizzware.dramaticdoors.registry.DDNames;
 //import com.fizzware.dramaticdoors.neoforge.addons.create.TallForgeCreateSlidingDoorBlockEntity;
 //import com.fizzware.dramaticdoors.neoforge.compat.CreateForgeCompat;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -55,25 +56,17 @@ public class DDNeoForgeRegistry
 				helper.register(new ResourceLocation(DramaticDoors.MOD_ID, "tall_sliding_door"), CreateForgeCompat.TALL_SLIDING_DOOR_BLOCK_ENTITY);
 			}*/
 		});
-	}
-	
-    @SubscribeEvent
-    public static void registerCreativeTabs(RegisterEvent event) {
     	event.register(Registries.CREATIVE_MODE_TAB, helper -> {
-    		helper.register(DDRegistry.MAIN_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
+    		helper.register(DDCreativeTabs.MAIN_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
     		if (NeoforgeUtils.INSTANCE.isModLoaded("chipped")) {
-    			helper.register(DDRegistry.CHIPPED_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_chipped")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_CHIPPED_BIRCH_GATED))); }).build());
+    			helper.register(DDCreativeTabs.CHIPPED_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_chipped")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_CHIPPED_BIRCH_GATED))); }).build());
     		}
     		if (NeoforgeUtils.INSTANCE.isModLoaded("mcwdoors")) {
-    			helper.register(DDRegistry.MACAW_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_macaw")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MACAW_DARK_OAK_BARN))); }).build());
+    			helper.register(DDCreativeTabs.MACAW_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_macaw")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MACAW_DARK_OAK_BARN))); }).build());
     		}
     		if (NeoforgeUtils.INSTANCE.isModLoaded("manyideas_doors")) {
-    			helper.register(DDRegistry.MANYIDEAS_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_manyideas")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MANYIDEAS_CRIMSON_BLANK))); }).build());
+    			helper.register(DDCreativeTabs.MANYIDEAS_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_manyideas")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MANYIDEAS_CRIMSON_BLANK))); }).build());
     		}
     	});
-    }
-    
-    public static void registerWeatherables() {
-    	
-    }
+	}
 }

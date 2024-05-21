@@ -1,7 +1,5 @@
 package com.fizzware.dramaticdoors.compat.registries;
 
-import com.fizzware.dramaticdoors.DDNames;
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.blocks.ShortDoorBlock;
 import com.fizzware.dramaticdoors.blocks.ShortFleshDoorBlock;
 import com.fizzware.dramaticdoors.blocks.ShortFullFleshDoorBlock;
@@ -12,6 +10,8 @@ import com.fizzware.dramaticdoors.compat.DDCompatAdvancement;
 import com.fizzware.dramaticdoors.compat.DDCompatRecipe;
 import com.fizzware.dramaticdoors.items.ShortDoorItem;
 import com.fizzware.dramaticdoors.items.TallDoorItem;
+import com.fizzware.dramaticdoors.registry.DDNames;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

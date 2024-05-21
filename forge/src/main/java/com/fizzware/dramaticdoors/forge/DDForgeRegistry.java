@@ -1,8 +1,9 @@
 package com.fizzware.dramaticdoors.forge;
 
-import com.fizzware.dramaticdoors.DDNames;
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.DramaticDoors;
+import com.fizzware.dramaticdoors.registry.DDCreativeTabs;
+import com.fizzware.dramaticdoors.registry.DDNames;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -21,10 +22,9 @@ public class DDForgeRegistry
 {
 	@SubscribeEvent
 	public static void registerBlocksItems(RegisterEvent event) {
-		// Hook in compats, I mean, vanilla stuff because Forge is deprecated.
-		DDRegistry.registerVanilla();
-		// Register blocks.
+		// Register stuff.
 		event.register(ForgeRegistries.Keys.BLOCKS, helper -> {
+			DDRegistry.registerVanilla(); // Hook in compats, I mean, vanilla stuff because Forge is deprecated.
 	        for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS_TO_REGISTER) {
 	        	helper.register(new ResourceLocation(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
 	        }
@@ -39,7 +39,7 @@ public class DDForgeRegistry
     @SubscribeEvent
     public static void registerCreativeTabs(RegisterEvent event) {
     	event.register(Registries.CREATIVE_MODE_TAB, helper -> {
-    		helper.register(DDRegistry.MAIN_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
+    		helper.register(DDCreativeTabs.MAIN_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
     	});
     }
 }

@@ -1,17 +1,19 @@
 package com.fizzware.dramaticdoors.forge;
 
-import com.fizzware.dramaticdoors.DDNames;
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.compat.CompatChecker;
 import com.fizzware.dramaticdoors.forge.config.DDConfigForge;
+import com.fizzware.dramaticdoors.registry.DDCreativeTabs;
+import com.fizzware.dramaticdoors.registry.DDNames;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab.TabVisibility;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.CreativeModeTab.TabVisibility;
 import net.minecraftforge.common.util.MutableHashedLinkedMap;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -93,7 +95,7 @@ public class ForgeUtils implements CompatChecker
     		map.putAfter(Items.OAK_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     	}
     	// Insert into Dramatic Doors tabs.
-    	if (event.getTabKey() == DDRegistry.MAIN_TAB) {
+    	if (event.getTabKey() == DDCreativeTabs.MAIN_TAB) {
 	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
 	        	map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        }

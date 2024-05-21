@@ -1,7 +1,8 @@
 package com.fizzware.dramaticdoors.forge.client;
 
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.client.SpecialDoorRenderList;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
+
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;

@@ -97,6 +97,9 @@ public class Compats
 		if (isModLoaded("blockus", checker)) {
 			BlockusCompat.registerCompat();
 		}
+		if (isModLoaded("born_in_chaos_v1", checker)) {
+			BornInChaosCompat.registerCompat();
+		}
     	if (isModLoaded("byg", checker)) {
     		BYGCompat.registerCompat();
     	}
@@ -118,9 +121,6 @@ public class Compats
 		if (isModLoaded("colorfulazaleas", checker)) {
 			ColorfulAzaleasCompat.registerCompat();
 		}
-		if (isModLoaded("copperoverhaul", checker)) {
-			CopperOverhaulCompat.registerCompat();
-		}
 		if (isModLoaded("alloyed", checker)) {
 			CreateAlloyedCompat.registerCompat();
 		}
@@ -135,6 +135,9 @@ public class Compats
 		}
 		if (isModLoaded("darkerdepths", checker)) {
 			DarkerDepthsCompat.registerCompat();
+		}
+		if (isModLoaded("dawnoftimebuilder", checker)) {
+			DawnOfTimeBuilderCompat.registerCompat();
 		}
 		if (isModLoaded("deep_aether", checker)) {
 			DeepAetherCompat.registerCompat();
@@ -165,9 +168,6 @@ public class Compats
 		}
 		if (isModLoaded("enlightened_end", checker)) {
 			EnlightenedEndCompat.registerCompat();
-		}
-		if (isModLoaded("everythingcopper", checker)) {
-			EverythingCopperCompat.registerCompat();
 		}
 		if (isModLoaded("extendedmushrooms", checker)) {
 			ExtendedMushroomsCompat.registerCompat();
@@ -214,8 +214,14 @@ public class Compats
 		if (isModLoaded("morecraft", checker)) {
 			MorecraftCompat.registerCompat();
 		}
+		if (isModLoaded("moredoors", checker)) {
+			MoreDoorsCompat.registerCompat();
+		}
 		if (isModLoaded("mysticsbiomes", checker)) {
 			MysticsBiomesCompat.registerCompat();
+		}
+		if (isModLoaded("natures_spirit", checker)) {
+			NaturesSpiritCompat.registerCompat();
 		}
 		if (isModLoaded("nethers_exoticism", checker)) {
 			NethersExoticismCompat.registerCompat();
@@ -314,5 +320,12 @@ public class Compats
     		return true;
     	}
     	return checker.isModLoaded(modid);
+    }
+    
+    public static boolean isModLoaded(String modid, CompatChecker checker, boolean hardCheck) {
+    	if (hardCheck) { // Ensures that mod HAS to be installed regardles of dev mode.
+    		return checker.isModLoaded(modid);
+    	}
+    	return isModLoaded(modid, checker);
     }
 }

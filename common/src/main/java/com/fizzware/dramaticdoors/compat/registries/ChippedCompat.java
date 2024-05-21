@@ -50,7 +50,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_spruce_door")), BlockSetType.SPRUCE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_spruce_door")), BlockSetType.SPRUCE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_spruce_door")), BlockSetType.SPRUCE, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_spruce_door")), BlockSetType.SPRUCE, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_spruce_door")), BlockSetType.SPRUCE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_PAPER, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "paper_spruce_door")), BlockSetType.SPRUCE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_BEACH, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "beach_spruce_door")), BlockSetType.SPRUCE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_SPRUCE_BARRED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "barred_spruce_door")), BlockSetType.SPRUCE, false);
@@ -71,7 +71,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_birch_door")), BlockSetType.BIRCH, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_birch_door")), BlockSetType.BIRCH, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_birch_door")), BlockSetType.BIRCH, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_birch_door")), BlockSetType.BIRCH, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_birch_door")), BlockSetType.BIRCH, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_BOARDED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "boarded_birch_door")), BlockSetType.BIRCH, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_BEACH, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "beach_birch_door")), BlockSetType.BIRCH, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_BIRCH_BARRED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "barred_birch_door")), BlockSetType.BIRCH, false);
@@ -92,7 +92,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_jungle_door")), BlockSetType.JUNGLE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_jungle_door")), BlockSetType.JUNGLE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_jungle_door")), BlockSetType.JUNGLE, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_jungle_door")), BlockSetType.JUNGLE, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_jungle_door")), BlockSetType.JUNGLE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_BOARDED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "boarded_jungle_door")), BlockSetType.JUNGLE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_PAPER, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "paper_jungle_door")), BlockSetType.JUNGLE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_JUNGLE_BARRED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "barred_jungle_door")), BlockSetType.JUNGLE, false);
@@ -113,7 +113,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_acacia_door")), BlockSetType.ACACIA, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_acacia_door")), BlockSetType.ACACIA, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_acacia_door")), BlockSetType.ACACIA, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_acacia_door")), BlockSetType.ACACIA, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_acacia_door")), BlockSetType.ACACIA, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_BOARDED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "boarded_acacia_door")), BlockSetType.ACACIA, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_PAPER, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "paper_acacia_door")), BlockSetType.ACACIA, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_ACACIA_BEACH, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "beach_acacia_door")), BlockSetType.ACACIA, false);
@@ -134,7 +134,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_dark_oak_door")), BlockSetType.DARK_OAK, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_dark_oak_door")), BlockSetType.DARK_OAK, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_dark_oak_door")), BlockSetType.DARK_OAK, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_dark_oak_door")), BlockSetType.DARK_OAK, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_dark_oak_door")), BlockSetType.DARK_OAK, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_BOARDED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "boarded_dark_oak_door")), BlockSetType.DARK_OAK, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_PAPER, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "paper_dark_oak_door")), BlockSetType.DARK_OAK, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_DARK_OAK_BEACH, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "beach_dark_oak_door")), BlockSetType.DARK_OAK, false);
@@ -155,7 +155,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_mangrove_door")), BlockSetType.MANGROVE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_mangrove_door")), BlockSetType.MANGROVE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_mangrove_door")), BlockSetType.MANGROVE, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_mangrove_door")), BlockSetType.MANGROVE, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_mangrove_door")), BlockSetType.MANGROVE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_BOARDED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "boarded_mangrove_door")), BlockSetType.MANGROVE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_PAPER, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "paper_mangrove_door")), BlockSetType.MANGROVE, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_MANGROVE_BEACH, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "beach_mangrove_door")), BlockSetType.MANGROVE, false);
@@ -177,7 +177,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_crimson_door")), BlockSetType.CRIMSON, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_crimson_door")), BlockSetType.CRIMSON, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_crimson_door")), BlockSetType.CRIMSON, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_crimson_door")), BlockSetType.CRIMSON, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_crimson_door")), BlockSetType.CRIMSON, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_BOARDED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "boarded_crimson_door")), BlockSetType.CRIMSON, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_PAPER, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "paper_crimson_door")), BlockSetType.CRIMSON, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_CRIMSON_BEACH, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "beach_crimson_door")), BlockSetType.CRIMSON, false);
@@ -198,7 +198,7 @@ public class ChippedCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_TILE_WINDOWED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "tile_windowed_warped_door")), BlockSetType.WARPED, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_FORTIFIED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "fortified_warped_door")), BlockSetType.WARPED, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_SECRET, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "secret_warped_door")), BlockSetType.WARPED, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "modern_warped_door")), BlockSetType.WARPED, false);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_MODERN, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "classic_windowed_warped_door")), BlockSetType.WARPED, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_BOARDED, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "boarded_warped_door")), BlockSetType.WARPED, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_PAPER, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "paper_warped_door")), BlockSetType.WARPED, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHIPPED_WARPED_BEACH, null, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("chipped", "beach_warped_door")), BlockSetType.WARPED, false);
@@ -241,7 +241,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_TILED, new ResourceLocation("chipped", "tiled_spruce_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_spruce_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_SECRET, new ResourceLocation("chipped", "secret_spruce_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_MODERN, new ResourceLocation("chipped", "modern_spruce_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_MODERN, new ResourceLocation("chipped", "classic_windowed_spruce_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_PAPER, new ResourceLocation("chipped", "paper_spruce_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_BEACH, new ResourceLocation("chipped", "beach_spruce_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_SPRUCE_BARRED, new ResourceLocation("chipped", "barred_spruce_door"));
@@ -261,7 +261,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_TILED, new ResourceLocation("chipped", "tiled_birch_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_birch_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_SECRET, new ResourceLocation("chipped", "secret_birch_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_MODERN, new ResourceLocation("chipped", "modern_birch_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_MODERN, new ResourceLocation("chipped", "classic_windowed_birch_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_BOARDED, new ResourceLocation("chipped", "boarded_birch_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_BEACH, new ResourceLocation("chipped", "beach_birch_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_BIRCH_BARRED, new ResourceLocation("chipped", "barred_birch_door"));
@@ -281,7 +281,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_TILED, new ResourceLocation("chipped", "tiled_jungle_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_jungle_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_SECRET, new ResourceLocation("chipped", "secret_jungle_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_MODERN, new ResourceLocation("chipped", "modern_jungle_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_MODERN, new ResourceLocation("chipped", "classic_windowed_jungle_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_BOARDED, new ResourceLocation("chipped", "boarded_jungle_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_PAPER, new ResourceLocation("chipped", "paper_jungle_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_JUNGLE_BARRED, new ResourceLocation("chipped", "barred_jungle_door"));
@@ -301,7 +301,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_TILED, new ResourceLocation("chipped", "tiled_acacia_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_acacia_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_SECRET, new ResourceLocation("chipped", "secret_acacia_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_MODERN, new ResourceLocation("chipped", "modern_acacia_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_MODERN, new ResourceLocation("chipped", "classic_windowed_acacia_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_BOARDED, new ResourceLocation("chipped", "boarded_acacia_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_PAPER, new ResourceLocation("chipped", "paper_acacia_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_ACACIA_BEACH, new ResourceLocation("chipped", "beach_acacia_door"));
@@ -321,7 +321,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_TILED, new ResourceLocation("chipped", "tiled_dark_oak_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_dark_oak_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_SECRET, new ResourceLocation("chipped", "secret_dark_oak_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_MODERN, new ResourceLocation("chipped", "modern_dark_oak_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_MODERN, new ResourceLocation("chipped", "classic_windowed_dark_oak_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_BOARDED, new ResourceLocation("chipped", "boarded_dark_oak_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_PAPER, new ResourceLocation("chipped", "paper_dark_oak_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_DARK_OAK_BEACH, new ResourceLocation("chipped", "beach_dark_oak_door"));
@@ -341,7 +341,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_TILED, new ResourceLocation("chipped", "tiled_mangrove_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_mangrove_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_SECRET, new ResourceLocation("chipped", "secret_mangrove_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_MODERN, new ResourceLocation("chipped", "modern_mangrove_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_MODERN, new ResourceLocation("chipped", "classic_windowed_mangrove_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_BOARDED, new ResourceLocation("chipped", "boarded_mangrove_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_PAPER, new ResourceLocation("chipped", "paper_mangrove_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_MANGROVE_BEACH, new ResourceLocation("chipped", "beach_mangrove_door"));
@@ -362,7 +362,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_TILED, new ResourceLocation("chipped", "tiled_crimson_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_crimson_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_SECRET, new ResourceLocation("chipped", "secret_crimson_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_MODERN, new ResourceLocation("chipped", "modern_crimson_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_MODERN, new ResourceLocation("chipped", "classic_windowed_crimson_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_BOARDED, new ResourceLocation("chipped", "boarded_crimson_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_PAPER, new ResourceLocation("chipped", "paper_crimson_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_CRIMSON_BEACH, new ResourceLocation("chipped", "beach_crimson_door"));
@@ -382,7 +382,7 @@ public class ChippedCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_TILED, new ResourceLocation("chipped", "tiled_warped_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_warped_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_SECRET, new ResourceLocation("chipped", "secret_warped_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_MODERN, new ResourceLocation("chipped", "modern_warped_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_MODERN, new ResourceLocation("chipped", "classic_windowed_warped_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_BOARDED, new ResourceLocation("chipped", "boarded_warped_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_PAPER, new ResourceLocation("chipped", "paper_warped_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHIPPED_WARPED_BEACH, new ResourceLocation("chipped", "beach_warped_door"));
@@ -423,7 +423,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_TILED, new ResourceLocation("chipped", "tiled_spruce_door"), "tall_chipped_spruce_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_spruce_door"), "tall_chipped_spruce_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_SECRET, new ResourceLocation("chipped", "secret_spruce_door"), "tall_chipped_spruce_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_MODERN, new ResourceLocation("chipped", "modern_spruce_door"), "tall_chipped_spruce_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_MODERN, new ResourceLocation("chipped", "classic_windowed_spruce_door"), "tall_chipped_spruce_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_PAPER, new ResourceLocation("chipped", "paper_spruce_door"), "tall_chipped_spruce_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_BEACH, new ResourceLocation("chipped", "beach_spruce_door"), "tall_chipped_spruce_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_SPRUCE_BARRED, new ResourceLocation("chipped", "barred_spruce_door"), "tall_chipped_spruce_door");
@@ -443,7 +443,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_TILED, new ResourceLocation("chipped", "tiled_birch_door"), "tall_chipped_birch_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_birch_door"), "tall_chipped_birch_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_SECRET, new ResourceLocation("chipped", "secret_birch_door"), "tall_chipped_birch_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_MODERN, new ResourceLocation("chipped", "modern_birch_door"), "tall_chipped_birch_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_MODERN, new ResourceLocation("chipped", "classic_windowed_birch_door"), "tall_chipped_birch_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_BOARDED, new ResourceLocation("chipped", "boarded_birch_door"), "tall_chipped_birch_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_BEACH, new ResourceLocation("chipped", "beach_birch_door"), "tall_chipped_birch_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_BIRCH_BARRED, new ResourceLocation("chipped", "barred_birch_door"), "tall_chipped_birch_door");
@@ -463,7 +463,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_TILED, new ResourceLocation("chipped", "tiled_jungle_door"), "tall_chipped_jungle_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_jungle_door"), "tall_chipped_jungle_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_SECRET, new ResourceLocation("chipped", "secret_jungle_door"), "tall_chipped_jungle_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_MODERN, new ResourceLocation("chipped", "modern_jungle_door"), "tall_chipped_jungle_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_MODERN, new ResourceLocation("chipped", "classic_windowed_jungle_door"), "tall_chipped_jungle_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_BOARDED, new ResourceLocation("chipped", "boarded_jungle_door"), "tall_chipped_jungle_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_PAPER, new ResourceLocation("chipped", "paper_jungle_door"), "tall_chipped_jungle_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_JUNGLE_BARRED, new ResourceLocation("chipped", "barred_jungle_door"), "tall_chipped_jungle_door");
@@ -483,7 +483,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_TILED, new ResourceLocation("chipped", "tiled_acacia_door"), "tall_chipped_acacia_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_acacia_door"), "tall_chipped_acacia_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_SECRET, new ResourceLocation("chipped", "secret_acacia_door"), "tall_chipped_acacia_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_MODERN, new ResourceLocation("chipped", "modern_acacia_door"), "tall_chipped_acacia_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_MODERN, new ResourceLocation("chipped", "classic_windowed_acacia_door"), "tall_chipped_acacia_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_BOARDED, new ResourceLocation("chipped", "boarded_acacia_door"), "tall_chipped_acacia_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_PAPER, new ResourceLocation("chipped", "paper_acacia_door"), "tall_chipped_acacia_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_ACACIA_BEACH, new ResourceLocation("chipped", "beach_acacia_door"), "tall_chipped_acacia_door");
@@ -503,7 +503,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_TILED, new ResourceLocation("chipped", "tiled_dark_oak_door"), "tall_chipped_dark_oak_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_dark_oak_door"), "tall_chipped_dark_oak_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_SECRET, new ResourceLocation("chipped", "secret_dark_oak_door"), "tall_chipped_dark_oak_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_MODERN, new ResourceLocation("chipped", "modern_dark_oak_door"), "tall_chipped_dark_oak_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_MODERN, new ResourceLocation("chipped", "classic_windowed_dark_oak_door"), "tall_chipped_dark_oak_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_BOARDED, new ResourceLocation("chipped", "boarded_dark_oak_door"), "tall_chipped_dark_oak_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_PAPER, new ResourceLocation("chipped", "paper_dark_oak_door"), "tall_chipped_dark_oak_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_DARK_OAK_BEACH, new ResourceLocation("chipped", "beach_dark_oak_door"), "tall_chipped_dark_oak_door");
@@ -523,7 +523,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_TILED, new ResourceLocation("chipped", "tiled_mangrove_door"), "tall_chipped_mangrove_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_mangrove_door"), "tall_chipped_mangrove_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_SECRET, new ResourceLocation("chipped", "secret_mangrove_door"), "tall_chipped_mangrove_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_MODERN, new ResourceLocation("chipped", "modern_mangrove_door"), "tall_chipped_mangrove_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_MODERN, new ResourceLocation("chipped", "classic_windowed_mangrove_door"), "tall_chipped_mangrove_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_BOARDED, new ResourceLocation("chipped", "boarded_mangrove_door"), "tall_chipped_mangrove_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_PAPER, new ResourceLocation("chipped", "paper_mangrove_door"), "tall_chipped_mangrove_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_MANGROVE_BEACH, new ResourceLocation("chipped", "beach_mangrove_door"), "tall_chipped_mangrove_door");
@@ -544,7 +544,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_TILED, new ResourceLocation("chipped", "tiled_crimson_door"), "tall_chipped_crimson_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_crimson_door"), "tall_chipped_crimson_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_SECRET, new ResourceLocation("chipped", "secret_crimson_door"), "tall_chipped_crimson_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_MODERN, new ResourceLocation("chipped", "modern_crimson_door"), "tall_chipped_crimson_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_MODERN, new ResourceLocation("chipped", "classic_windowed_crimson_door"), "tall_chipped_crimson_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_BOARDED, new ResourceLocation("chipped", "boarded_crimson_door"), "tall_chipped_crimson_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_PAPER, new ResourceLocation("chipped", "paper_crimson_door"), "tall_chipped_crimson_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_CRIMSON_BEACH, new ResourceLocation("chipped", "beach_crimson_door"), "tall_chipped_crimson_door");
@@ -564,7 +564,7 @@ public class ChippedCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_TILED, new ResourceLocation("chipped", "tiled_warped_door"), "tall_chipped_warped_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_TILE_WINDOWED, new ResourceLocation("chipped", "tile_windowed_warped_door"), "tall_chipped_warped_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_SECRET, new ResourceLocation("chipped", "secret_warped_door"), "tall_chipped_warped_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_MODERN, new ResourceLocation("chipped", "modern_warped_door"), "tall_chipped_warped_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_MODERN, new ResourceLocation("chipped", "classic_windowed_warped_door"), "tall_chipped_warped_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_BOARDED, new ResourceLocation("chipped", "boarded_warped_door"), "tall_chipped_warped_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_PAPER, new ResourceLocation("chipped", "paper_warped_door"), "tall_chipped_warped_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHIPPED_WARPED_BEACH, new ResourceLocation("chipped", "beach_warped_door"), "tall_chipped_warped_door");

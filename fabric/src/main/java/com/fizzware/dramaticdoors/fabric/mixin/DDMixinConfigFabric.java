@@ -7,6 +7,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import com.fizzware.dramaticdoors.config.DDConfigCommon;
 import com.fizzware.dramaticdoors.fabric.config.DDConfigFabric;
 
 import net.fabricmc.loader.api.FabricLoader;
@@ -19,8 +20,8 @@ public class DDMixinConfigFabric implements IMixinConfigPlugin
 	@Override
 	public void onLoad(String mixinPackage) {
 		DDConfigFabric.initializeConfigs();
-		waterloggableDoors = DDConfigFabric.CONFIG.getOrDefault("dramaticdoors.waterloggable_doors", true);
-		waterloggableFenceGates = DDConfigFabric.CONFIG.getOrDefault("dramaticdoors.waterloggable_fence_gates", true);
+		waterloggableDoors = DDConfigFabric.CONFIG.getOrDefault(DDConfigCommon.CONFIG_WATERLOGGABLE_DOORS, true);
+		waterloggableFenceGates = DDConfigFabric.CONFIG.getOrDefault(DDConfigCommon.CONFIG_WATERLOGGABLE_GATES, true);
 	}
 
 	@Override
@@ -35,9 +36,6 @@ public class DDMixinConfigFabric implements IMixinConfigPlugin
 		}
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.fabric.mixin.JapaneseDoorBlockMixinFabric")) {
 			return waterloggableDoors && FabricLoader.getInstance().isModLoaded("mcwdoors") && (!FabricLoader.getInstance().isModLoaded("forge"));
-		}
-		if (mixinClassName.equals("com.fizzware.dramaticdoors.fabric.mixin.forge.JapaneseDoorBlockMixinForge")) {
-			return waterloggableDoors && FabricLoader.getInstance().isModLoaded("mcwdoors") && FabricLoader.getInstance().isModLoaded("forge");
 		}
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.fabric.mixin.FenceGateBlockMixin")) {
 			return waterloggableFenceGates && !FabricLoader.getInstance().isModLoaded("fluidlogged");

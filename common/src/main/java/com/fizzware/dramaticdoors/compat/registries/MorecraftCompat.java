@@ -29,8 +29,8 @@ public class MorecraftCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MORECRAFT_NETHERWOOD, DDNames.SHORT_MORECRAFT_NETHERWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("morecraft", "netherwood_door")), BlockSetType.CRIMSON, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MORECRAFT_NETHERBRICK, DDNames.SHORT_MORECRAFT_NETHERBRICK, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("morecraft", "netherbrick_door")), BlockSetType.STONE, true);
 		
-		Block shortNetheriteDoor = new TallDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("morecraft", "netherite_door"), Blocks.IRON_DOOR), BlockSetType.IRON);
-		Block tallNetheriteDoor = new TallDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("morecraft", "netherite_door"), Blocks.IRON_DOOR), BlockSetType.IRON);
+		Block shortNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("morecraft", "netherite_door"), Blocks.IRON_DOOR));
+		Block tallNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("morecraft", "netherite_door"), Blocks.IRON_DOOR));
 		
 		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_MORECRAFT_NETHERITE, shortNetheriteDoor));
     	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_MORECRAFT_NETHERITE, tallNetheriteDoor));

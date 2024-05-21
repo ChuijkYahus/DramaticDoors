@@ -2,7 +2,6 @@
   "parent": "minecraft:block/door_top_left_open",
   "textures": {
     "bottom": "dramaticdoors:block/tall_rue_brimwood_door_bottom",
-    "middle": "dramaticdoors:block/tall_rue_brimwood_door_middle",
     "top": "dramaticdoors:block/tall_rue_brimwood_door_top"
   }
 }

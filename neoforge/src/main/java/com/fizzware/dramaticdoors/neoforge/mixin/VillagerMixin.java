@@ -13,7 +13,7 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.schedule.Activity;
 
-@Mixin(Villager.class)
+@Mixin(value = Villager.class, remap = false)
 public class VillagerMixin
 {
 	@Inject(method = "registerBrainGoals(Lnet/minecraft/world/entity/ai/Brain;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/behavior/VillagerGoalPackages;getCorePackage(Lnet/minecraft/world/entity/npc/VillagerProfession;F)Lcom/google/common/collect/ImmutableList;"), locals = LocalCapture.CAPTURE_FAILSOFT)

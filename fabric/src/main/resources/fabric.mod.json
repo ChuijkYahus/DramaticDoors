@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "dramaticdoors",
+  "version": "${version}",
+
+  "name": "Dramatic Doors (NeoQuiFabrge)",
+  "description": "Dramatic Doors, the mod that adds three block tall doors and one block short doors! Compatible with Fabric, Forge, NeoForge, and Quilt. Supports over 80 mods!",
+  "authors": [
+    "Fizzware (Original creator)", "Kitteh6660 (Fabric port)"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/dramatic-doors",
+    "sources": "https://github.com/TheFizzWare/DramaticDoors"
+  },
+
+  "license": "MIT",
+  "icon": "icon_square.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.fizzware.dramaticdoors.fabric.datagen.DramaticDoorsDataGenerators"
+    ],
+    "main": [
+      "com.fizzware.dramaticdoors.fabric.DramaticDoorsFabric"
+    ],
+    "client": [
+      "com.fizzware.dramaticdoors.fabric.client.RenderHandler"
+    ]
+  },
+  "mixins": [
+    "dramaticdoors_fabric.mixins.json"
+  ],
+  "accessWidener": "dramaticdoors.accesswidener",
+
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": ">=0.97.0",
+    "minecraft": ">=1.20.6",
+    "java": ">=21"
+  },
+  "suggests": {
+    "doubledoors": "*",
+    "ad_astra": "*",
+    "bewitchment": "*",
+    "biomemakeover": "*",
+    "byg": "*",
+    "ceilands": "*",
+    "charm": "*",
+    "ecologics": "*",
+    "glassdoor": "*",
+    "mcwdoors": ">=1.1.0",
+    "promenade": "*",
+    "snowyspirit": "*",
+    "supplementaries": "*",
+    "tconstruct": "*",
+    "techreborn": "*",
+    "traverse": "*",
+    "twigs": "*",
+    "twilightforest": "*"
+  }
+}

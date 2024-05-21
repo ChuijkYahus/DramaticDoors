@@ -30,7 +30,7 @@ public class UndergardenCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WIGGLEWOOD, new ResourceLocation("undergarden", "wigglewood_door"));
 		
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GRONGLE, new ResourceLocation("undergarden", "grongle_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SMOGSTEM, new ResourceLocation("undergarden", "greenheart_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SMOGSTEM, new ResourceLocation("undergarden", "smogstem_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WIGGLEWOOD, new ResourceLocation("undergarden", "wigglewood_door"), true);
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GRONGLE, new ResourceLocation("undergarden", "grongle_door"), "tall_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SMOGSTEM, new ResourceLocation("undergarden", "smogstem_door"), "tall_wooden_door");

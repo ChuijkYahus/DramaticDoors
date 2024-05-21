@@ -31,7 +31,7 @@ public class QuarkCompat
 		
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_ANCIENT, new ResourceLocation("quark", "ancient_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_AZALEA, new ResourceLocation("quark", "azalea_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_BLOSSOM, new ResourceLocation("quark", "mystical_oak_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_BLOSSOM, new ResourceLocation("quark", "blossom_door"), true);
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_ANCIENT, new ResourceLocation("quark", "ancient_door"), "tall_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_AZALEA, new ResourceLocation("quark", "azalea_door"), "tall_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_BLOSSOM, new ResourceLocation("quark", "blossom_door"), "tall_wooden_door");

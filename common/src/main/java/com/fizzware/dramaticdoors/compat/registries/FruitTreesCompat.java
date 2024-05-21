@@ -21,7 +21,7 @@ public class FruitTreesCompat
 	private static void registerBlocksItems() {
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_FT_CHERRY, DDNames.SHORT_FT_CHERRY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("fruittrees", "cherry_door")), BlockSetType.CHERRY, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_FT_CITRUS, DDNames.SHORT_FT_CITRUS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("fruittrees", "citrus_door")), BlockSetType.OAK, true);
-		Block sliding_cherry_door = new TallSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("fruittrees", "cherry_sliding_door")), BlockSetType.CHERRY);
+		Block sliding_cherry_door = new TallSlidingDoorBlock(BlockSetType.CHERRY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("fruittrees", "cherry_sliding_door")));
 		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_FT_CHERRY_SLIDING, sliding_cherry_door));
 		DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_FT_CHERRY_SLIDING, new TallDoorItem(sliding_cherry_door, DDRegistry.PROPERTIES)));
 	}

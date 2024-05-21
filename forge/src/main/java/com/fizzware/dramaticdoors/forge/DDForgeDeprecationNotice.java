@@ -10,8 +10,8 @@ public class DDForgeDeprecationNotice
 	// Forge support is being phased out.
 	
 	// Stage 1: Just display a message. 1.20.2.
-	// Stage 2: Disable short doors. 1.20.3.
-	// Stage 3: Disable mod compats. 1.20.4+.
+	// Stage 2: Disable short doors. 1.20.4.
+	// Stage 3: Disable mod compats. 1.20.6+.
 	// Final stage: Completely remove Forge support. 1.21+
 	
 	private static boolean hasDisplayed = false; 
@@ -22,6 +22,7 @@ public class DDForgeDeprecationNotice
 			hasDisplayed = true;
 			Player player = (Player)event.getEntity();
 			player.displayClientMessage(Component.translatable("messages.dramaticdoors.forge_deprecation_notice"), false);
+			player.displayClientMessage(Component.translatable("messages.dramaticdoors.forge_deprecation_notice_2"), false);
 		}
 	}
 }

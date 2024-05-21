@@ -15,6 +15,7 @@ import com.fizzware.dramaticdoors.tags.DDItemTags;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -69,6 +70,23 @@ public class DDFabricRegistry
 		}
 	}
 
+	public static void registerWeatherables() {
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_OXIDIZED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_OXIDIZED_COPPER)));
+	}
+	
 	public static void registerFuels() {
 		// Set up fuel. Only wooden doors can be used as fuel. Nether wood automatically excluded.
 		FuelRegistry.INSTANCE.add(DDItemTags.TALL_WOODEN_DOORS, 300);

@@ -3,8 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.+'
-	// id 'net.neoforged.gradle.mixin'
+    id 'net.neoforged.gradle.userdev' version '7.0.+'
 }
 
 archivesBaseName = "neoforge" // "${rootProject.archives_base_name}-${project.name}"
@@ -21,10 +20,9 @@ repositories {
 }
 
 // mixin {
-    // Only uncomment if you need to generate the refmap. Remember to edit the refmap for the merged JAR file!
-    // if (!file('src/main/resources/${rootProject.mod_id}_forge.refmap.json').exists()) {
-    //    add(sourceSets.main, "${rootProject.mod_id}_forge.refmap.json")
-    // }
+//    if (!file('src/main/resources/${rootProject.mod_id}_neoforge.refmap.json').exists()) {
+//        add(sourceSets.main, "${rootProject.mod_id}_neoforge.refmap.json")
+//    }
 // }
 
 minecraft.accessTransformers.file project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -37,11 +35,11 @@ runs {
     }	
 	client {
 		systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-		programArgument "-mixin.config=" + "dramaticdoors_neoforge.mixins.json"
+		// programArgument "-mixin.config=" + "dramaticdoors_neoforge.mixins.json"
 	}
 	server {
 		systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-		programArgument "-mixin.config=" + "dramaticdoors_neoforge.mixins.json" + " --nogui"
+		// programArgument "-mixin.config=" + "dramaticdoors_neoforge.mixins.json" + " --nogui"
 	}
 	data {
 		programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()

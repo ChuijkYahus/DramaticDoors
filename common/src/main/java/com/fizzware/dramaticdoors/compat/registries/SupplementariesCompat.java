@@ -23,14 +23,14 @@ import oshi.util.tuples.Pair;
 
 public class SupplementariesCompat
 {
-	public static final Block SHORT_GOLD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "gold_door")), BlockSetType.IRON) : null;
-	public static final Block SHORT_SILVER_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "silver_door")), BlockSetType.IRON) : null;
-	public static final Block SHORT_LEAD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortLeadDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "lead_door")), BlockSetType.IRON) : null;
-	public static final Block SHORT_NETHERITE_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortNetheriteDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "netherite_door")), BlockSetType.IRON) : null;
-	public static final Block TALL_GOLD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "gold_door")), BlockSetType.IRON) : null;
-	public static final Block TALL_SILVER_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "silver_door")), BlockSetType.IRON) : null;
-	public static final Block TALL_LEAD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallLeadDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "lead_door")), BlockSetType.IRON) : null;
-	public static final Block TALL_NETHERITE_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallNetheriteDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "netherite_door")), BlockSetType.IRON) : null;
+	public static final Block SHORT_GOLD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "gold_door"))) : null;
+	//public static final Block SHORT_SILVER_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "silver_door"))) : null;
+	//public static final Block SHORT_LEAD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortLeadDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "lead_door"))) : null;
+	public static final Block SHORT_NETHERITE_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new ShortNetheriteDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "netherite_door"))) : null;
+	public static final Block TALL_GOLD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "gold_door"))) : null;
+	//public static final Block TALL_SILVER_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "silver_door"))) : null;
+	//public static final Block TALL_LEAD_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallLeadDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "lead_door"))) : null;
+	public static final Block TALL_NETHERITE_DOOR = Compats.SUPPLEMENTARIES_INSTALLED ? new TallNetheriteDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("supplementaries", "netherite_door"))) : null;
 	
 	public static void registerCompat(CompatChecker checker) {
 		registerBlocksItems();
@@ -39,22 +39,25 @@ public class SupplementariesCompat
 	
 	private static void registerBlocksItems() {
     	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_GOLD, SHORT_GOLD_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_SILVER, SHORT_SILVER_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_LEAD, SHORT_LEAD_DOOR));
     	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_NETHERITE, SHORT_NETHERITE_DOOR));
     	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_GOLD, TALL_GOLD_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_SILVER, TALL_SILVER_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_LEAD, TALL_LEAD_DOOR));
     	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_NETHERITE, TALL_NETHERITE_DOOR));
     	
     	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_GOLD, new ShortDoorItem(SHORT_GOLD_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_SILVER, new ShortDoorItem(SHORT_SILVER_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_LEAD, new ShortDoorItem(SHORT_LEAD_DOOR, DDRegistry.PROPERTIES)));
     	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_NETHERITE, new ShortDoorItem(SHORT_NETHERITE_DOOR, DDRegistry.PROPERTIES.fireResistant())));
     	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_GOLD, new TallDoorItem(TALL_GOLD_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_SILVER, new TallDoorItem(TALL_SILVER_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_LEAD, new TallDoorItem(TALL_LEAD_DOOR, DDRegistry.PROPERTIES)));
     	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_NETHERITE, new TallDoorItem(TALL_NETHERITE_DOOR, DDRegistry.PROPERTIES.fireResistant())));
+		/*if (checker.isModLoaded("forge")) {
+    	    DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_SILVER, SHORT_SILVER_DOOR));
+    	    DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_LEAD, SHORT_LEAD_DOOR));
+	    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_SILVER, TALL_SILVER_DOOR));
+	    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_LEAD, TALL_LEAD_DOOR));	
+	    	
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_SILVER, new ShortDoorItem(SHORT_SILVER_DOOR, DDRegistry.PROPERTIES)));
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_LEAD, new ShortDoorItem(SHORT_LEAD_DOOR, DDRegistry.PROPERTIES)));
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_SILVER, new TallDoorItem(TALL_SILVER_DOOR, DDRegistry.PROPERTIES)));
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_LEAD, new TallDoorItem(TALL_LEAD_DOOR, DDRegistry.PROPERTIES)));
+		}*/
 	}
 	
 	private static void registerRecipes(CompatChecker checker) {
@@ -68,7 +71,7 @@ public class SupplementariesCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GOLD, new ResourceLocation("supplementaries", "gold_door"), "tall_metal_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_NETHERITE, new ResourceLocation("supplementaries", "netherite_door"), "tall_metal_door");
 		
-		if (checker.isModLoaded("forge")) {
+		/*if (checker.isModLoaded("forge")) {
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SILVER, new ResourceLocation("supplementaries", "silver_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_LEAD, new ResourceLocation("supplementaries", "lead_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SILVER, new ResourceLocation("supplementaries", "silver_door"));
@@ -78,6 +81,6 @@ public class SupplementariesCompat
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_LEAD, new ResourceLocation("supplementaries", "lead_door"), false);
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SILVER, new ResourceLocation("supplementaries", "silver_door"), "tall_metal_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_LEAD, new ResourceLocation("supplementaries", "lead_door"), "tall_metal_door");
-		}
+		}*/
 	}
 }

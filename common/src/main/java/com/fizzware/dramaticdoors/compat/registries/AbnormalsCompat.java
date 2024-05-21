@@ -22,6 +22,7 @@ public class AbnormalsCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ASPEN, DDNames.SHORT_ASPEN, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "aspen_door")), BlockSetType.OAK, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GRIMWOOD, DDNames.SHORT_GRIMWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "grimwood_door")), BlockSetType.OAK, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_KOUSA, DDNames.SHORT_KOUSA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "kousa_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_LAUREL, DDNames.SHORT_LAUREL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "laurel_door")), BlockSetType.SPRUCE, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MORADO, DDNames.SHORT_MORADO, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "morado_door")), BlockSetType.OAK, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ROSEWOOD, DDNames.SHORT_ROSEWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "rosewood_door")), BlockSetType.OAK, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_YUCCA, DDNames.SHORT_YUCCA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "yucca_door")), BlockSetType.OAK, true);
@@ -40,6 +41,7 @@ public class AbnormalsCompat
 
 		// Environmental
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_DARK_CHERRY, DDNames.SHORT_DARK_CHERRY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "cherry_door")), BlockSetType.CHERRY, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_PINE, DDNames.SHORT_PINE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "pine_door")), BlockSetType.SPRUCE, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WILLOW, DDNames.SHORT_WILLOW, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "willow_door")), BlockSetType.MANGROVE, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WISTERIA, DDNames.SHORT_WISTERIA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "wisteria_door")), BlockSetType.CHERRY, true);
 		
@@ -55,6 +57,7 @@ public class AbnormalsCompat
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_ASPEN, new ResourceLocation("atmospheric", "aspen_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GRIMWOOD, new ResourceLocation("atmospheric", "grimwood_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_KOUSA, new ResourceLocation("atmospheric", "kousa_door"));
+			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_LAUREL, new ResourceLocation("atmospheric", "laurel_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MORADO, new ResourceLocation("atmospheric", "morado_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_ROSEWOOD, new ResourceLocation("atmospheric", "rosewood_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_YUCCA, new ResourceLocation("atmospheric", "yucca_door"));
@@ -68,12 +71,14 @@ public class AbnormalsCompat
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_ASPEN, new ResourceLocation("atmospheric", "aspen_door"), true);
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GRIMWOOD, new ResourceLocation("atmospheric", "grimwood_door"), true);
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_KOUSA, new ResourceLocation("atmospheric", "kousa_door"), true);
+			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_LAUREL, new ResourceLocation("atmospheric", "laurel_door"), true);
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MORADO, new ResourceLocation("atmospheric", "morado_door"), true);
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_ROSEWOOD, new ResourceLocation("atmospheric", "rosewood_door"), true);
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_YUCCA, new ResourceLocation("atmospheric", "yucca_door"), true);
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_ASPEN, new ResourceLocation("atmospheric", "aspen_door"), "tall_wooden_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GRIMWOOD, new ResourceLocation("atmospheric", "grimwood_door"), "tall_wooden_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_KOUSA, new ResourceLocation("atmospheric", "kousa_door"), "tall_wooden_door");
+			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_LAUREL, new ResourceLocation("atmospheric", "laurel_door"), "tall_wooden_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MORADO, new ResourceLocation("atmospheric", "morado_door"), "tall_wooden_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_ROSEWOOD, new ResourceLocation("atmospheric", "rosewood_door"), "tall_wooden_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_YUCCA, new ResourceLocation("atmospheric", "yucca_door"), "tall_wooden_door");
@@ -109,16 +114,20 @@ public class AbnormalsCompat
 		}
 		if (Compats.isModLoaded("environmental", checker)) {
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_DARK_CHERRY, new ResourceLocation("environmental", "cherry_door"));
+			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_PINE, new ResourceLocation("environmental", "pine_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WILLOW, new ResourceLocation("environmental", "willow_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WISTERIA, new ResourceLocation("environmental", "wisteria_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_DARK_CHERRY, new ResourceLocation("environmental", "cherry_door"));
+			DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_PINE, new ResourceLocation("environmental", "pine_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WILLOW, new ResourceLocation("environmental", "willow_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WISTERIA, new ResourceLocation("environmental", "wisteria_door"));
 	
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_DARK_CHERRY, new ResourceLocation("environmental", "cherry_door"), true);
+			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_PINE, new ResourceLocation("environmental", "pine_door"), true);
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WILLOW, new ResourceLocation("environmental", "willow_door"), true);
 			DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WISTERIA, new ResourceLocation("environmental", "wisteria_door"), true);
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_DARK_CHERRY, new ResourceLocation("environmental", "cherry_door"), "tall_wooden_door");
+			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_PINE, new ResourceLocation("environmental", "pine_door"), "tall_wooden_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WILLOW, new ResourceLocation("environmental", "willow_door"), "tall_wooden_door");
 			DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WISTERIA, new ResourceLocation("environmental", "wisteria_door"), "tall_wooden_door");
 		}

@@ -22,12 +22,12 @@ public abstract class RecipeManagerMixin
     public void interceptApply(Map<ResourceLocation, JsonElement> map, ResourceManager resourceManager, ProfilerFiller profiler, CallbackInfo info) {
     	DDCompatRecipe.SHORT_DOOR_RECIPES.forEach((recipe) -> { 
     		if (recipe.get("type").getAsString().contains("aurorasdeco") && recipe.getAsJsonObject("ingredient").get("item").getAsString().contains("minecraft")) {
-    			map.put(new ResourceLocation(recipe.get("result").getAsString() + "_woodcutting"), recipe); 
+    			map.put(new ResourceLocation(recipe.get("result").getAsJsonObject().get("id").getAsString() + "_woodcutting"), recipe); 
     		}
     		else {
-    			map.put(new ResourceLocation(recipe.get("result").getAsString()), recipe); 
+    			map.put(new ResourceLocation(recipe.get("result").getAsJsonObject().get("id").getAsString()), recipe); 
     		}
     	} );
-    	DDCompatRecipe.TALL_DOOR_RECIPES.forEach((recipe) -> { map.put(new ResourceLocation(recipe.get("result").getAsJsonObject().get("item").getAsString()), recipe); } );
+    	DDCompatRecipe.TALL_DOOR_RECIPES.forEach((recipe) -> { map.put(new ResourceLocation(recipe.get("result").getAsJsonObject().get("id").getAsString()), recipe); } );
     }
 }

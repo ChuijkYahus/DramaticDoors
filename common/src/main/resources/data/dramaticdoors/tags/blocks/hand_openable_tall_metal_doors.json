@@ -12,7 +12,7 @@
     {"id": "dramaticdoors:tall_create_train_door", "required": false}, 
     {"id": "dramaticdoors:tall_andesite_door", "required": false}, 
     {"id": "dramaticdoors:tall_brass_door", "required": false}, 
-    {"id": "dramaticdoors:tall_copper_door", "required": false}, 
+    {"id": "dramaticdoors:tall_cd_copper_door", "required": false}, 
     {"id": "dramaticdoors:tall_zinc_door", "required": false}, 
     {"id": "dramaticdoors:tall_steel_door", "required": false}, 
     {"id": "dramaticdoors:tall_chain_door", "required": false}, 

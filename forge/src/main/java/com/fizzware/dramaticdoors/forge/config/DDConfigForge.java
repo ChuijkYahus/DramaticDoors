@@ -4,6 +4,7 @@ import java.nio.file.Path;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
+import com.fizzware.dramaticdoors.config.DDConfigCommon;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
@@ -13,11 +14,7 @@ public class DDConfigForge
 	
 	public static ForgeConfigSpec CONFIG;
 
-	public static final String CATEGORY_EXPERIMENTAL = "Experimental";
-
 	public static ForgeConfigSpec.BooleanValue devMode;
-
-	public static final String CATEGORY_MIXINS = "Mixins";
 	
 	public static ForgeConfigSpec.BooleanValue waterloggableDoors;
 	public static ForgeConfigSpec.BooleanValue waterloggableFenceGates;
@@ -30,23 +27,23 @@ public class DDConfigForge
 	
 	private static void initializeConfig()
 	{
-		BUILDER.comment("Dramatic Doors").push(CATEGORY_EXPERIMENTAL);
+		BUILDER.comment("Dramatic Doors").push(DDConfigCommon.CATEGORY_EXPERIMENTAL);
 		
         devMode = BUILDER
                 .comment("Development mode ensures that all compat doors are always registered regardless of whether mods are installed or not, for development purposes.  " + "Default: false")
-                .define("dev_mode", false);
+                .define(DDConfigCommon.CONFIG_DEV_MODE, false);
 		
         BUILDER.pop();
         
-		BUILDER.push(CATEGORY_MIXINS);
+		BUILDER.push(DDConfigCommon.CATEGORY_MIXINS);
 		
         waterloggableDoors = BUILDER
                 .comment("Allow doors to be waterlogged. Enable to allow waterlogging. Disable for compatibility with certain mods. Requires restart after changing.  " + "Default: true")
-                .define("waterloggable_doors", true);
+                .define(DDConfigCommon.CONFIG_WATERLOGGABLE_DOORS, true);
         
         waterloggableFenceGates = BUILDER
                 .comment("Allow fence gates to be waterlogged. Enable to allow waterlogging. Disable for compatibility with certain mods. Requires restart after changing.  " + "Default: true")
-                .define("waterloggable_fence_gates", true);
+                .define(DDConfigCommon.CONFIG_WATERLOGGABLE_GATES, true);
 		
 		BUILDER.pop();
 	}

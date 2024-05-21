@@ -41,8 +41,8 @@ public class TallFleshDoorBlock extends TallDoorBlock
 	protected static final VoxelShape[] Z_POS_AABB = createClosedAndOpenShape(0, 0, 16d - THICKNESS, 16, 16, 16);
 
 	
-	public TallFleshDoorBlock(Block from, BlockSetType blockset) {
-		super(from, blockset);
+	public TallFleshDoorBlock(BlockSetType blockset, Block from) {
+		super(blockset, from);
 		registerDefaultState(defaultBlockState().setValue(ORIENTATION, Orientation.X_MIDDLE));
 	}
 
@@ -128,7 +128,7 @@ public class TallFleshDoorBlock extends TallDoorBlock
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
+	public boolean isPathfindable(BlockState state, PathComputationType type) {
 		return switch (type) {
 			case LAND, AIR -> isOpen(state);
 			case WATER -> false;

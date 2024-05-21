@@ -42,8 +42,8 @@ public class ShortFullFleshDoorBlock extends ShortDoorBlock
 	protected static final VoxelShape[] Z_NONE_AABB = createClosedAndOpenShape(0, 0, 8d - THICKNESS / 2d, 16, 16, 8d + THICKNESS / 2d);
 	protected static final VoxelShape[] Z_POS_AABB = createClosedAndOpenShape(0, 0, 16d - THICKNESS, 16, 16, 16);
 
-	public ShortFullFleshDoorBlock(Block from, BlockSetType blockset) {
-		super(from, blockset);
+	public ShortFullFleshDoorBlock(BlockSetType blockset, Block from) {
+		super(blockset, from);
 		registerDefaultState(defaultBlockState().setValue(ORIENTATION, Orientation.X_MIDDLE));
 	}
 
@@ -180,7 +180,7 @@ public class ShortFullFleshDoorBlock extends ShortDoorBlock
 	}
 	
 	@Override
-	public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
+	public boolean isPathfindable(BlockState state, PathComputationType type) {
 		return switch (type) {
 			case LAND, AIR -> isOpen(state);
 			case WATER -> false;

@@ -7,7 +7,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -24,8 +23,8 @@ public class ShortLeadDoorBlock extends ShortDoorBlock
 {
 	public static final IntegerProperty OPENING_PROGRESS = DDBlockStateProperties.OPENING_PROGRESS;
 
-	public ShortLeadDoorBlock(Block from, BlockSetType blockset) {
-		super(from, blockset);
+	public ShortLeadDoorBlock(BlockSetType blockset, Block from) {
+		super(blockset, from);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HINGE, DoorHingeSide.LEFT).setValue(POWERED, Boolean.FALSE).setValue(WATERLOGGED, false).setValue(OPENING_PROGRESS, 0));
 	}
 	
@@ -39,7 +38,7 @@ public class ShortLeadDoorBlock extends ShortDoorBlock
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (this.canBeOpened(state)) {
             ShortDoorBlock.tryOpenDoubleDoor(level, state, pos);
 

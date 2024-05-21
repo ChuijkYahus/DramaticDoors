@@ -1,13 +1,15 @@
 {
   "type": "woodworks:sawmill",
   "ingredient": {
-      "item": "minecraft:birch_door"
+    "item": "minecraft:birch_door"
   },
-  "result": "dramaticdoors:short_birch_door",
-  "count": 2,
-  "conditions": [
+  "result": {
+    "id": "dramaticdoors:short_birch_door",
+    "count": 2
+  },
+  "neoforge:conditions": [
     {
-      "type": "forge:mod_loaded",
+      "type": "neoforge:mod_loaded",
       "modid": "woodworks"
     }
   ]

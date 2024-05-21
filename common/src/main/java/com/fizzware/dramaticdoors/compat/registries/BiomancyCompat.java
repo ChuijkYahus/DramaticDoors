@@ -21,13 +21,13 @@ import oshi.util.tuples.Pair;
 
 public class BiomancyCompat
 {
-    public static final Block SHORT_FLESH_DOOR = new ShortFleshDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "flesh_door")), BlockSetType.STONE);
-    public static final Block SHORT_FULL_FLESH_DOOR = new ShortFullFleshDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "full_flesh_door")), BlockSetType.STONE);
-    public static final Block SHORT_FLESHKIN_DOOR = new ShortDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "fleshkin_door")), BlockSetType.STONE);
+    public static final Block SHORT_FLESH_DOOR = new ShortFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "flesh_door")));
+    public static final Block SHORT_FULL_FLESH_DOOR = new ShortFullFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "full_flesh_door")));
+    public static final Block SHORT_FLESHKIN_DOOR = new ShortDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "fleshkin_door")));
 
-    public static final Block TALL_FLESH_DOOR = new TallFleshDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "flesh_door")), BlockSetType.STONE);
-    public static final Block TALL_FULL_FLESH_DOOR = new TallFullFleshDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "full_flesh_door")), BlockSetType.STONE);
-    public static final Block TALL_FLESHKIN_DOOR = new TallDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "fleshkin_door")), BlockSetType.STONE);
+    public static final Block TALL_FLESH_DOOR = new TallFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "flesh_door")));
+    public static final Block TALL_FULL_FLESH_DOOR = new TallFullFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "full_flesh_door")));
+    public static final Block TALL_FLESHKIN_DOOR = new TallDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "fleshkin_door")));
 
 	public static void registerCompat() {
 		registerBlocksItems();

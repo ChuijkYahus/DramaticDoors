@@ -21,7 +21,7 @@ public class CPIMMixin
 	private void injectUse(LocalPlayer player, InteractionHand hand, BlockHitResult hitResult, CallbackInfoReturnable<InteractionResult> ci) {
 		boolean blWithKey = player.getMainHandItem() != null && player.getMainHandItem().is(DDItemTags.KEY);
 		if (blWithKey && ci.isCancellable()) {
-			ci.setReturnValue(player.level().getBlockState(hitResult.getBlockPos()).use(player.level(), player, hand, hitResult));
+			ci.setReturnValue(player.level().getBlockState(hitResult.getBlockPos()).useWithoutItem(player.level(), player, hitResult));
 		}
 	}
 

@@ -1,4 +1,5 @@
-package com.fizzware.dramaticdoors.fabric.mixin;
+//Disabled: Macaw's Doors not on 1.20.6 yet.
+/*package com.fizzware.dramaticdoors.fabric.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +25,7 @@ public class JapaneseDoorBlockMixinFabric
 	
 	@Inject(at = @At("TAIL"), method = "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V")
 	private void enhanceConstructor(BlockBehaviour.Properties properties, BlockSetType blocksettype, CallbackInfo callback) {
-		((JapaneseDoors)(Object)this).registerDefaultState(((JapaneseDoors) (Object) this).defaultBlockState().setValue(WATERLOGGED, false));
+		((JapaneseDoors)(Object)this).registerDefaultState(((JapaneseDoors)(Object)this).defaultBlockState().setValue(WATERLOGGED, false));
 	}
 	
 	@Inject(at = @At("TAIL"), method = "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V")
@@ -33,5 +34,4 @@ public class JapaneseDoorBlockMixinFabric
 			builder.add(WATERLOGGED);
 		}
 	}
-}
-
+}*/

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "dramaticdoors:short_copper_door",
+    "dramaticdoors:short_exposed_copper_door",
+    "dramaticdoors:short_weathered_copper_door",
+    "dramaticdoors:short_oxidized_copper_door",
+    "dramaticdoors:short_waxed_copper_door",
+    "dramaticdoors:short_waxed_exposed_copper_door",
+    "dramaticdoors:short_waxed_weathered_copper_door",
+    "dramaticdoors:short_waxed_oxidized_copper_door",
+    {"id": "dramaticdoors:short_macaw_store_door", "required": false},
+    {"id": "dramaticdoors:short_macaw_sliding_glass_door", "required": false}
+  ]
+}

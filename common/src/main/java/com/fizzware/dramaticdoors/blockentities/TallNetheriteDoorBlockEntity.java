@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Nullable;
 import com.fizzware.dramaticdoors.tags.DDItemTags;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -27,16 +28,16 @@ public class TallNetheriteDoorBlockEntity extends BlockEntity
 	}
 
 	@Override
-	public void saveAdditional(CompoundTag tag) {
-		super.saveAdditional(tag);
+	public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+		super.saveAdditional(tag, provider);
         if (this.password != null) {
             tag.putString("Password", this.password);
         }
 	}
 	
 	@Override
-	public void load(CompoundTag tag) {
-		super.load(tag);
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+		super.loadAdditional(tag, provider);
         if (tag.contains("Password")) {
             this.password = tag.getString("Password");
         }

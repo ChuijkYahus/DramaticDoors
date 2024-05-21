@@ -29,12 +29,11 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-    modImplementation "com.terraformersmc:modmenu:8.0.0", {
+    modImplementation "com.terraformersmc:modmenu:10.0.0-beta.1", {
         exclude module: "fabric-api"
     }
     implementation project(":common")
-	implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-	modImplementation("curse.maven:macaws-doors-378646:4781679")
+	// modImplementation("curse.maven:macaws-doors-378646:4974690")
     // modImplementation("com.simibubi.create:create-fabric-${rootProject.minecraft_version}:${rootProject.create_fabric_version}")
 }
 
@@ -61,7 +60,20 @@ loom {
             ideConfigGenerated(true)
             runDir("run")
         }
+		datagen {
+            inherit server
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=${mod_id}"
+            runDir("build/datagen")
+        }
     }
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 tasks.withType(JavaCompile).configureEach {

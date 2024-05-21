@@ -14,6 +14,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -35,8 +36,8 @@ public class DoorBlockMixin extends Block implements SimpleWaterloggedBlock
 		
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	@Inject(at = @At("TAIL"), method = "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V")
-	private void enhanceConstructor(BlockBehaviour.Properties properties, BlockSetType blockset, CallbackInfo callback) {
+	@Inject(at = @At("TAIL"), method = "<init>(Lnet/minecraft/world/level/block/state/properties/BlockSetType;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V")
+	private void enhanceConstructor(BlockSetType blockset, BlockBehaviour.Properties properties, CallbackInfo callback) {
 		((DoorBlock)(Object)this).registerDefaultState(((DoorBlock)(Object)this).defaultBlockState().setValue(WATERLOGGED, false));
 	}
 
@@ -59,9 +60,16 @@ public class DoorBlockMixin extends Block implements SimpleWaterloggedBlock
 		callback.cancel();
 	}
 
-	@Inject(at = @At("RETURN"), method = "updateShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;")
-	private void injectUpdateShape(BlockState stateIn, Direction direction, BlockState facingState, LevelAccessor accessor, BlockPos pos1, BlockPos pos2, CallbackInfoReturnable<BlockState> callback) {
-		stateIn = stateIn.setValue(WATERLOGGED, accessor.getFluidState(pos1).getType() == Fluids.WATER);
+	@Inject(at = @At("HEAD"), method = "updateShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;", cancellable = true)
+	private void injectUpdateShape(BlockState stateIn, Direction direction, BlockState facingState, LevelAccessor accessor, BlockPos currentPos, BlockPos facingPos, CallbackInfoReturnable<BlockState> callback) {
+		if (stateIn.hasProperty(BlockStateProperties.WATERLOGGED)) {
+			DoubleBlockHalf doubleblockhalf = stateIn.getValue(DoorBlock.HALF);
+			if (direction.getAxis() != Direction.Axis.Y || doubleblockhalf == DoubleBlockHalf.LOWER != (direction == Direction.UP)) {
+				callback.setReturnValue(doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !stateIn.canSurvive(accessor, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, direction, facingState, accessor, currentPos, facingPos));
+			} else {
+				callback.setReturnValue(facingState.getBlock() instanceof DoorBlock && facingState.getValue(DoorBlock.HALF) != doubleblockhalf ? facingState.setValue(DoorBlock.HALF, doubleblockhalf).setValue(WATERLOGGED, accessor.getFluidState(currentPos).getType() == Fluids.WATER) : Blocks.AIR.defaultBlockState());
+			}
+		}
 	}
 
 	@Inject(at = @At("HEAD"), method = "setPlacedBy(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)V", cancellable = true)

@@ -3,7 +3,6 @@ package com.fizzware.dramaticdoors.blocks;
 import com.fizzware.dramaticdoors.blockentities.TallNetheriteDoorBlockEntity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -19,8 +18,8 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ShortNetheriteDoorBlock extends ShortDoorBlock implements EntityBlock
 {
 
-	public ShortNetheriteDoorBlock(Block from, BlockSetType blockset) {
-		super(from, blockset);
+	public ShortNetheriteDoorBlock(BlockSetType blockset, Block from) {
+		super(blockset, from);
 	}
 	
 	@Override
@@ -29,12 +28,12 @@ public class ShortNetheriteDoorBlock extends ShortDoorBlock implements EntityBlo
 	}
 	
 	@Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 		BlockEntity be = level.getBlockEntity(pos);
 		//Execute action.
 		if (be != null && be instanceof TallNetheriteDoorBlockEntity) {
 			TallNetheriteDoorBlockEntity door = (TallNetheriteDoorBlockEntity) be;
-			if (door.handleAction(player, hand, "door")) {
+			if (door.handleAction(player, player.getUsedItemHand(), "door")) {
 				tryOpenDoubleDoor(level, state, pos);
 				BlockState newState = state.cycle(OPEN);
 				level.setBlock(pos, newState, 10);

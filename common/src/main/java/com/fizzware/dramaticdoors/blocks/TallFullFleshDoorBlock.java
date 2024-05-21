@@ -3,7 +3,6 @@ package com.fizzware.dramaticdoors.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -51,8 +50,8 @@ public class TallFullFleshDoorBlock extends TallDoorBlock
 	protected static final VoxelShape[] Z_NONE_AABB = createClosedAndOpenShape(0, 0, 8d - THICKNESS / 2d, 16, 16, 8d + THICKNESS / 2d);
 	protected static final VoxelShape[] Z_POS_AABB = createClosedAndOpenShape(0, 0, 16d - THICKNESS, 16, 16, 16);
 
-	public TallFullFleshDoorBlock(Block from, BlockSetType blockset) {
-		super(from, blockset);
+	public TallFullFleshDoorBlock(BlockSetType blockset, Block from) {
+		super(blockset, from);
 		registerDefaultState(defaultBlockState().setValue(ORIENTATION, Orientation.X_MIDDLE));
 	}
 
@@ -170,7 +169,7 @@ public class TallFullFleshDoorBlock extends TallDoorBlock
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 		BlockState newState = state.cycle(OPEN);
 		level.setBlock(pos, newState, USE_UPDATE_FLAG);
 		triggerOpenCloseEvent(player, level, pos, isOpen(newState));
@@ -272,7 +271,7 @@ public class TallFullFleshDoorBlock extends TallDoorBlock
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
+	public boolean isPathfindable(BlockState state, PathComputationType type) {
 		return switch (type) {
 		case LAND, AIR -> isOpen(state);
 		case WATER -> false;

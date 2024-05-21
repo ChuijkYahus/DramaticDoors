@@ -33,7 +33,7 @@ public abstract class BlockLootMixin
 	public void alterDrops(BlockState state, LootParams.Builder builder, CallbackInfoReturnable<List<ItemStack>> cir) {
 		if ((state.getBlock() instanceof TallDoorBlock || state.getBlock() instanceof ShortDoorBlock) && BuiltInRegistries.BLOCK.getKey(state.getBlock()).getNamespace().equals(DramaticDoors.MOD_ID)) {
 			LootParams lootparams = builder.withParameter(LootContextParams.BLOCK_STATE, state).create(LootContextParamSets.BLOCK);
-			LootTable loottable = lootparams.getLevel().getServer().getLootData().getLootTable(((BlockBehaviour)(Object)this).getLootTable());
+			LootTable loottable = lootparams.getLevel().getServer().reloadableRegistries().getLootTable(((BlockBehaviour)(Object)this).getLootTable());
 			if (loottable != LootTable.EMPTY) {
 				return;
 			}

@@ -30,8 +30,8 @@ public class FenceGateBlockMixin extends Block
 	
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	@Inject(at = @At("TAIL"), method = "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V")
-	private void enhanceConstructor(BlockBehaviour.Properties properties, WoodType woodtype, CallbackInfo callback) {
+	@Inject(at = @At("TAIL"), method = "<init>(Lnet/minecraft/world/level/block/state/properties/WoodType;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V")
+	private void enhanceConstructor(WoodType woodtype, BlockBehaviour.Properties properties, CallbackInfo callback) {
 		((FenceGateBlock)(Object)this).registerDefaultState(((FenceGateBlock) (Object) this).defaultBlockState().setValue(WATERLOGGED, false));
 	}
 

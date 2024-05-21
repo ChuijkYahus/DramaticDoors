@@ -6,7 +6,6 @@ import com.fizzware.dramaticdoors.state.properties.DDBlockStateProperties;
 import com.fizzware.dramaticdoors.state.properties.TripleBlockPart;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -48,8 +47,8 @@ public abstract class TallCreateSlidingDoorBlock extends TallDoorBlock
 	public static final BooleanProperty VISIBLE = DDBlockStateProperties.VISIBLE;
 	private boolean folds = false;
 	
-	public TallCreateSlidingDoorBlock(Block from, BlockSetType blockset, boolean isFolding) {
-		super(from, blockset);
+	public TallCreateSlidingDoorBlock(BlockSetType blockset, Block from, boolean isFolding) {
+		super(blockset, from);
 		this.registerDefaultState(this.stateDefinition.any().setValue(DDBlockStateProperties.VISIBLE, true));
 		this.folds = isFolding;
 	}
@@ -117,7 +116,7 @@ public abstract class TallCreateSlidingDoorBlock extends TallDoorBlock
 	}
 	
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 		state = state.cycle(OPEN);
 		if (state.getValue(OPEN)) {
 			state = state.setValue(VISIBLE, false);
@@ -130,7 +129,7 @@ public abstract class TallCreateSlidingDoorBlock extends TallDoorBlock
 		BlockPos otherPos = pos.relative(hinge == DoorHingeSide.LEFT ? facing.getClockWise() : facing.getCounterClockWise());
 		BlockState otherDoor = level.getBlockState(otherPos);
 		if (isDoubleDoor(state, hinge, facing, otherDoor)) {
-			use(otherDoor, level, otherPos, player, hand, hit);
+			useWithoutItem(otherDoor, level, otherPos, player, hit);
 		}
 		else if (state.getValue(OPEN)) {
 			level.gameEvent(player, GameEvent.BLOCK_OPEN, pos);

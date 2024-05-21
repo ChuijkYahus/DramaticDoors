@@ -19,6 +19,7 @@ public class DramaticDoorsFabric implements ModInitializer
 		DDFabricRegistry.registerBlockEntities();
 		DDFabricRegistry.registerCreativeTabs();
 		DDFabricRegistry.registerFuels();
+		DDFabricRegistry.registerWeatherables();
 		FabricUtils.assignItemsToTabs();
 	}
 }

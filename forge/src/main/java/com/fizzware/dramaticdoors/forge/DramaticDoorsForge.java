@@ -3,8 +3,6 @@ package com.fizzware.dramaticdoors.forge;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.compat.Compats;
 import com.fizzware.dramaticdoors.forge.client.RenderHandler;
-import com.fizzware.dramaticdoors.forge.compat.AutomaticDoorCompat;
-import com.fizzware.dramaticdoors.forge.compat.QuarkDoubleDoorCompat;
 import com.fizzware.dramaticdoors.forge.config.DDConfigForge;
 
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,9 +20,6 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 public class DramaticDoorsForge
 {
     public DramaticDoorsForge() {
-    	if (ForgeUtils.INSTANCE.isModLoaded("connector")) { // Let Fabric side take over if Sinytra Connector is installed.
-    		return;
-    	}
     	// Please let this be a normal field trip.
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus(); 
     	
@@ -44,12 +39,7 @@ public class DramaticDoorsForge
     }
 
     private void setupCommon(final FMLCommonSetupEvent event) {
-    	if (Compats.AUTOMATIC_DOORS_INSTALLED) {
-    		MinecraftForge.EVENT_BUS.register(new AutomaticDoorCompat());
-    	}
-    	if (Compats.QUARK_INSTALLED) {
-    		MinecraftForge.EVENT_BUS.register(new QuarkDoubleDoorCompat());
-    	}
+    	// Nothing here as Forge support is being deprecated.
     }
     
     private void setupClient(final FMLClientSetupEvent event) {

@@ -2,7 +2,6 @@
   "parent": "minecraft:block/door_top_left_open",
   "textures": {
     "bottom": "dramaticdoors:block/tall_mb_jacaranda_door_bottom",
-    "middle": "dramaticdoors:block/tall_mb_jacaranda_door_middle",
     "top": "dramaticdoors:block/tall_mb_jacaranda_door_top"
   }
 }

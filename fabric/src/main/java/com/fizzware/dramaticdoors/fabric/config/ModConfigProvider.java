@@ -16,9 +16,21 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig
 
 	private final List<Pair<?, ?>> configsList = new ArrayList<>();
 
+	public void addComment(String comment) {
+		configContents += "#" + comment + "\n";
+	}
+	
+	public void addCategory(String comment) {
+		configContents += "[" + comment + "]\n";
+	}
+
+	public void addNewLine() {
+		configContents += "\n";
+	}
+	
 	public void addKeyValuePair(Pair<String, ?> keyValuePair, String comment) {
-		configContents += "#" + comment + " | default: " + keyValuePair.getSecond() + "\n";
-		configContents += keyValuePair.getFirst() + "=" + keyValuePair.getSecond() + "\n";
+		configContents += "\t#" + comment + " | default: " + keyValuePair.getSecond() + "\n";
+		configContents += "\t" + keyValuePair.getFirst() + " = " + keyValuePair.getSecond() + "\n";
 		configsList.add(keyValuePair);
 	}
 

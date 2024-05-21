@@ -2,16 +2,20 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.fizzware.dramaticdoors.neoforge.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "plugin": "com.fizzware.dramaticdoors.neoforge.mixin.DDMixinConfigForge",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "com.fizzware.dramaticdoors.neoforge.mixin.DDMixinConfigNeoForge",
   "mixins": [
     "AdvancementManagerMixin",
     "RecipeManagerMixin",
     "BlockLootMixin",
-    "LandPathNodeMakerMixin",
+    "WalkNodeEvaluatorMixin",
     "DoorBlockMixin",
     "FenceGateBlockMixin",
-    "JapaneseDoorBlockMixinForge",
+    "ShortDoorBlockMixin",
+    "TallDoorBlockMixin",
+    "ShortCopperDoorBlockMixin",
+    "TallCopperDoorBlockMixin",
+    "HoneycombItemMixin",
     "DoorInteractGoalMixin",
     "OpenDoorsTaskMixin",
     "PiglinBrainMixin",
@@ -25,6 +29,5 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "maxShiftBy": 2,
-  "refmap": "dramaticdoors_neoforge.refmap.json"
+  "maxShiftBy": 2
 }

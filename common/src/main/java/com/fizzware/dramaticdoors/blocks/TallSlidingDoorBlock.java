@@ -25,8 +25,8 @@ public class TallSlidingDoorBlock extends TallDoorBlock
     protected static final VoxelShape WEST_OPEN_LEFT_AABB = Block.box(7.0D, 0.0D, 0.0D, 9.0D, 16.0D, 16.0D).move(0.0D, 0.0D, 0.6875D);
     protected static final VoxelShape EAST_OPEN_LEFT_AABB = Block.box(7.0D, 0.0D, 0.0D, 9.0D, 16.0D, 16.0D).move(0.0D, 0.0D, -0.6875D);
     
-	public TallSlidingDoorBlock(Block from, BlockSetType blockset) {
-		super(from, blockset);
+	public TallSlidingDoorBlock(BlockSetType blockset, Block from) {
+		super(blockset, from);
 	}
 
 	@Override

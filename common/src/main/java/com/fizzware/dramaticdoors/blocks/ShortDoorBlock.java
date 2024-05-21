@@ -7,11 +7,16 @@ import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.compat.Compats;
 import com.fizzware.dramaticdoors.compat.registries.SupplementariesCompat;
 import com.fizzware.dramaticdoors.tags.DDBlockTags;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -21,6 +26,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.flag.FeatureFlag;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -45,7 +51,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -53,7 +59,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 @SuppressWarnings("deprecation")
 public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
-	
+    public static final MapCodec<ShortDoorBlock> CODEC = RecordCodecBuilder.mapCodec(
+        p_308821_ -> p_308821_.group(BlockSetType.CODEC.fieldOf("block_set_type").forGetter(ShortDoorBlock::type), propertiesCodec()).apply(p_308821_, ShortDoorBlock::new)
+    );
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
     public static final EnumProperty<DoorHingeSide> HINGE = BlockStateProperties.DOOR_HINGE;
@@ -67,18 +75,18 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
 	
     public static final ResourceLocation TOOTH_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_TOOTH);
     
-    public ShortDoorBlock(Block from, BlockSetType blockset) {
-        this(from, blockset, null);
+    public ShortDoorBlock(BlockSetType blockset, Block from) {
+        this(blockset, from, null);
     }
     
-	public ShortDoorBlock(Block from, BlockSetType blockset, @Nullable FeatureFlag flag) {
-    	super(flag != null ? Properties.copy(from).requiredFeatures(flag) : Properties.copy(from));
+	public ShortDoorBlock(BlockSetType blockset, Block from, @Nullable FeatureFlag flag) {
+    	super(flag != null ? Properties.ofFullCopy(from).requiredFeatures(flag) : Properties.ofFullCopy(from));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HINGE, DoorHingeSide.LEFT).setValue(POWERED, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
         this.type = blockset;
 	}
 	
-    public ShortDoorBlock(Properties properties, BlockSetType blockset) {
-    	super(properties);
+    public ShortDoorBlock(BlockSetType blockset, Properties properties) {
+    	super(properties.sound(blockset.soundType()));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HINGE, DoorHingeSide.LEFT).setValue(POWERED, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
         this.type = blockset;
     }
@@ -89,8 +97,8 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        super.playerWillDestroy(level, pos, state, player);
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        return super.playerWillDestroy(level, pos, state, player);
     }
 
     @Nullable
@@ -146,12 +154,26 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+		ItemStack itemstack = player.getItemInHand(InteractionHand.MAIN_HAND);
+		if (this.type() == BlockSetType.COPPER && itemstack.getItem() instanceof AxeItem && player.isCrouching()) {
+        	if (ShortWeatheringCopperDoorBlock.getUnwaxed(state).isPresent()) {
+        		BlockState newstate = ShortWeatheringCopperDoorBlock.getUnwaxed(state).get();
+	            if (player instanceof ServerPlayer) {
+	                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, itemstack);
+	            }
+	            level.setBlock(pos, newstate, 11);
+	            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newstate));
+	            level.levelEvent(player, 3003, pos, 0);
+        		itemstack.hurtAndBreak(1, player, Player.getSlotForHand(InteractionHand.MAIN_HAND));
+        		return InteractionResult.sidedSuccess(level.isClientSide());
+        	}
+		}
     	if (!this.type.canOpenByHand() && !state.is(DDBlockTags.HAND_OPENABLE_SHORT_METAL_DOORS)) {
             return InteractionResult.PASS;
         } 
     	else {
-        	if (Compats.SUPPLEMENTARIES_INSTALLED && (this == SupplementariesCompat.SHORT_GOLD_DOOR && state.getValue(POWERED)) || (this == SupplementariesCompat.SHORT_SILVER_DOOR && !state.getValue(POWERED))) {
+        	if (Compats.SUPPLEMENTARIES_INSTALLED && (this == SupplementariesCompat.SHORT_GOLD_DOOR && state.getValue(POWERED))/* || (this == SupplementariesCompat.SHORT_SILVER_DOOR && !state.getValue(POWERED))*/) {
         		return InteractionResult.PASS;
         	}
         	tryOpenDoubleDoor(level, state, pos);
@@ -216,7 +238,7 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
         boolean flag = level.hasNeighborSignal(pos);
         if (blockIn != this && flag != state.getValue(POWERED)) {
-        	if (Compats.SUPPLEMENTARIES_INSTALLED && this == SupplementariesCompat.SHORT_GOLD_DOOR || this == SupplementariesCompat.SHORT_SILVER_DOOR) {
+        	if (Compats.SUPPLEMENTARIES_INSTALLED && this == SupplementariesCompat.SHORT_GOLD_DOOR/* || this == SupplementariesCompat.SHORT_SILVER_DOOR*/) {
         		level.setBlock(pos, state.setValue(POWERED, flag), 2);
         	}
         	else {
@@ -280,7 +302,7 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
         }
     }
 
-    public boolean allowsMovement(BlockState state, BlockGetter level, BlockPos pos, BlockPathTypes type) {
+    public boolean allowsMovement(BlockState state, BlockGetter level, BlockPos pos, PathType type) {
         switch(type) {
             case WALKABLE:
                 return state.getValue(OPEN);
@@ -305,7 +327,6 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
         return mirrorIn == Mirror.NONE ? state : state.rotate(mirrorIn.getRotation(state.getValue(FACING))).cycle(HINGE);
     }
 
-    // TODO: Figure out if Zombie breaking Tall Doors is feasible...
     public static boolean isWoodenDoor(Level level, BlockPos pos) {
     	return isWoodenDoor(level.getBlockState(pos));
     }

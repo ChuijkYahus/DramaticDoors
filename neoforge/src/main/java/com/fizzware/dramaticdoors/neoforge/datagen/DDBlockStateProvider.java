@@ -6,6 +6,7 @@ import com.fizzware.dramaticdoors.blocks.ShortDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallDoorBlock;
 import com.fizzware.dramaticdoors.state.properties.TripleBlockPart;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -15,10 +16,9 @@ import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.ModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.ForgeRegistries;
 
-public class DDBlockStateProvider extends BlockStateProvider {
-	
+public class DDBlockStateProvider extends BlockStateProvider 
+{	
     public DDBlockStateProvider(PackOutput gen, ExistingFileHelper exFileHelper) {
         super(gen, DramaticDoors.MOD_ID, exFileHelper);
     }
@@ -28,8 +28,8 @@ public class DDBlockStateProvider extends BlockStateProvider {
     	// Insert any blocks that need to be data-generated. Example below:
     	//shortDoorBlock(DDBlocks.SHORT_OAK_DOOR, "block/short_oak");
     	//tallDoorBlock(DDBlocks.TALL_OAK_DOOR, "block/tall_oak");
-    	shortDoorBlock(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_BIRCH)), "block/short_birch");
-    	tallDoorBlock(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_BIRCH)), "block/tall_birch");
+    	shortDoorBlock(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_BIRCH)), "block/short_birch");
+    	tallDoorBlock(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_BIRCH)), "block/tall_birch");
     }
     
     /*private void tallDoorBlockAlt(Block block, String baseName, String texName) {

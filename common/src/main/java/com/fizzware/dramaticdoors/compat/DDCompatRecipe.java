@@ -26,7 +26,7 @@ public class DDCompatRecipe
 	public static void createShortDoorRecipe(String recipeID, ResourceLocation baseDoor, boolean isWood) {
 		JsonObject json;
 		if (isWood) {
-			if (Compats.WOODWORKS_INSTALLED || Compats.isModLoaded("aurorasdeco", Compats.modChecker)) {
+			if (Compats.isModLoaded("woodworks", Compats.modChecker, true) || Compats.isModLoaded("aurorasdeco", Compats.modChecker, true)) {
 				//Woodworks
 				if (Compats.WOODWORKS_INSTALLED) {
 					json = createSawmillRecipeJson(new ResourceLocation(baseDoor.getNamespace(), baseDoor.getPath()), new ResourceLocation("dramaticdoors:" + recipeID), "woodworks:sawmill");
@@ -90,7 +90,7 @@ public class DDCompatRecipe
         json.add("key", keyList);
         //Finally, we define our result object
         JsonObject result = new JsonObject();
-        result.addProperty("item", output.toString());
+        result.addProperty("id", output.toString());
         result.addProperty("count", 2);
         json.add("result", result);
  
@@ -107,8 +107,10 @@ public class DDCompatRecipe
         ingredient.addProperty("item", input.toString());
         json.add("ingredient", ingredient);
         //Add output.
-        json.addProperty("result", output.toString());
-        json.addProperty("count", 2);
+        JsonObject result = new JsonObject();
+        result.addProperty("id", output.toString());
+        result.addProperty("count", 2);
+        json.add("result", result);
         return json;
     }
     
@@ -122,8 +124,10 @@ public class DDCompatRecipe
         ingredient.addProperty("item", input.toString());
         json.add("ingredient", ingredient);
         //Add output.
-        json.addProperty("result", output.toString());
-        json.addProperty("count", 2);
+        JsonObject result = new JsonObject();
+        result.addProperty("id", output.toString());
+        result.addProperty("count", 2);
+        json.add("result", result);
         return json;
     }
 }

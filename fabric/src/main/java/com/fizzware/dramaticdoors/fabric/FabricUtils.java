@@ -49,6 +49,14 @@ public class FabricUtils implements CompatChecker
 	// Add to vanilla tabs.
 	private static void addBuildingBlocks(FabricItemGroupEntries entries) {
 		entries.addBefore(Items.IRON_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_IRON)));
+		entries.addBefore(Items.COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)));
+		entries.addBefore(Items.EXPOSED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)));
+		entries.addBefore(Items.WEATHERED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)));
+		entries.addBefore(Items.OXIDIZED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)));
+		entries.addBefore(Items.WAXED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_COPPER)));
+		entries.addBefore(Items.WAXED_EXPOSED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_EXPOSED_COPPER)));
+		entries.addBefore(Items.WAXED_WEATHERED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_COPPER)));
+		entries.addBefore(Items.WAXED_OXIDIZED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_OXIDIZED_COPPER)));
 		entries.addBefore(Items.OAK_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OAK)));
 		entries.addBefore(Items.SPRUCE_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_SPRUCE)));
 		entries.addBefore(Items.BIRCH_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_BIRCH)));
@@ -61,6 +69,14 @@ public class FabricUtils implements CompatChecker
 		entries.addBefore(Items.CRIMSON_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_CRIMSON)));
 		entries.addBefore(Items.WARPED_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WARPED)));
 		entries.addAfter(Items.IRON_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_IRON)));
+		entries.addAfter(Items.COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)));
+		entries.addAfter(Items.EXPOSED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)));
+		entries.addAfter(Items.WEATHERED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)));
+		entries.addAfter(Items.OXIDIZED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)));
+		entries.addAfter(Items.WAXED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_COPPER)));
+		entries.addAfter(Items.WAXED_EXPOSED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_EXPOSED_COPPER)));
+		entries.addAfter(Items.WAXED_WEATHERED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_WEATHERED_COPPER)));
+		entries.addAfter(Items.WAXED_OXIDIZED_COPPER_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_OXIDIZED_COPPER)));
 		entries.addAfter(Items.OAK_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK)));
 		entries.addAfter(Items.SPRUCE_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_SPRUCE)));
 		entries.addAfter(Items.BIRCH_DOOR, BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_BIRCH)));

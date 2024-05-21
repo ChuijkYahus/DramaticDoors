@@ -29,8 +29,8 @@ public class BlocksPlusCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_EMERALD, DDNames.SHORT_BP_EMERALD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "emerald_door")), BlockSetType.IRON, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_MUSHROOM, DDNames.SHORT_BP_MUSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "mushroom_door")), BlockSetType.WARPED, true);
 		
-		Block shortNetheriteDoor = new TallDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "netherite_door"), Blocks.IRON_DOOR), BlockSetType.IRON);
-		Block tallNetheriteDoor = new TallDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "netherite_door"), Blocks.IRON_DOOR), BlockSetType.IRON);
+		Block shortNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "netherite_door"), Blocks.IRON_DOOR));
+		Block tallNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "netherite_door"), Blocks.IRON_DOOR));
 		
 		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_BP_NETHERITE, shortNetheriteDoor));
     	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_BP_NETHERITE, tallNetheriteDoor));
@@ -62,8 +62,8 @@ public class BlocksPlusCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_COPPER, new ResourceLocation("blocksplus", "copper_door"), "tall_metal_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_GOLDEN, new ResourceLocation("blocksplus", "golden_door"), "tall_metal_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_DIAMOND, new ResourceLocation("blocksplus", "diamond_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_EMERALD, new ResourceLocation("blocksplus", "netherite_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_NETHERITE, new ResourceLocation("blocksplus", "copper_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_EMERALD, new ResourceLocation("blocksplus", "emerald_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_NETHERITE, new ResourceLocation("blocksplus", "netherite_door"), "tall_metal_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_MUSHROOM, new ResourceLocation("blocksplus", "mushroom_door"), "tall_wooden_door");
 	}
 }

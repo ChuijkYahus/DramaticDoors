@@ -11,7 +11,7 @@
       "performUseItemOn(Lnet/minecraft/client/player/LocalPlayer;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;": "Lnet/minecraft/class_636;method_41934(Lnet/minecraft/class_746;Lnet/minecraft/class_1268;Lnet/minecraft/class_3965;)Lnet/minecraft/class_1269;"
     },
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/DoorBlockMixin": {
-      "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V": "Lnet/minecraft/class_2323;<init>(Lnet/minecraft/class_4970$class_2251;Lnet/minecraft/class_8177;)V",
+      "<init>(Lnet/minecraft/world/level/block/state/properties/BlockSetType;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V": "Lnet/minecraft/class_2323;<init>(Lnet/minecraft/class_8177;Lnet/minecraft/class_4970$class_2251;)V",
       "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/class_2323;method_9515(Lnet/minecraft/class_2689$class_2690;)V",
       "getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/minecraft/class_2323;method_9605(Lnet/minecraft/class_1750;)Lnet/minecraft/class_2680;",
       "setPlacedBy(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/class_2323;method_9567(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V",
@@ -24,16 +24,13 @@
       "setOpen(Z)V": "Lnet/minecraft/class_1343;method_19995(Z)V"
     },
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/FenceGateBlockMixin": {
-      "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V": "Lnet/minecraft/class_2349;<init>(Lnet/minecraft/class_4970$class_2251;Lnet/minecraft/class_4719;)V",
+      "<init>(Lnet/minecraft/world/level/block/state/properties/WoodType;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V": "Lnet/minecraft/class_2349;<init>(Lnet/minecraft/class_4719;Lnet/minecraft/class_4970$class_2251;)V",
       "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/class_2349;method_9515(Lnet/minecraft/class_2689$class_2690;)V",
       "getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/minecraft/class_2349;method_9605(Lnet/minecraft/class_1750;)Lnet/minecraft/class_2680;"
     },
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/JapaneseDoorBlockMixinFabric": {
       "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V": "Lnet/kikoz/mcwdoors/objects/JapaneseDoors;<init>(Lnet/minecraft/class_4970$class_2251;Lnet/minecraft/class_8177;)V",
       "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/kikoz/mcwdoors/objects/JapaneseDoors;method_9515(Lnet/minecraft/class_2689$class_2690;)V"
-    },
-    "com/fizzware/dramaticdoors/fabric/fabric/mixin/LandPathNodeMakerMixin": {
-      "getBlockPathTypeRaw(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;": "Lnet/minecraft/class_14;method_58(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;)Lnet/minecraft/class_7;"
     },
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/OpenDoorsTaskMixin": {
       "Lnet/minecraft/server/level/ServerLevel;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/minecraft/class_3218;method_8320(Lnet/minecraft/class_2338;)Lnet/minecraft/class_2680;",
@@ -51,6 +48,9 @@
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/VillagerMixin": {
       "Lnet/minecraft/world/entity/ai/behavior/VillagerGoalPackages;getCorePackage(Lnet/minecraft/world/entity/npc/VillagerProfession;F)Lcom/google/common/collect/ImmutableList;": "Lnet/minecraft/class_4129;method_19020(Lnet/minecraft/class_3852;F)Lcom/google/common/collect/ImmutableList;",
       "registerBrainGoals(Lnet/minecraft/world/entity/ai/Brain;)V": "Lnet/minecraft/class_1646;method_19174(Lnet/minecraft/class_4095;)V"
+    },
+    "com/fizzware/dramaticdoors/fabric/fabric/mixin/WalkNodeEvaluatorMixin": {
+      "getPathTypeFromState(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/PathType;": "Lnet/minecraft/class_14;method_58(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;)Lnet/minecraft/class_7;"
     },
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/WitchMixin": {
       "registerGoals()V": "Lnet/minecraft/class_1640;method_5959()V"

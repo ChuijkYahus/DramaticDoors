@@ -1,15 +1,17 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-      "item": "minecraft:bamboo_door"
+    "item": "minecraft:bamboo_door"
   },
-  "result": "dramaticdoors:short_bamboo_door",
-  "count": 2,
-  "conditions": [
+  "result": {
+    "id": "dramaticdoors:short_bamboo_door",
+    "count": 2
+  },
+  "neoforge:conditions": [
     {
-      "type": "forge:not",
+      "type": "neoforge:not",
       "value": {
-        "type": "forge:mod_loaded",
+        "type": "neoforge:mod_loaded",
         "modid": "woodworks"
       }
     }

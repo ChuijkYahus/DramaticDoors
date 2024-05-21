@@ -9,7 +9,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -25,8 +24,8 @@ public class TallLeadDoorBlock extends TallDoorBlock
 {
 	public static final IntegerProperty OPENING_PROGRESS = DDBlockStateProperties.OPENING_PROGRESS;
 	
-	public TallLeadDoorBlock(Block from, BlockSetType blockset) {
-		super(from, blockset);
+	public TallLeadDoorBlock(BlockSetType blockset, Block from) {
+		super(blockset, from);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HINGE, DoorHingeSide.LEFT).setValue(POWERED, Boolean.FALSE).setValue(THIRD, TripleBlockPart.LOWER).setValue(WATERLOGGED, false).setValue(OPENING_PROGRESS, 0));
 	}
 
@@ -40,7 +39,7 @@ public class TallLeadDoorBlock extends TallDoorBlock
     }
     
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (this.canBeOpened(state)) {
             TallDoorBlock.tryOpenDoubleDoor(level, state, pos);
 

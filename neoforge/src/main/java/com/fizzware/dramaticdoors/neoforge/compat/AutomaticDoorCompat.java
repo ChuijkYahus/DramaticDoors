@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.fizzware.dramaticdoors.blocks.TallDoorBlock;
 import com.fizzware.dramaticdoors.compat.Compats;
-import com.fizzware.dramaticdoors.neoforge.config.DDConfigForge;
+import com.fizzware.dramaticdoors.neoforge.config.DDConfigNF;
 import com.fizzware.dramaticdoors.tags.DDBlockTags;
 
 import net.minecraft.core.BlockPos;
@@ -18,17 +18,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.loading.FMLPaths;
-import net.neoforged.neoforge.event.TickEvent.LevelTickEvent;
-import net.neoforged.neoforge.event.TickEvent.Phase;
-import net.neoforged.neoforge.event.TickEvent.PlayerTickEvent;
 import net.neoforged.neoforge.event.level.LevelEvent;
+import net.neoforged.neoforge.event.tick.LevelTickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 // This class file provides compatibility for Serilum's Automatic Doors. Doesn't directly require Collective.
 public class AutomaticDoorCompat
 {
-	protected static int doorOpenTime = DDConfigForge.getConfigIntValue(DDConfigForge.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.doorOpenTime");
-	protected static boolean shouldOpenIronDoors = DDConfigForge.getConfigBooleanValue(DDConfigForge.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.shouldOpenIronDoors");
-	protected static boolean preventOpeningOnSneak = DDConfigForge.getConfigBooleanValue(DDConfigForge.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.preventOpeningOnSneak");
+	protected static int doorOpenTime = DDConfigNF.getConfigIntValue(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.doorOpenTime");
+	protected static boolean shouldOpenIronDoors = DDConfigNF.getConfigBooleanValue(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.shouldOpenIronDoors");
+	protected static boolean preventOpeningOnSneak = DDConfigNF.getConfigBooleanValue(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.preventOpeningOnSneak");
 	
 	public static HashMap<Level, List<BlockPos>> toclosedoors = new HashMap<Level, List<BlockPos>>();
 	public static HashMap<Level, List<BlockPos>> newclosedoors = new HashMap<Level, List<BlockPos>>();
@@ -44,9 +43,9 @@ public class AutomaticDoorCompat
 			return;
 		}
 		//Reload config.
-		doorOpenTime = DDConfigForge.getConfigIntValue(DDConfigForge.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.doorOpenTime");
-		shouldOpenIronDoors = DDConfigForge.getConfigBooleanValue(DDConfigForge.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.shouldOpenIronDoors");
-		preventOpeningOnSneak = DDConfigForge.getConfigBooleanValue(DDConfigForge.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.preventOpeningOnSneak");
+		doorOpenTime = DDConfigNF.getConfigIntValue(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.doorOpenTime");
+		shouldOpenIronDoors = DDConfigNF.getConfigBooleanValue(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.shouldOpenIronDoors");
+		preventOpeningOnSneak = DDConfigNF.getConfigBooleanValue(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("automaticdoors-common.toml"), "General.preventOpeningOnSneak");
 		
 		toclosedoors.put(world, new ArrayList<BlockPos>());
 		newclosedoors.put(world, new ArrayList<BlockPos>());
@@ -54,12 +53,12 @@ public class AutomaticDoorCompat
 	}
 	
 	@SubscribeEvent
-	public void onWorldTick(LevelTickEvent e) {
+	public void onWorldTick(LevelTickEvent.Post e) {
 		if (!Compats.AUTOMATIC_DOORS_INSTALLED) {
 			return;
 		}
-		Level world = e.level;
-		if (world.isClientSide || e.phase != Phase.START) {
+		Level world = e.getLevel();
+		if (world.isClientSide) {
 			return;
 		}
 		if (newclosedoors.size() > 0) {
@@ -118,10 +117,10 @@ public class AutomaticDoorCompat
 	}
 	
 	@SubscribeEvent
-	public void onPlayerTick(PlayerTickEvent e) {
-		Player player = e.player;
+	public void onPlayerTick(PlayerTickEvent.Post e) {
+		Player player = e.getEntity();
 		Level world = player.getCommandSenderWorld();
-		if (world.isClientSide || !e.phase.equals(Phase.START)) {
+		if (world.isClientSide) {
 			return;
 		}
 		

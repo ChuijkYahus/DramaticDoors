@@ -15,9 +15,7 @@ import net.minecraft.world.item.CreativeModeTab.TabVisibility;
 import net.minecraftforge.common.util.MutableHashedLinkedMap;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLEnvironment;
-import net.minecraftforge.fml.loading.LoadingModList;
 import oshi.util.tuples.Pair;
 
 public class ForgeUtils implements CompatChecker
@@ -26,10 +24,7 @@ public class ForgeUtils implements CompatChecker
 	
 	@Override
 	public boolean isModLoaded(String modid) {
-		if (LoadingModList.get().getModFileById(modid) != null) {
-			return true;
-		}
-		return ModList.get().isLoaded(modid);
+		return false;
 	}
 	
 	@Override
@@ -42,17 +37,23 @@ public class ForgeUtils implements CompatChecker
     
 	@Override
 	public boolean isQuarkModuleEnabled() {
-		return INSTANCE.isModLoaded("quark");
+		return false;
 	}
 	
-    @SuppressWarnings("deprecation")
-	@SubscribeEvent
+    @SubscribeEvent
     public static void assignItemsToTabs(BuildCreativeModeTabContentsEvent event) {
     	MutableHashedLinkedMap<ItemStack, TabVisibility> map = event.getEntries();
-    	
     	// Insert into vanilla tabs.
     	if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
     		map.putBefore(Items.IRON_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_IRON)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.EXPOSED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.WEATHERED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.OXIDIZED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.WAXED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.WAXED_EXPOSED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_EXPOSED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.WAXED_WEATHERED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putBefore(Items.WAXED_OXIDIZED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_OXIDIZED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putBefore(Items.OAK_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OAK)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putBefore(Items.SPRUCE_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_SPRUCE)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putBefore(Items.BIRCH_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_BIRCH)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
@@ -65,6 +66,14 @@ public class ForgeUtils implements CompatChecker
     		map.putBefore(Items.CRIMSON_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_CRIMSON)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putBefore(Items.WARPED_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WARPED)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putAfter(Items.IRON_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_IRON)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.EXPOSED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.WEATHERED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.OXIDIZED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.WAXED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.WAXED_EXPOSED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_EXPOSED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.WAXED_WEATHERED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_WEATHERED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
+    		map.putAfter(Items.WAXED_OXIDIZED_COPPER_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_OXIDIZED_COPPER)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putAfter(Items.OAK_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putAfter(Items.SPRUCE_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_SPRUCE)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
     		map.putAfter(Items.BIRCH_DOOR.getDefaultInstance(), BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_BIRCH)).getDefaultInstance(), TabVisibility.PARENT_TAB_ONLY);
@@ -86,30 +95,7 @@ public class ForgeUtils implements CompatChecker
     	// Insert into Dramatic Doors tabs.
     	if (event.getTabKey() == DDRegistry.MAIN_TAB) {
 	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
-	        	if (!(pair.getA().contains("chipped") || pair.getA().contains("macaw") || pair.getA().contains("manyideas"))) {
-	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
-	        	}
-	        }
-    	}
-    	if (event.getTabKey() == DDRegistry.CHIPPED_TAB) {
-	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
-	        	if (pair.getA().contains("chipped")) {
-	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
-	        	}
-	        }
-    	}
-    	if (event.getTabKey() == DDRegistry.MACAW_TAB) {
-	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
-	        	if (pair.getA().contains("macaw")) {
-	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
-	        	}
-	        }
-    	}
-    	if (event.getTabKey() == DDRegistry.MANYIDEAS_TAB) {
-	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
-	        	if (pair.getA().contains("manyideas")) {
-	        		map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
-	        	}
+	        	map.put(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        }
     	}
     }

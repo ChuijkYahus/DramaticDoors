@@ -16,14 +16,14 @@ public class ThermalFoundationCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUBBERWOOD, DDNames.SHORT_RUBBERWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("thermal", "rubberwood_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUBBERWOOD, DDNames.SHORT_RUBBERWOOD, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("thermal", "rubberwood_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUBBERWOOD, new ResourceLocation("thermal", "rubberwood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUBBERWOOD, new ResourceLocation("thermal", "rubberwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUBBERWOOD, ResourceLocation.fromNamespaceAndPath("thermal", "rubberwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUBBERWOOD, ResourceLocation.fromNamespaceAndPath("thermal", "rubberwood_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUBBERWOOD, new ResourceLocation("thermal", "rubberwood_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUBBERWOOD, new ResourceLocation("thermal", "rubberwood_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUBBERWOOD, ResourceLocation.fromNamespaceAndPath("thermal", "rubberwood_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUBBERWOOD, ResourceLocation.fromNamespaceAndPath("thermal", "rubberwood_door"), "tall_wooden_door");
 	}
 }

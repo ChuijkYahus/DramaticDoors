@@ -16,19 +16,19 @@ public class MalumCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUNEWOOD, DDNames.SHORT_RUNEWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("malum", "runewood_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SOULWOOD, DDNames.SHORT_SOULWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("malum", "soulwood_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUNEWOOD, DDNames.SHORT_RUNEWOOD, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("malum", "runewood_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SOULWOOD, DDNames.SHORT_SOULWOOD, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("malum", "soulwood_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUNEWOOD, new ResourceLocation("malum", "runewood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SOULWOOD, new ResourceLocation("malum", "soulwood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUNEWOOD, new ResourceLocation("malum", "runewood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SOULWOOD, new ResourceLocation("malum", "soulwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUNEWOOD, ResourceLocation.fromNamespaceAndPath("malum", "runewood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SOULWOOD, ResourceLocation.fromNamespaceAndPath("malum", "soulwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUNEWOOD, ResourceLocation.fromNamespaceAndPath("malum", "runewood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SOULWOOD, ResourceLocation.fromNamespaceAndPath("malum", "soulwood_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUNEWOOD, new ResourceLocation("malum", "runewood_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SOULWOOD, new ResourceLocation("malum", "soulwood_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUNEWOOD, new ResourceLocation("malum", "runewood_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SOULWOOD, new ResourceLocation("malum", "soulwood_door"), "tall_wooden_door");	
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUNEWOOD, ResourceLocation.fromNamespaceAndPath("malum", "runewood_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SOULWOOD, ResourceLocation.fromNamespaceAndPath("malum", "soulwood_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUNEWOOD, ResourceLocation.fromNamespaceAndPath("malum", "runewood_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SOULWOOD, ResourceLocation.fromNamespaceAndPath("malum", "soulwood_door"), "tall_wooden_door");	
 	}
 }

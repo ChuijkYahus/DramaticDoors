@@ -16,19 +16,19 @@ public class CreateAlloyedCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_STEEL, DDNames.SHORT_STEEL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("alloyed", "steel_door")), BlockSetType.IRON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_LOCKED_STEEL, DDNames.SHORT_LOCKED_STEEL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("alloyed", "locked_steel_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_STEEL, DDNames.SHORT_STEEL, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("alloyed", "steel_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_LOCKED_STEEL, DDNames.SHORT_LOCKED_STEEL, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("alloyed", "locked_steel_door")), BlockSetType.IRON, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_STEEL, new ResourceLocation("alloyed", "steel_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_LOCKED_STEEL, new ResourceLocation("alloyed", "locked_steel_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_STEEL, new ResourceLocation("alloyed", "steel_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_LOCKED_STEEL, new ResourceLocation("alloyed", "locked_steel_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "steel_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_LOCKED_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "locked_steel_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "steel_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_LOCKED_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "locked_steel_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_STEEL, new ResourceLocation("alloyed", "steel_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_LOCKED_STEEL, new ResourceLocation("alloyed", "locked_steel_door"), false);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_STEEL, new ResourceLocation("alloyed", "steel_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_LOCKED_STEEL, new ResourceLocation("alloyed", "locked_steel_door"), "tall_metal_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "steel_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_LOCKED_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "locked_steel_door"), false);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "steel_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_LOCKED_STEEL, ResourceLocation.fromNamespaceAndPath("alloyed", "locked_steel_door"), "tall_metal_door");
 	}
 }

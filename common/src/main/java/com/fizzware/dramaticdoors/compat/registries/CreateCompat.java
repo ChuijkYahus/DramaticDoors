@@ -46,16 +46,16 @@ public class CreateCompat
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_ANDESITE, new ResourceLocation("create", "andesite_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_BRASS, new ResourceLocation("create", "brass_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_COPPER, new ResourceLocation("create", "copper_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_FRAMED_GLASS, new ResourceLocation("create", "framed_glass_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_TRAIN, new ResourceLocation("create", "train_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_ANDESITE, ResourceLocation.fromNamespaceAndPath("create", "andesite_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_BRASS, ResourceLocation.fromNamespaceAndPath("create", "brass_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_COPPER, ResourceLocation.fromNamespaceAndPath("create", "copper_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_FRAMED_GLASS, ResourceLocation.fromNamespaceAndPath("create", "framed_glass_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CREATE_TRAIN, ResourceLocation.fromNamespaceAndPath("create", "train_door"));
 		
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_ANDESITE, new ResourceLocation("create", "andesite_door"), "tall_create_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_BRASS, new ResourceLocation("create", "brass_door"), "tall_create_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_COPPER, new ResourceLocation("create", "copper_door"), "tall_create_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_FRAMED_GLASS, new ResourceLocation("create", "framed_glass_door"), "tall_create_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_TRAIN, new ResourceLocation("create", "train_door"), "tall_create_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_ANDESITE, ResourceLocation.fromNamespaceAndPath("create", "andesite_door"), "tall_create_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_BRASS, ResourceLocation.fromNamespaceAndPath("create", "brass_door"), "tall_create_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_COPPER, ResourceLocation.fromNamespaceAndPath("create", "copper_door"), "tall_create_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_FRAMED_GLASS, ResourceLocation.fromNamespaceAndPath("create", "framed_glass_door"), "tall_create_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CREATE_TRAIN, ResourceLocation.fromNamespaceAndPath("create", "train_door"), "tall_create_door");
 	}
 }

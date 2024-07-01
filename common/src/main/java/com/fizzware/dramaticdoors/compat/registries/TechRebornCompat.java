@@ -16,14 +16,14 @@ public class TechRebornCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUBBER, DDNames.SHORT_RUBBER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("techreborn", "rubber_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUBBER, DDNames.SHORT_RUBBER, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("techreborn", "rubber_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUBBER, new ResourceLocation("techreborn", "rubber_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUBBER, new ResourceLocation("techreborn", "rubber_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUBBER, ResourceLocation.fromNamespaceAndPath("techreborn", "rubber_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUBBER, ResourceLocation.fromNamespaceAndPath("techreborn", "rubber_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUBBER, new ResourceLocation("techreborn", "rubber_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUBBER, new ResourceLocation("techreborn", "rubber_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUBBER, ResourceLocation.fromNamespaceAndPath("techreborn", "rubber_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUBBER, ResourceLocation.fromNamespaceAndPath("techreborn", "rubber_door"), "tall_wooden_door");
 	}
 }

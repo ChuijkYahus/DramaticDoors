@@ -16,19 +16,19 @@ public class BambooEverythingCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BE_BAMBOO, DDNames.SHORT_BE_BAMBOO, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("bambooeverything", "bamboo_door")), BlockSetType.BAMBOO, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BE_DRY_BAMBOO, DDNames.SHORT_BE_DRY_BAMBOO, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("bambooeverything", "dry_bamboo_door")), BlockSetType.BAMBOO, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BE_BAMBOO, DDNames.SHORT_BE_BAMBOO, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("bambooeverything", "bamboo_door")), BlockSetType.BAMBOO, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BE_DRY_BAMBOO, DDNames.SHORT_BE_DRY_BAMBOO, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("bambooeverything", "dry_bamboo_door")), BlockSetType.BAMBOO, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BE_BAMBOO, new ResourceLocation("bambooeverything", "bamboo_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BE_DRY_BAMBOO, new ResourceLocation("bambooeverything", "dry_bamboo_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BE_BAMBOO, new ResourceLocation("bambooeverything", "bamboo_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BE_DRY_BAMBOO, new ResourceLocation("bambooeverything", "dry_bamboo_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BE_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "bamboo_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BE_DRY_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "dry_bamboo_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BE_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "bamboo_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BE_DRY_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "dry_bamboo_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BE_BAMBOO, new ResourceLocation("bambooeverything", "bamboo_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BE_DRY_BAMBOO, new ResourceLocation("bambooeverything", "dry_bamboo_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BE_BAMBOO, new ResourceLocation("bambooeverything", "bamboo_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BE_DRY_BAMBOO, new ResourceLocation("bambooeverything", "dry_bamboo_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BE_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "bamboo_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BE_DRY_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "dry_bamboo_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BE_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "bamboo_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BE_DRY_BAMBOO, ResourceLocation.fromNamespaceAndPath("bambooeverything", "dry_bamboo_door"), "tall_wooden_door");
 	}
 }

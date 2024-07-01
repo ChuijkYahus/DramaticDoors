@@ -16,19 +16,19 @@ public class WindsweptCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHESTNUT, DDNames.SHORT_CHESTNUT, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("windswept", "chestnut_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_HOLLY, DDNames.SHORT_HOLLY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("windswept", "holly_door")), BlockSetType.SPRUCE, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHESTNUT, DDNames.SHORT_CHESTNUT, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("windswept", "chestnut_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_HOLLY, DDNames.SHORT_HOLLY, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("windswept", "holly_door")), BlockSetType.SPRUCE, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHESTNUT, new ResourceLocation("windswept", "chestnut_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_HOLLY, new ResourceLocation("windswept", "holly_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHESTNUT, new ResourceLocation("windswept", "chestnut_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_HOLLY, new ResourceLocation("windswept", "holly_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHESTNUT, ResourceLocation.fromNamespaceAndPath("windswept", "chestnut_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_HOLLY, ResourceLocation.fromNamespaceAndPath("windswept", "holly_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHESTNUT, ResourceLocation.fromNamespaceAndPath("windswept", "chestnut_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_HOLLY, ResourceLocation.fromNamespaceAndPath("windswept", "holly_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHESTNUT, new ResourceLocation("windswept", "chestnut_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_HOLLY, new ResourceLocation("windswept", "holly_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHESTNUT, new ResourceLocation("windswept", "chestnut_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_HOLLY, new ResourceLocation("windswept", "holly_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHESTNUT, ResourceLocation.fromNamespaceAndPath("windswept", "chestnut_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_HOLLY, ResourceLocation.fromNamespaceAndPath("windswept", "holly_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHESTNUT, ResourceLocation.fromNamespaceAndPath("windswept", "chestnut_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_HOLLY, ResourceLocation.fromNamespaceAndPath("windswept", "holly_door"), "tall_wooden_door");
 	}
 }

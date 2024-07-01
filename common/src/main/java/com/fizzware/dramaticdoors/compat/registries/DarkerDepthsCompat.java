@@ -16,14 +16,14 @@ public class DarkerDepthsCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_PETRIFIED, DDNames.SHORT_PETRIFIED, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("darkerdepths", "petrified_door")), BlockSetType.STONE, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_PETRIFIED, DDNames.SHORT_PETRIFIED, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("darkerdepths", "petrified_door")), BlockSetType.STONE, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_PETRIFIED, new ResourceLocation("darkerdepths", "petrified_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_PETRIFIED, new ResourceLocation("darkerdepths", "petrified_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_PETRIFIED, ResourceLocation.fromNamespaceAndPath("darkerdepths", "petrified_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_PETRIFIED, ResourceLocation.fromNamespaceAndPath("darkerdepths", "petrified_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_PETRIFIED, new ResourceLocation("darkerdepths", "petrified_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_PETRIFIED, new ResourceLocation("darkerdepths", "petrified_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_PETRIFIED, ResourceLocation.fromNamespaceAndPath("darkerdepths", "petrified_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_PETRIFIED, ResourceLocation.fromNamespaceAndPath("darkerdepths", "petrified_door"), "tall_wooden_door");
 	}
 }

@@ -16,24 +16,24 @@ public class UndergardenCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GRONGLE, DDNames.SHORT_GRONGLE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("undergarden", "grongle_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SMOGSTEM, DDNames.SHORT_SMOGSTEM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("undergarden", "smogstem_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WIGGLEWOOD, DDNames.SHORT_WIGGLEWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("undergarden", "wigglewood_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GRONGLE, DDNames.SHORT_GRONGLE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("undergarden", "grongle_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SMOGSTEM, DDNames.SHORT_SMOGSTEM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("undergarden", "smogstem_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WIGGLEWOOD, DDNames.SHORT_WIGGLEWOOD, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("undergarden", "wigglewood_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GRONGLE, new ResourceLocation("undergarden", "grongle_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SMOGSTEM, new ResourceLocation("undergarden", "smogstem_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WIGGLEWOOD, new ResourceLocation("undergarden", "wigglewood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GRONGLE, new ResourceLocation("undergarden", "grongle_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SMOGSTEM, new ResourceLocation("undergarden", "smogstem_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WIGGLEWOOD, new ResourceLocation("undergarden", "wigglewood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GRONGLE, ResourceLocation.fromNamespaceAndPath("undergarden", "grongle_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SMOGSTEM, ResourceLocation.fromNamespaceAndPath("undergarden", "smogstem_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WIGGLEWOOD, ResourceLocation.fromNamespaceAndPath("undergarden", "wigglewood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GRONGLE, ResourceLocation.fromNamespaceAndPath("undergarden", "grongle_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SMOGSTEM, ResourceLocation.fromNamespaceAndPath("undergarden", "smogstem_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WIGGLEWOOD, ResourceLocation.fromNamespaceAndPath("undergarden", "wigglewood_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GRONGLE, new ResourceLocation("undergarden", "grongle_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SMOGSTEM, new ResourceLocation("undergarden", "smogstem_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WIGGLEWOOD, new ResourceLocation("undergarden", "wigglewood_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GRONGLE, new ResourceLocation("undergarden", "grongle_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SMOGSTEM, new ResourceLocation("undergarden", "smogstem_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WIGGLEWOOD, new ResourceLocation("undergarden", "wigglewood_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GRONGLE, ResourceLocation.fromNamespaceAndPath("undergarden", "grongle_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SMOGSTEM, ResourceLocation.fromNamespaceAndPath("undergarden", "smogstem_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WIGGLEWOOD, ResourceLocation.fromNamespaceAndPath("undergarden", "wigglewood_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GRONGLE, ResourceLocation.fromNamespaceAndPath("undergarden", "grongle_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SMOGSTEM, ResourceLocation.fromNamespaceAndPath("undergarden", "smogstem_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WIGGLEWOOD, ResourceLocation.fromNamespaceAndPath("undergarden", "wigglewood_door"), "tall_wooden_door");
 	}
 }

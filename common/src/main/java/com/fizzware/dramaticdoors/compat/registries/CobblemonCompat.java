@@ -16,14 +16,14 @@ public class CobblemonCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_APRICORN, DDNames.SHORT_APRICORN, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("cobblemon", "apricorn_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_APRICORN, DDNames.SHORT_APRICORN, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("cobblemon", "apricorn_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_APRICORN, new ResourceLocation("cobblemon", "apricorn_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_APRICORN, new ResourceLocation("cobblemon", "apricorn_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_APRICORN, ResourceLocation.fromNamespaceAndPath("cobblemon", "apricorn_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_APRICORN, ResourceLocation.fromNamespaceAndPath("cobblemon", "apricorn_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_APRICORN, new ResourceLocation("cobblemon", "apricorn_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_APRICORN, new ResourceLocation("cobblemon", "apricorn_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_APRICORN, ResourceLocation.fromNamespaceAndPath("cobblemon", "apricorn_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_APRICORN, ResourceLocation.fromNamespaceAndPath("cobblemon", "apricorn_door"), "tall_wooden_door");
 	}
 }

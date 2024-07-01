@@ -16,14 +16,14 @@ public class ArchitectsPaletteCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_TWISTED, DDNames.SHORT_TWISTED, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("architects_palette", "twisted_door")), BlockSetType.WARPED, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_TWISTED, DDNames.SHORT_TWISTED, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("architects_palette", "twisted_door")), BlockSetType.WARPED, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_TWISTED, new ResourceLocation("architects_palette", "twisted_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_TWISTED, new ResourceLocation("architects_palette", "twisted_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_TWISTED, ResourceLocation.fromNamespaceAndPath("architects_palette", "twisted_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_TWISTED, ResourceLocation.fromNamespaceAndPath("architects_palette", "twisted_door"));
 	
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_TWISTED, new ResourceLocation("architects_palette", "twisted_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_TWISTED, new ResourceLocation("architects_palette", "twisted_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_TWISTED, ResourceLocation.fromNamespaceAndPath("architects_palette", "twisted_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_TWISTED, ResourceLocation.fromNamespaceAndPath("architects_palette", "twisted_door"), "tall_wooden_door");
 	}
 }

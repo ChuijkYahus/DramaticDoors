@@ -16,19 +16,19 @@ public class GardensOfTheDeadCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SOULBLIGHT, DDNames.SHORT_SOULBLIGHT, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("gardens_of_the_dead", "soulblight_door")), BlockSetType.WARPED, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WHISTLECANE, DDNames.SHORT_WHISTLECANE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("gardens_of_the_dead", "whistlecane_door")), BlockSetType.CRIMSON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SOULBLIGHT, DDNames.SHORT_SOULBLIGHT, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "soulblight_door")), BlockSetType.WARPED, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WHISTLECANE, DDNames.SHORT_WHISTLECANE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "whistlecane_door")), BlockSetType.CRIMSON, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SOULBLIGHT, new ResourceLocation("gardens_of_the_dead", "soulblight_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WHISTLECANE, new ResourceLocation("gardens_of_the_dead", "whistlecane_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SOULBLIGHT, new ResourceLocation("gardens_of_the_dead", "soulblight_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WHISTLECANE, new ResourceLocation("gardens_of_the_dead", "whistlecane_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SOULBLIGHT, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "soulblight_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WHISTLECANE, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "whistlecane_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SOULBLIGHT, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "soulblight_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WHISTLECANE, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "whistlecane_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SOULBLIGHT, new ResourceLocation("gardens_of_the_dead", "soulblight_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WHISTLECANE, new ResourceLocation("gardens_of_the_dead", "whistlecane_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SOULBLIGHT, new ResourceLocation("gardens_of_the_dead", "soulblight_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WHISTLECANE, new ResourceLocation("gardens_of_the_dead", "whistlecane_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SOULBLIGHT, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "soulblight_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WHISTLECANE, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "whistlecane_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SOULBLIGHT, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "soulblight_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WHISTLECANE, ResourceLocation.fromNamespaceAndPath("gardens_of_the_dead", "whistlecane_door"), "tall_wooden_door");
 	}
 }

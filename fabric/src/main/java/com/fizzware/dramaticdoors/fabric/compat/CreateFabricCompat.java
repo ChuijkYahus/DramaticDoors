@@ -23,11 +23,11 @@ public class CreateFabricCompat
 
 	public static void registerCompat() {
 		if (!CreateCompat.initialized) {
-			CreateCompat.TALL_ANDESITE_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("create", "andesite_door"), Blocks.IRON_DOOR), BlockSetType.IRON, true);
-			CreateCompat.TALL_BRASS_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("create", "brass_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
-			CreateCompat.TALL_COPPER_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("create", "copper_door"), Blocks.IRON_DOOR), BlockSetType.IRON, true);
-			CreateCompat.TALL_FRAMED_GLASS_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("create", "framed_glass_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
-			CreateCompat.TALL_TRAIN_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(new ResourceLocation("create", "train_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
+			CreateCompat.TALL_ANDESITE_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("create", "andesite_door"), Blocks.IRON_DOOR), BlockSetType.IRON, true);
+			CreateCompat.TALL_BRASS_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("create", "brass_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
+			CreateCompat.TALL_COPPER_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("create", "copper_door"), Blocks.IRON_DOOR), BlockSetType.IRON, true);
+			CreateCompat.TALL_FRAMED_GLASS_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("create", "framed_glass_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
+			CreateCompat.TALL_TRAIN_DOOR = new TallFabricCreateSlidingDoorBlock(DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("create", "train_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
 		}
     	CreateCompat.registerCompat();
     	

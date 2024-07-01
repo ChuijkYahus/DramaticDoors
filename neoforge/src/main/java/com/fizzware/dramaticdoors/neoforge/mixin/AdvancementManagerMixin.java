@@ -21,6 +21,6 @@ public class AdvancementManagerMixin
 {
 	@Inject(method = "apply", at = @At("HEAD"))
     public void interceptApply(Map<ResourceLocation, JsonElement> map, ResourceManager manager, ProfilerFiller profiler, CallbackInfo info) {
-    	DDCompatAdvancement.RECIPE_ADVANCEMENTS.forEach((advancement) -> { map.put(new ResourceLocation(DramaticDoors.MOD_ID, "recipes/redstone/" + advancement.getAsJsonObject("rewards").getAsJsonArray("recipes").get(0).getAsString().replace(DramaticDoors.MOD_ID + ":", "")), advancement); } );
+    	DDCompatAdvancement.RECIPE_ADVANCEMENTS.forEach((advancement) -> { map.put(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "recipes/redstone/" + advancement.getAsJsonObject("rewards").getAsJsonArray("recipes").get(0).getAsString().replace(DramaticDoors.MOD_ID + ":", "")), advancement); } );
     }
 }

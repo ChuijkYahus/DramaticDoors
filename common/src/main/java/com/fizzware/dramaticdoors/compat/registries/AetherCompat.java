@@ -16,14 +16,14 @@ public class AetherCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_AETHER_SKYROOT, DDNames.SHORT_AETHER_SKYROOT, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("aether", "skyroot_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_AETHER_SKYROOT, DDNames.SHORT_AETHER_SKYROOT, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("aether", "skyroot_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_AETHER_SKYROOT, new ResourceLocation("aether", "skyroot_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_AETHER_SKYROOT, new ResourceLocation("aether", "skyroot_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_AETHER_SKYROOT, ResourceLocation.fromNamespaceAndPath("aether", "skyroot_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_AETHER_SKYROOT, ResourceLocation.fromNamespaceAndPath("aether", "skyroot_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_AETHER_SKYROOT, new ResourceLocation("aether", "skyroot_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_AETHER_SKYROOT, new ResourceLocation("aether", "skyroot_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_AETHER_SKYROOT, ResourceLocation.fromNamespaceAndPath("aether", "skyroot_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_AETHER_SKYROOT, ResourceLocation.fromNamespaceAndPath("aether", "skyroot_door"), "tall_wooden_door");
 	}
 }

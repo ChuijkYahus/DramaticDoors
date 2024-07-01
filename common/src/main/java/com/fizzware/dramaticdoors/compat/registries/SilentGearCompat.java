@@ -16,14 +16,14 @@ public class SilentGearCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_NETHERWOOD, DDNames.SHORT_NETHERWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("silentgear", "netherwood_door")), BlockSetType.CRIMSON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_NETHERWOOD, DDNames.SHORT_NETHERWOOD, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("silentgear", "netherwood_door")), BlockSetType.CRIMSON, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_NETHERWOOD, new ResourceLocation("silentgear", "netherwood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_NETHERWOOD, new ResourceLocation("silentgear", "netherwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_NETHERWOOD, ResourceLocation.fromNamespaceAndPath("silentgear", "netherwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_NETHERWOOD, ResourceLocation.fromNamespaceAndPath("silentgear", "netherwood_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MORECRAFT_NETHERWOOD, new ResourceLocation("morecraft", "netherwood_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MORECRAFT_NETHERWOOD, new ResourceLocation("morecraft", "netherwood_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MORECRAFT_NETHERWOOD, ResourceLocation.fromNamespaceAndPath("morecraft", "netherwood_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MORECRAFT_NETHERWOOD, ResourceLocation.fromNamespaceAndPath("morecraft", "netherwood_door"), "tall_wooden_door");
 	}
 }

@@ -16,19 +16,19 @@ public class GoodEndingCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GE_CYPRESS, DDNames.SHORT_GE_CYPRESS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("goodending", "cypress_door")), BlockSetType.MANGROVE, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GE_MUDDY_OAK, DDNames.SHORT_GE_MUDDY_OAK, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("goodending", "muddy_oak_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GE_CYPRESS, DDNames.SHORT_GE_CYPRESS, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("goodending", "cypress_door")), BlockSetType.MANGROVE, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GE_MUDDY_OAK, DDNames.SHORT_GE_MUDDY_OAK, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("goodending", "muddy_oak_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GE_CYPRESS, new ResourceLocation("goodending", "cypress_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GE_MUDDY_OAK, new ResourceLocation("goodending", "muddy_oak_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GE_CYPRESS, new ResourceLocation("goodending", "cypress_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GE_MUDDY_OAK, new ResourceLocation("goodending", "muddy_oak_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GE_CYPRESS, ResourceLocation.fromNamespaceAndPath("goodending", "cypress_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GE_MUDDY_OAK, ResourceLocation.fromNamespaceAndPath("goodending", "muddy_oak_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GE_CYPRESS, ResourceLocation.fromNamespaceAndPath("goodending", "cypress_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GE_MUDDY_OAK, ResourceLocation.fromNamespaceAndPath("goodending", "muddy_oak_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GE_CYPRESS, new ResourceLocation("goodending", "cypress_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GE_MUDDY_OAK, new ResourceLocation("goodending", "muddy_oak_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GE_CYPRESS, new ResourceLocation("goodending", "cypress_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GE_MUDDY_OAK, new ResourceLocation("goodending", "muddy_oak_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GE_CYPRESS, ResourceLocation.fromNamespaceAndPath("goodending", "cypress_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GE_MUDDY_OAK, ResourceLocation.fromNamespaceAndPath("goodending", "muddy_oak_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GE_CYPRESS, ResourceLocation.fromNamespaceAndPath("goodending", "cypress_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GE_MUDDY_OAK, ResourceLocation.fromNamespaceAndPath("goodending", "muddy_oak_door"), "tall_wooden_door");
 	}
 }

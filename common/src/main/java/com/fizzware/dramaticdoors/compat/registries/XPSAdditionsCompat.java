@@ -16,14 +16,14 @@ public class XPSAdditionsCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SOUL_COPPER, DDNames.SHORT_SOUL_COPPER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("xps_additions", "soul_copper_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SOUL_COPPER, DDNames.SHORT_SOUL_COPPER, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("xps_additions", "soul_copper_door")), BlockSetType.IRON, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SOUL_COPPER, new ResourceLocation("xps_additions", "soul_copper_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SOUL_COPPER, new ResourceLocation("xps_additions", "soul_copper_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SOUL_COPPER, ResourceLocation.fromNamespaceAndPath("xps_additions", "soul_copper_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SOUL_COPPER, ResourceLocation.fromNamespaceAndPath("xps_additions", "soul_copper_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SOUL_COPPER, new ResourceLocation("xps_additions", "soul_copper_door"), false);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SOUL_COPPER, new ResourceLocation("xps_additions", "soul_copper_door"), "tall_metal_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SOUL_COPPER, ResourceLocation.fromNamespaceAndPath("xps_additions", "soul_copper_door"), false);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SOUL_COPPER, ResourceLocation.fromNamespaceAndPath("xps_additions", "soul_copper_door"), "tall_metal_door");
 	}
 }

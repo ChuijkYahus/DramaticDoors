@@ -23,14 +23,14 @@ public class BlocksPlusCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_COPPER, DDNames.SHORT_BP_COPPER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "copper_door")), BlockSetType.IRON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_GOLDEN, DDNames.SHORT_BP_GOLDEN, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "golden_door")), BlockSetType.IRON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_DIAMOND, DDNames.SHORT_BP_DIAMOND, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "diamond_door")), BlockSetType.IRON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_EMERALD, DDNames.SHORT_BP_EMERALD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "emerald_door")), BlockSetType.IRON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_MUSHROOM, DDNames.SHORT_BP_MUSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "mushroom_door")), BlockSetType.WARPED, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_COPPER, DDNames.SHORT_BP_COPPER, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("blocksplus", "copper_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_GOLDEN, DDNames.SHORT_BP_GOLDEN, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("blocksplus", "golden_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_DIAMOND, DDNames.SHORT_BP_DIAMOND, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("blocksplus", "diamond_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_EMERALD, DDNames.SHORT_BP_EMERALD, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("blocksplus", "emerald_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BP_MUSHROOM, DDNames.SHORT_BP_MUSHROOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("blocksplus", "mushroom_door")), BlockSetType.WARPED, true);
 		
-		Block shortNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "netherite_door"), Blocks.IRON_DOOR));
-		Block tallNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("blocksplus", "netherite_door"), Blocks.IRON_DOOR));
+		Block shortNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("blocksplus", "netherite_door"), Blocks.IRON_DOOR));
+		Block tallNetheriteDoor = new TallDoorBlock(BlockSetType.IRON, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("blocksplus", "netherite_door"), Blocks.IRON_DOOR));
 		
 		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_BP_NETHERITE, shortNetheriteDoor));
     	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_BP_NETHERITE, tallNetheriteDoor));
@@ -40,30 +40,30 @@ public class BlocksPlusCompat
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_COPPER, new ResourceLocation("blocksplus", "copper_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_GOLDEN, new ResourceLocation("blocksplus", "golden_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_DIAMOND, new ResourceLocation("blocksplus", "diamond_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_EMERALD, new ResourceLocation("blocksplus", "emerald_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_NETHERITE, new ResourceLocation("blocksplus", "netherite_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_MUSHROOM, new ResourceLocation("blocksplus", "mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_COPPER, new ResourceLocation("blocksplus", "copper_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_GOLDEN, new ResourceLocation("blocksplus", "golden_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_DIAMOND, new ResourceLocation("blocksplus", "diamond_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_EMERALD, new ResourceLocation("blocksplus", "emerald_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_NETHERITE, new ResourceLocation("blocksplus", "netherite_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_MUSHROOM, new ResourceLocation("blocksplus", "mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_COPPER, ResourceLocation.fromNamespaceAndPath("blocksplus", "copper_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_GOLDEN, ResourceLocation.fromNamespaceAndPath("blocksplus", "golden_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_DIAMOND, ResourceLocation.fromNamespaceAndPath("blocksplus", "diamond_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_EMERALD, ResourceLocation.fromNamespaceAndPath("blocksplus", "emerald_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_NETHERITE, ResourceLocation.fromNamespaceAndPath("blocksplus", "netherite_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BP_MUSHROOM, ResourceLocation.fromNamespaceAndPath("blocksplus", "mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_COPPER, ResourceLocation.fromNamespaceAndPath("blocksplus", "copper_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_GOLDEN, ResourceLocation.fromNamespaceAndPath("blocksplus", "golden_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_DIAMOND, ResourceLocation.fromNamespaceAndPath("blocksplus", "diamond_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_EMERALD, ResourceLocation.fromNamespaceAndPath("blocksplus", "emerald_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_NETHERITE, ResourceLocation.fromNamespaceAndPath("blocksplus", "netherite_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BP_MUSHROOM, ResourceLocation.fromNamespaceAndPath("blocksplus", "mushroom_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_COPPER, new ResourceLocation("blocksplus", "copper_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_GOLDEN, new ResourceLocation("blocksplus", "golden_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_DIAMOND, new ResourceLocation("blocksplus", "diamond_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_EMERALD, new ResourceLocation("blocksplus", "emerald_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_NETHERITE, new ResourceLocation("blocksplus", "netherite_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_MUSHROOM, new ResourceLocation("blocksplus", "mushroom_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_COPPER, new ResourceLocation("blocksplus", "copper_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_GOLDEN, new ResourceLocation("blocksplus", "golden_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_DIAMOND, new ResourceLocation("blocksplus", "diamond_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_EMERALD, new ResourceLocation("blocksplus", "emerald_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_NETHERITE, new ResourceLocation("blocksplus", "netherite_door"), "tall_metal_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_MUSHROOM, new ResourceLocation("blocksplus", "mushroom_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_COPPER, ResourceLocation.fromNamespaceAndPath("blocksplus", "copper_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_GOLDEN, ResourceLocation.fromNamespaceAndPath("blocksplus", "golden_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_DIAMOND, ResourceLocation.fromNamespaceAndPath("blocksplus", "diamond_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_EMERALD, ResourceLocation.fromNamespaceAndPath("blocksplus", "emerald_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_NETHERITE, ResourceLocation.fromNamespaceAndPath("blocksplus", "netherite_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BP_MUSHROOM, ResourceLocation.fromNamespaceAndPath("blocksplus", "mushroom_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_COPPER, ResourceLocation.fromNamespaceAndPath("blocksplus", "copper_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_GOLDEN, ResourceLocation.fromNamespaceAndPath("blocksplus", "golden_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_DIAMOND, ResourceLocation.fromNamespaceAndPath("blocksplus", "diamond_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_EMERALD, ResourceLocation.fromNamespaceAndPath("blocksplus", "emerald_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_NETHERITE, ResourceLocation.fromNamespaceAndPath("blocksplus", "netherite_door"), "tall_metal_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BP_MUSHROOM, ResourceLocation.fromNamespaceAndPath("blocksplus", "mushroom_door"), "tall_wooden_door");
 	}
 }

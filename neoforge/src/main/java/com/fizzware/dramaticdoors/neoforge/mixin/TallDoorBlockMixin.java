@@ -3,7 +3,7 @@ package com.fizzware.dramaticdoors.neoforge.mixin;
 import org.spongepowered.asm.mixin.Mixin;
 
 import com.fizzware.dramaticdoors.blocks.TallDoorBlock;
-import com.fizzware.dramaticdoors.blocks.TallWeatheringCopperDoorBlock;
+import com.fizzware.dramaticdoors.blocks.TallWeatheringDoorBlock;
 
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +21,7 @@ public class TallDoorBlockMixin extends Block
 	@Override
 	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
 		if (ToolActions.AXE_WAX_OFF == toolAction && !simulate) {
-            return TallWeatheringCopperDoorBlock.getUnwaxed(state).orElse(null);
+            return TallWeatheringDoorBlock.getUnwaxed(state).orElse(null);
 		}
 		return super.getToolModifiedState(state, context, toolAction, simulate);
 	}

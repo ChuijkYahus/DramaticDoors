@@ -6,16 +6,17 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 
 import com.fizzware.dramaticdoors.blocks.ShortDoorBlock;
-import com.fizzware.dramaticdoors.blocks.ShortWeatheringCopperDoorBlock;
+import com.fizzware.dramaticdoors.blocks.ShortWeatheringDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallSlidingDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallStableDoorBlock;
-import com.fizzware.dramaticdoors.blocks.TallWeatheringCopperDoorBlock;
+import com.fizzware.dramaticdoors.blocks.TallWeatheringDoorBlock;
+import com.fizzware.dramaticdoors.compat.Compats;
 import com.fizzware.dramaticdoors.items.ShortDoorItem;
 import com.fizzware.dramaticdoors.items.TallDoorItem;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -33,6 +34,7 @@ public class DDRegistry
 	public static final Item.Properties PROPERTIES = new Item.Properties();
 		
 	public static void registerVanilla() {
+		// Register wooden doors.
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_OAK, DDNames.SHORT_OAK, Blocks.OAK_DOOR, BlockSetType.OAK, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SPRUCE, DDNames.SHORT_SPRUCE, Blocks.SPRUCE_DOOR, BlockSetType.SPRUCE, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BIRCH, DDNames.SHORT_BIRCH, Blocks.BIRCH_DOOR, BlockSetType.BIRCH, true);
@@ -44,17 +46,26 @@ public class DDRegistry
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BAMBOO, DDNames.SHORT_BAMBOO, Blocks.BAMBOO_DOOR, BlockSetType.BAMBOO, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CRIMSON, DDNames.SHORT_CRIMSON, Blocks.CRIMSON_DOOR, BlockSetType.CRIMSON, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WARPED, DDNames.SHORT_WARPED, Blocks.WARPED_DOOR, BlockSetType.WARPED, true);
+		// Register iron door.
+		if (Compats.IMMERSIVE_WEATHERING_INSTALLED) {
+			DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_IRON, DDNames.SHORT_IRON, Blocks.IRON_DOOR.properties(), BlockSetType.IRON, true, WeatherState.UNAFFECTED);
+		}
+		else {
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_IRON, DDNames.SHORT_IRON, Blocks.IRON_DOOR, BlockSetType.IRON, true);
+		}
+		// Register copper doors.
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_IRON, DDNames.SHORT_IRON, Blocks.IRON_DOOR, BlockSetType.IRON, true);
-		DDRegistry.registerCopperDoorBlockAndItem(DDNames.TALL_COPPER, DDNames.SHORT_COPPER, Blocks.COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true, WeatherState.UNAFFECTED);
-		DDRegistry.registerCopperDoorBlockAndItem(DDNames.TALL_EXPOSED_COPPER, DDNames.SHORT_EXPOSED_COPPER, Blocks.EXPOSED_COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true, WeatherState.EXPOSED);
-		DDRegistry.registerCopperDoorBlockAndItem(DDNames.TALL_WEATHERED_COPPER, DDNames.SHORT_WEATHERED_COPPER, Blocks.WEATHERED_COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true, WeatherState.WEATHERED);
-		DDRegistry.registerCopperDoorBlockAndItem(DDNames.TALL_OXIDIZED_COPPER, DDNames.SHORT_OXIDIZED_COPPER, Blocks.OXIDIZED_COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true, WeatherState.OXIDIZED);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_COPPER, DDNames.SHORT_WAXED_COPPER, Blocks.WAXED_COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_EXPOSED_COPPER, DDNames.SHORT_WAXED_EXPOSED_COPPER, Blocks.WAXED_EXPOSED_COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_WEATHERED_COPPER, DDNames.SHORT_WAXED_WEATHERED_COPPER, Blocks.WAXED_WEATHERED_COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_OXIDIZED_COPPER, DDNames.SHORT_WAXED_OXIDIZED_COPPER, Blocks.WAXED_OXIDIZED_COPPER_DOOR.properties().requiredFeatures(FeatureFlags.UPDATE_1_21), BlockSetType.COPPER, true);
+		DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_COPPER, DDNames.SHORT_COPPER, Blocks.COPPER_DOOR.properties(), BlockSetType.COPPER, true, WeatherState.UNAFFECTED);
+		DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_EXPOSED_COPPER, DDNames.SHORT_EXPOSED_COPPER, Blocks.EXPOSED_COPPER_DOOR.properties(), BlockSetType.COPPER, true, WeatherState.EXPOSED);
+		DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_WEATHERED_COPPER, DDNames.SHORT_WEATHERED_COPPER, Blocks.WEATHERED_COPPER_DOOR.properties(), BlockSetType.COPPER, true, WeatherState.WEATHERED);
+		DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_OXIDIZED_COPPER, DDNames.SHORT_OXIDIZED_COPPER, Blocks.OXIDIZED_COPPER_DOOR.properties(), BlockSetType.COPPER, true, WeatherState.OXIDIZED);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_COPPER, DDNames.SHORT_WAXED_COPPER, Blocks.WAXED_COPPER_DOOR.properties(), BlockSetType.COPPER, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_EXPOSED_COPPER, DDNames.SHORT_WAXED_EXPOSED_COPPER, Blocks.WAXED_EXPOSED_COPPER_DOOR.properties(), BlockSetType.COPPER, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_WEATHERED_COPPER, DDNames.SHORT_WAXED_WEATHERED_COPPER, Blocks.WAXED_WEATHERED_COPPER_DOOR.properties(), BlockSetType.COPPER, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WAXED_OXIDIZED_COPPER, DDNames.SHORT_WAXED_OXIDIZED_COPPER, Blocks.WAXED_OXIDIZED_COPPER_DOOR.properties(), BlockSetType.COPPER, true);
 	}
 	
+	// Register methods.
 	public static void registerDoorBlockAndItem(String tallname, @Nullable String shortname, Block block, BlockSetType blocksettype, boolean includeShort) {
 		Block tempBlock;
 		Item tempItem;
@@ -85,7 +96,7 @@ public class DDRegistry
 		DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(tallname, tempItem));
 	}
 	
-	public static void registerCopperDoorBlockAndItem(String tallname, @Nullable String shortname, Properties properties, BlockSetType blocksettype, boolean includeShort, WeatheringCopper.WeatherState state) {
+	public static void registerWeatheringDoorBlockAndItem(String tallname, @Nullable String shortname, Properties properties, BlockSetType blocksettype, boolean includeShort, WeatheringCopper.WeatherState state) {
 		Block tempBlock;
 		Item tempItem;
 		if (includeShort) {
@@ -128,72 +139,35 @@ public class DDRegistry
 		}
 	}
 	
+	// Create blocks and items.
 	protected static Block createCopperDoorBlock(Properties properties, BlockSetType blocksettype, boolean isTall, WeatheringCopper.WeatherState state) {
-		Block tempBlock;
-		if (isTall) {
-			tempBlock = new TallWeatheringCopperDoorBlock(blocksettype, state, properties);
-		}
-		else {
-			tempBlock = new ShortWeatheringCopperDoorBlock(blocksettype, state, properties);
-		}
-		return tempBlock;
+		return isTall ? new TallWeatheringDoorBlock(blocksettype, state, properties) : new ShortWeatheringDoorBlock(blocksettype, state, properties);
 	}
 	
 	protected static Block createSlidingDoorBlock(Block block, BlockSetType blocksettype, boolean isTall) {
-		Block tempBlock;
-		if (isTall) {
-			tempBlock = new TallSlidingDoorBlock(blocksettype, block);
-		}
-		else {
+		if (!isTall) {
 			throw new IllegalArgumentException("Short version of Macaw sliding doors are currently not supported.");
-			//tempBlock = new ShortSlidingDoorBlock(block, blocksettype);
 		}
-		return tempBlock;
+		return new TallSlidingDoorBlock(blocksettype, block);
 	}
 	
 	protected static Block createStableDoorBlock(Block block, BlockSetType blocksettype, boolean isTall) {
-		Block tempBlock;
-		if (isTall) {
-			tempBlock = new TallStableDoorBlock(blocksettype, block);
-		}
-		else {
+		if (!isTall) {
 			throw new IllegalArgumentException("Short version of Macaw stable doors are currently not supported.");
-			//tempBlock = new ShortSlidingDoorBlock(block, blocksettype);
 		}
-		return tempBlock;
+		return new TallStableDoorBlock(blocksettype, block);
 	}
 	
 	protected static Block createDoorBlock(Block block, BlockSetType blocksettype, boolean isTall) {
-		Block tempBlock;
-		if (isTall) {
-			tempBlock = new TallDoorBlock(blocksettype, block);
-		}
-		else {
-			tempBlock = new ShortDoorBlock(blocksettype, block);
-		}
-		return tempBlock;
+		return isTall ? new TallDoorBlock(blocksettype, block) : new ShortDoorBlock(blocksettype, block);
 	}
 	
 	protected static Block createDoorBlock(Properties properties, BlockSetType blocksettype, boolean isTall) {
-		Block tempBlock;
-		if (isTall) {
-			tempBlock = new TallDoorBlock(blocksettype, properties);
-		}
-		else {
-			tempBlock = new ShortDoorBlock(blocksettype, properties);
-		}
-		return tempBlock;
+		return isTall ? new TallDoorBlock(blocksettype, properties) : new ShortDoorBlock(blocksettype, properties);
 	}
 	
 	protected static Item createDoorItem(Block block, boolean isTall) {
-		Item tempItem;
-		if (isTall) {
-			tempItem = new TallDoorItem(block, PROPERTIES);
-		}
-		else {
-			tempItem = new ShortDoorItem(block, PROPERTIES);
-		}
-		return tempItem;
+		return isTall ? new TallDoorItem(block, PROPERTIES) : new ShortDoorItem(block, PROPERTIES);
 	}
 	
 	/* Utility functions for getting blocks by key. */

@@ -16,24 +16,24 @@ public class QuarkCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_QUARK_ANCIENT, DDNames.SHORT_QUARK_ANCIENT, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("quark", "ancient_door")), BlockSetType.BIRCH, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_QUARK_AZALEA, DDNames.SHORT_QUARK_AZALEA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("quark", "azalea_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_QUARK_BLOSSOM, DDNames.SHORT_QUARK_BLOSSOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("quark", "blossom_door")), BlockSetType.CHERRY, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_QUARK_ANCIENT, DDNames.SHORT_QUARK_ANCIENT, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("quark", "ancient_door")), BlockSetType.BIRCH, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_QUARK_AZALEA, DDNames.SHORT_QUARK_AZALEA, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("quark", "azalea_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_QUARK_BLOSSOM, DDNames.SHORT_QUARK_BLOSSOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("quark", "blossom_door")), BlockSetType.CHERRY, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_QUARK_ANCIENT, new ResourceLocation("quark", "ancient_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_QUARK_AZALEA, new ResourceLocation("quark", "azalea_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_QUARK_BLOSSOM, new ResourceLocation("quark", "blossom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_QUARK_ANCIENT, new ResourceLocation("quark", "ancient_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_QUARK_AZALEA, new ResourceLocation("quark", "azalea_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_QUARK_BLOSSOM, new ResourceLocation("quark", "blossom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_QUARK_ANCIENT, ResourceLocation.fromNamespaceAndPath("quark", "ancient_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_QUARK_AZALEA, ResourceLocation.fromNamespaceAndPath("quark", "azalea_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_QUARK_BLOSSOM, ResourceLocation.fromNamespaceAndPath("quark", "blossom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_QUARK_ANCIENT, ResourceLocation.fromNamespaceAndPath("quark", "ancient_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_QUARK_AZALEA, ResourceLocation.fromNamespaceAndPath("quark", "azalea_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_QUARK_BLOSSOM, ResourceLocation.fromNamespaceAndPath("quark", "blossom_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_ANCIENT, new ResourceLocation("quark", "ancient_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_AZALEA, new ResourceLocation("quark", "azalea_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_BLOSSOM, new ResourceLocation("quark", "blossom_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_ANCIENT, new ResourceLocation("quark", "ancient_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_AZALEA, new ResourceLocation("quark", "azalea_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_BLOSSOM, new ResourceLocation("quark", "blossom_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_ANCIENT, ResourceLocation.fromNamespaceAndPath("quark", "ancient_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_AZALEA, ResourceLocation.fromNamespaceAndPath("quark", "azalea_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_QUARK_BLOSSOM, ResourceLocation.fromNamespaceAndPath("quark", "blossom_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_ANCIENT, ResourceLocation.fromNamespaceAndPath("quark", "ancient_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_AZALEA, ResourceLocation.fromNamespaceAndPath("quark", "azalea_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_QUARK_BLOSSOM, ResourceLocation.fromNamespaceAndPath("quark", "blossom_door"), "tall_wooden_door");
 	}
 }

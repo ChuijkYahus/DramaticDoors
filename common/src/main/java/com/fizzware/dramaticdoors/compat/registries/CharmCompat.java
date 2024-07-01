@@ -16,19 +16,19 @@ public class CharmCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHARM_AZALEA, DDNames.SHORT_CHARM_AZALEA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("charm", "azalea_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHARM_EBONY, DDNames.SHORT_CHARM_EBONY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("charm", "ebony_door")), BlockSetType.DARK_OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHARM_AZALEA, DDNames.SHORT_CHARM_AZALEA, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("charm", "azalea_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHARM_EBONY, DDNames.SHORT_CHARM_EBONY, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("charm", "ebony_door")), BlockSetType.DARK_OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHARM_AZALEA, new ResourceLocation("charm", "azalea_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHARM_EBONY, new ResourceLocation("charm", "ebony_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHARM_AZALEA, new ResourceLocation("charm", "azalea_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHARM_EBONY, new ResourceLocation("charm", "ebony_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHARM_AZALEA, ResourceLocation.fromNamespaceAndPath("charm", "azalea_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHARM_EBONY, ResourceLocation.fromNamespaceAndPath("charm", "ebony_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHARM_AZALEA, ResourceLocation.fromNamespaceAndPath("charm", "azalea_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHARM_EBONY, ResourceLocation.fromNamespaceAndPath("charm", "ebony_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHARM_AZALEA, new ResourceLocation("charm", "azalea_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHARM_EBONY, new ResourceLocation("charm", "ebony_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHARM_AZALEA, new ResourceLocation("charm", "azalea_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHARM_EBONY, new ResourceLocation("charm", "ebony_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHARM_AZALEA, ResourceLocation.fromNamespaceAndPath("charm", "azalea_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHARM_EBONY, ResourceLocation.fromNamespaceAndPath("charm", "ebony_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHARM_AZALEA, ResourceLocation.fromNamespaceAndPath("charm", "azalea_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHARM_EBONY, ResourceLocation.fromNamespaceAndPath("charm", "ebony_door"), "tall_wooden_door");
 	}
 }

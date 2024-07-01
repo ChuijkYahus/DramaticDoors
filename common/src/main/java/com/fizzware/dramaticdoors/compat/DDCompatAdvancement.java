@@ -17,7 +17,7 @@ public class DDCompatAdvancement
     public static void createRecipeAdvancement(String recipeName, ResourceLocation triggeringItem) {
         //Creating a new json object, where we will store our recipe advancements.
         JsonObject json = new JsonObject();
-        json.addProperty("parent", "dramaticdoors:recipes/root");
+        json.addProperty("parent", "dramaticdoors:recipe/root");
         
         //Create the criteria.
         JsonObject jsonCriteria = new JsonObject();

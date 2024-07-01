@@ -20,7 +20,7 @@ public abstract class RecipeManagerMixin
 {	
     @Inject(method = "apply", at = @At("HEAD"))
     public void interceptApply(Map<ResourceLocation, JsonElement> map, ResourceManager resourceManager, ProfilerFiller profiler, CallbackInfo info) {
-    	DDCompatRecipe.SHORT_DOOR_RECIPES.forEach((recipe) -> { map.put(new ResourceLocation(recipe.get("result").getAsJsonObject().get("id").getAsString()), recipe); } );
-    	DDCompatRecipe.TALL_DOOR_RECIPES.forEach((recipe) -> { map.put(new ResourceLocation(recipe.get("result").getAsJsonObject().get("id").getAsString()), recipe); } );
+    	DDCompatRecipe.SHORT_DOOR_RECIPES.forEach((recipe) -> { map.put(ResourceLocation.parse(recipe.get("result").getAsJsonObject().get("id").getAsString()), recipe); } );
+    	DDCompatRecipe.TALL_DOOR_RECIPES.forEach((recipe) -> { map.put(ResourceLocation.parse(recipe.get("result").getAsJsonObject().get("id").getAsString()), recipe); } );
     }
 }

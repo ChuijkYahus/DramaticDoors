@@ -51,7 +51,6 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 dependencies {
     implementation("net.neoforged:neoforge:${project.neoforge_version}")
     compileOnly project(":common")
-	// annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 	// implementation("curse.maven:macaws-doors-378646:4781680")
     // implementation("com.simibubi.create:create-${project.minecraft_version}:${project.create_version}:slim") { transitive = false }
     // implementation("com.jozufozu.flywheel:flywheel-forge-${project.minecraft_version}:${project.flywheel_version}")

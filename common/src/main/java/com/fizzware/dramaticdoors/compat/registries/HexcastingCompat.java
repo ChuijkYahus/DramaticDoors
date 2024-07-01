@@ -16,14 +16,14 @@ public class HexcastingCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_EDIFIED, DDNames.SHORT_EDIFIED, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("hexcasting", "edified_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_EDIFIED, DDNames.SHORT_EDIFIED, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("hexcasting", "edified_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_EDIFIED, new ResourceLocation("hexcasting", "edified_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_EDIFIED, new ResourceLocation("hexcasting", "edified_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_EDIFIED, ResourceLocation.fromNamespaceAndPath("hexcasting", "edified_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_EDIFIED, ResourceLocation.fromNamespaceAndPath("hexcasting", "edified_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_EDIFIED, new ResourceLocation("hexcasting", "edified_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_EDIFIED, new ResourceLocation("hexcasting", "edified_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_EDIFIED, ResourceLocation.fromNamespaceAndPath("hexcasting", "edified_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_EDIFIED, ResourceLocation.fromNamespaceAndPath("hexcasting", "edified_door"), "tall_wooden_door");
 	}
 }

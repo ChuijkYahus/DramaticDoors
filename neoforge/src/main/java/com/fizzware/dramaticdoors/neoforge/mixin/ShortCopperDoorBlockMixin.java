@@ -3,7 +3,7 @@ package com.fizzware.dramaticdoors.neoforge.mixin;
 import org.spongepowered.asm.mixin.Mixin;
 
 import com.fizzware.dramaticdoors.blocks.ShortDoorBlock;
-import com.fizzware.dramaticdoors.blocks.ShortWeatheringCopperDoorBlock;
+import com.fizzware.dramaticdoors.blocks.ShortWeatheringDoorBlock;
 
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.common.ToolAction;
 import net.neoforged.neoforge.common.ToolActions;
 
-@Mixin(ShortWeatheringCopperDoorBlock.class)
+@Mixin(ShortWeatheringDoorBlock.class)
 public class ShortCopperDoorBlockMixin extends ShortDoorBlock
 {
 	public ShortCopperDoorBlockMixin(BlockSetType blockset, Block from) {
@@ -22,7 +22,7 @@ public class ShortCopperDoorBlockMixin extends ShortDoorBlock
 	@Override
 	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
 		if (ToolActions.AXE_SCRAPE == toolAction && !simulate) {
-            return ShortWeatheringCopperDoorBlock.getPrevious(state).orElse(null);
+            return ShortWeatheringDoorBlock.getPrevious(state).orElse(null);
 		}
 		return super.getToolModifiedState(state, context, toolAction, simulate);
 	}

@@ -16,29 +16,29 @@ public class ExtendedMushroomsCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MUSHROOM, DDNames.SHORT_MUSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("extendedmushrooms", "mushroom_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_POISONOUS_MUSHROOM, DDNames.SHORT_POISONOUS_MUSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("extendedmushrooms", "poisonous_mushroom_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GLOWSHROOM, DDNames.SHORT_GLOWSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("extendedmushrooms", "glowshroom_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_HONEY_FUNGUS, DDNames.SHORT_HONEY_FUNGUS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("extendedmushrooms", "honey_fungus_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MUSHROOM, DDNames.SHORT_MUSHROOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "mushroom_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_POISONOUS_MUSHROOM, DDNames.SHORT_POISONOUS_MUSHROOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "poisonous_mushroom_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GLOWSHROOM, DDNames.SHORT_GLOWSHROOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "glowshroom_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_HONEY_FUNGUS, DDNames.SHORT_HONEY_FUNGUS, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "honey_fungus_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MUSHROOM, new ResourceLocation("extendedmushrooms", "mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_POISONOUS_MUSHROOM, new ResourceLocation("extendedmushrooms", "poisonous_mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GLOWSHROOM, new ResourceLocation("extendedmushrooms", "glowshroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_HONEY_FUNGUS, new ResourceLocation("extendedmushrooms", "honey_fungus_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MUSHROOM, new ResourceLocation("extendedmushrooms", "mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_POISONOUS_MUSHROOM, new ResourceLocation("extendedmushrooms", "poisonous_mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GLOWSHROOM, new ResourceLocation("extendedmushrooms", "glowshroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_HONEY_FUNGUS, new ResourceLocation("extendedmushrooms", "honey_fungus_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_POISONOUS_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "poisonous_mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GLOWSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "glowshroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_HONEY_FUNGUS, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "honey_fungus_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_POISONOUS_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "poisonous_mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GLOWSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "glowshroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_HONEY_FUNGUS, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "honey_fungus_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MUSHROOM, new ResourceLocation("extendedmushrooms", "mushroom_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_POISONOUS_MUSHROOM, new ResourceLocation("extendedmushrooms", "poisonous_mushroom_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GLOWSHROOM, new ResourceLocation("extendedmushrooms", "glowshroom_mushroom_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_HONEY_FUNGUS, new ResourceLocation("extendedmushrooms", "honey_fungus_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MUSHROOM, new ResourceLocation("extendedmushrooms", "mushroom_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_POISONOUS_MUSHROOM, new ResourceLocation("extendedmushrooms", "poisonous_mushroom_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GLOWSHROOM, new ResourceLocation("extendedmushrooms", "glowshroom_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_HONEY_FUNGUS, new ResourceLocation("extendedmushrooms", "honey_fungus_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "mushroom_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_POISONOUS_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "poisonous_mushroom_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GLOWSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "glowshroom_mushroom_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_HONEY_FUNGUS, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "honey_fungus_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "mushroom_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_POISONOUS_MUSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "poisonous_mushroom_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GLOWSHROOM, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "glowshroom_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_HONEY_FUNGUS, ResourceLocation.fromNamespaceAndPath("extendedmushrooms", "honey_fungus_door"), "tall_wooden_door");
 	}
 }

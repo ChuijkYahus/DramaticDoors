@@ -31,42 +31,62 @@ public class DDNeoForgeRegistry
 	@SubscribeEvent
 	public static void registerBlocksItems(RegisterEvent event) {
 		// Hook in compats.
-		Compats.registerCompats(NeoforgeUtils.INSTANCE);
+		DDRegistry.registerVanilla();
+		// Compats.registerCompats(NeoforgeUtils.INSTANCE);
 		/*if (Compats.isModLoaded("create", NeoforgeUtils.INSTANCE)) {
 			CreateForgeCompat.registerCompat();
 		}*/
 		// Register blocks.
 		event.register(Registries.BLOCK, helper -> {
 	        for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS_TO_REGISTER) {
-	        	helper.register(new ResourceLocation(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
+	        	helper.register(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
 	        }
 		});
 		event.register(Registries.ITEM, helper -> {
 	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
-	        	helper.register(new ResourceLocation(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
+	        	helper.register(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
 	        }
 		});
 		event.register(Registries.BLOCK_ENTITY_TYPE, helper -> {
-			if (Compats.isModLoaded("supplementaries", NeoforgeUtils.INSTANCE)) {
+			/*if (Compats.isModLoaded("supplementaries", NeoforgeUtils.INSTANCE)) {
 				DDBlockEntities.TALL_NETHERITE_DOOR = BlockEntityType.Builder.of(TallNetheriteDoorBlockEntity::new, SupplementariesCompat.SHORT_NETHERITE_DOOR, SupplementariesCompat.TALL_NETHERITE_DOOR).build(null);
-				helper.register(new ResourceLocation(DramaticDoors.MOD_ID, "tall_netherite_door"), DDBlockEntities.TALL_NETHERITE_DOOR);
-			}
+				helper.register(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "tall_netherite_door"), DDBlockEntities.TALL_NETHERITE_DOOR);
+			}*/
 			/*if (Compats.isModLoaded("create", NeoforgeUtils.INSTANCE)) {
 				CreateForgeCompat.TALL_SLIDING_DOOR_BLOCK_ENTITY = BlockEntityType.Builder.of(TallForgeCreateSlidingDoorBlockEntity::new, CreateCompat.TALL_ANDESITE_DOOR, CreateCompat.TALL_BRASS_DOOR, CreateCompat.TALL_COPPER_DOOR, CreateCompat.TALL_FRAMED_GLASS_DOOR, CreateCompat.TALL_TRAIN_DOOR).build(null);
-				helper.register(new ResourceLocation(DramaticDoors.MOD_ID, "tall_sliding_door"), CreateForgeCompat.TALL_SLIDING_DOOR_BLOCK_ENTITY);
+				helper.register(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "tall_sliding_door"), CreateForgeCompat.TALL_SLIDING_DOOR_BLOCK_ENTITY);
 			}*/
 		});
     	event.register(Registries.CREATIVE_MODE_TAB, helper -> {
-    		helper.register(DDCreativeTabs.MAIN_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
-    		if (NeoforgeUtils.INSTANCE.isModLoaded("chipped")) {
-    			helper.register(DDCreativeTabs.CHIPPED_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_chipped")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_CHIPPED_BIRCH_GATED))); }).build());
+    		helper.register(DDCreativeTabs.MAIN_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
+    		/*if (NeoforgeUtils.INSTANCE.isModLoaded("chipped")) {
+    			helper.register(DDCreativeTabs.CHIPPED_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_chipped")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_CHIPPED_BIRCH_GATED))); }).build());
     		}
     		if (NeoforgeUtils.INSTANCE.isModLoaded("mcwdoors")) {
-    			helper.register(DDCreativeTabs.MACAW_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_macaw")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MACAW_DARK_OAK_BARN))); }).build());
+    			helper.register(DDCreativeTabs.MACAW_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_macaw")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_MACAW_DARK_OAK_BARN))); }).build());
     		}
     		if (NeoforgeUtils.INSTANCE.isModLoaded("manyideas_doors")) {
-    			helper.register(DDCreativeTabs.MANYIDEAS_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_manyideas")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MANYIDEAS_CRIMSON_BLANK))); }).build());
-    		}
+    			helper.register(DDCreativeTabs.MANYIDEAS_TAB, CreativeModeTab.builder().title(Component.translatable("itemGroup.dramaticdoors_manyideas")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_MANYIDEAS_CRIMSON_BLANK))); }).build());
+    		}*/
     	});
+	}
+	
+	public static void registerWeatheringBlocks() {
+		/*
+		NeoforgeUtils.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)));
+		NeoforgeUtils.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)));
+		NeoforgeUtils.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)));
+		NeoforgeUtils.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)));
+		NeoforgeUtils.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)));
+		NeoforgeUtils.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_EXPOSED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_OXIDIZED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_EXPOSED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_WEATHERED_COPPER)));
+		NeoforgeUtils.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_OXIDIZED_COPPER)));
+		*/
 	}
 }

@@ -16,14 +16,14 @@ public class IntegratedDynamicsCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MENRIL, DDNames.SHORT_MENRIL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("integrateddynamics", "menril_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MENRIL, DDNames.SHORT_MENRIL, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("integrateddynamics", "menril_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MENRIL, new ResourceLocation("integrateddynamics", "menril_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MENRIL, new ResourceLocation("integrateddynamics", "menril_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MENRIL, ResourceLocation.fromNamespaceAndPath("integrateddynamics", "menril_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MENRIL, ResourceLocation.fromNamespaceAndPath("integrateddynamics", "menril_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MENRIL, new ResourceLocation("integrateddynamics", "menril_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MENRIL, new ResourceLocation("integrateddynamics", "menril_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MENRIL, ResourceLocation.fromNamespaceAndPath("integrateddynamics", "menril_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MENRIL, ResourceLocation.fromNamespaceAndPath("integrateddynamics", "menril_door"), "tall_wooden_door");
 	}
 }

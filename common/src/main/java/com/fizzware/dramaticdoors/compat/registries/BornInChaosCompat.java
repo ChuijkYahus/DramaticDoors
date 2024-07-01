@@ -16,19 +16,19 @@ public class BornInChaosCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MESH, DDNames.SHORT_MESH, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("born_in_chaos_v1", "mesh_door")), BlockSetType.IRON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SCORCHED_PLANKS, DDNames.SHORT_SCORCHED_PLANKS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("born_in_chaos_v1", "scorched_planks_door")), BlockSetType.DARK_OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MESH, DDNames.SHORT_MESH, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "mesh_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_SCORCHED_PLANKS, DDNames.SHORT_SCORCHED_PLANKS, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "scorched_planks_door")), BlockSetType.DARK_OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MESH, new ResourceLocation("born_in_chaos_v1", "mesh_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SCORCHED_PLANKS, new ResourceLocation("born_in_chaos_v1", "scorched_planks_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MESH, new ResourceLocation("born_in_chaos_v1", "mesh_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SCORCHED_PLANKS, new ResourceLocation("born_in_chaos_v1", "scorched_planks_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MESH, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "mesh_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SCORCHED_PLANKS, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "scorched_planks_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MESH, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "mesh_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SCORCHED_PLANKS, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "scorched_planks_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MESH, new ResourceLocation("born_in_chaos_v1", "mesh_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SCORCHED_PLANKS, new ResourceLocation("born_in_chaos_v1", "scorched_planks_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MESH, new ResourceLocation("born_in_chaos_v1", "mesh_door"), "tall_misc_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SCORCHED_PLANKS, new ResourceLocation("born_in_chaos_v1", "scorched_planks_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MESH, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "mesh_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SCORCHED_PLANKS, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "scorched_planks_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MESH, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "mesh_door"), "tall_misc_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_SCORCHED_PLANKS, ResourceLocation.fromNamespaceAndPath("born_in_chaos_v1", "scorched_planks_door"), "tall_wooden_door");
 	}
 }

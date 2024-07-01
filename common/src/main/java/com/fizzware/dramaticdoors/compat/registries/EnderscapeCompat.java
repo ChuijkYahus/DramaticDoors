@@ -16,19 +16,19 @@ public class EnderscapeCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CELESTIAL, DDNames.SHORT_CELESTIAL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("enderscape", "celestial_door")), BlockSetType.CRIMSON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MURUSHROOM, DDNames.SHORT_MURUSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("enderscape", "murushroom_door")), BlockSetType.WARPED, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CELESTIAL, DDNames.SHORT_CELESTIAL, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("enderscape", "celestial_door")), BlockSetType.CRIMSON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MURUSHROOM, DDNames.SHORT_MURUSHROOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("enderscape", "murushroom_door")), BlockSetType.WARPED, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CELESTIAL, new ResourceLocation("enderscape", "celestial_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MURUSHROOM, new ResourceLocation("enderscape", "murushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CELESTIAL, new ResourceLocation("enderscape", "celestial_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MURUSHROOM, new ResourceLocation("enderscape", "murushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CELESTIAL, ResourceLocation.fromNamespaceAndPath("enderscape", "celestial_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MURUSHROOM, ResourceLocation.fromNamespaceAndPath("enderscape", "murushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CELESTIAL, ResourceLocation.fromNamespaceAndPath("enderscape", "celestial_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MURUSHROOM, ResourceLocation.fromNamespaceAndPath("enderscape", "murushroom_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CELESTIAL, new ResourceLocation("enderscape", "celestial_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MURUSHROOM, new ResourceLocation("enderscape", "murushroom_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CELESTIAL, new ResourceLocation("enderscape", "celestial_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MURUSHROOM, new ResourceLocation("enderscape", "murushroom_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CELESTIAL, ResourceLocation.fromNamespaceAndPath("enderscape", "celestial_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MURUSHROOM, ResourceLocation.fromNamespaceAndPath("enderscape", "murushroom_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CELESTIAL, ResourceLocation.fromNamespaceAndPath("enderscape", "celestial_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MURUSHROOM, ResourceLocation.fromNamespaceAndPath("enderscape", "murushroom_door"), "tall_wooden_door");
 	}
 }

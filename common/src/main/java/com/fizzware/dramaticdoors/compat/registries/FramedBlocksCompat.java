@@ -37,10 +37,10 @@ public class FramedBlocksCompat
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FRAMED, new ResourceLocation("framedblocks", "framed_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FRAMED_IRON, new ResourceLocation("framedblocks", "framed_iron_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FRAMED, ResourceLocation.fromNamespaceAndPath("framedblocks", "framed_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FRAMED_IRON, ResourceLocation.fromNamespaceAndPath("framedblocks", "framed_iron_door"));
 
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FRAMED, new ResourceLocation("framedblocks", "framed_door"), "tall_misc_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FRAMED_IRON, new ResourceLocation("framedblocks", "framed_iron_door"), "tall_misc_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FRAMED, ResourceLocation.fromNamespaceAndPath("framedblocks", "framed_door"), "tall_misc_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FRAMED_IRON, ResourceLocation.fromNamespaceAndPath("framedblocks", "framed_iron_door"), "tall_misc_door");
 	}
 }

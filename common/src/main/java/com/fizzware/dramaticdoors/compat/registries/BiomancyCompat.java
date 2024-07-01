@@ -21,13 +21,13 @@ import oshi.util.tuples.Pair;
 
 public class BiomancyCompat
 {
-    public static final Block SHORT_FLESH_DOOR = new ShortFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "flesh_door")));
-    public static final Block SHORT_FULL_FLESH_DOOR = new ShortFullFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "full_flesh_door")));
-    public static final Block SHORT_FLESHKIN_DOOR = new ShortDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "fleshkin_door")));
+    public static final Block SHORT_FLESH_DOOR = new ShortFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("biomancy", "flesh_door")));
+    public static final Block SHORT_FULL_FLESH_DOOR = new ShortFullFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("biomancy", "full_flesh_door")));
+    public static final Block SHORT_FLESHKIN_DOOR = new ShortDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("biomancy", "fleshkin_door")));
 
-    public static final Block TALL_FLESH_DOOR = new TallFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "flesh_door")));
-    public static final Block TALL_FULL_FLESH_DOOR = new TallFullFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "full_flesh_door")));
-    public static final Block TALL_FLESHKIN_DOOR = new TallDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("biomancy", "fleshkin_door")));
+    public static final Block TALL_FLESH_DOOR = new TallFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("biomancy", "flesh_door")));
+    public static final Block TALL_FULL_FLESH_DOOR = new TallFullFleshDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("biomancy", "full_flesh_door")));
+    public static final Block TALL_FLESHKIN_DOOR = new TallDoorBlock(BlockSetType.STONE, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("biomancy", "fleshkin_door")));
 
 	public static void registerCompat() {
 		registerBlocksItems();
@@ -51,18 +51,18 @@ public class BiomancyCompat
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_FLESH, new ResourceLocation("biomancy", "flesh_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_FULL_FLESH, new ResourceLocation("biomancy", "full_flesh_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_FLESHKIN, new ResourceLocation("biomancy", "fleshkin_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FLESH, new ResourceLocation("biomancy", "flesh_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FULL_FLESH, new ResourceLocation("biomancy", "full_flesh_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FLESHKIN, new ResourceLocation("biomancy", "fleshkin_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "flesh_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_FULL_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "full_flesh_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_FLESHKIN, ResourceLocation.fromNamespaceAndPath("biomancy", "fleshkin_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "flesh_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FULL_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "full_flesh_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_FLESHKIN, ResourceLocation.fromNamespaceAndPath("biomancy", "fleshkin_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_FLESH, new ResourceLocation("biomancy", "flesh_door"));
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_FULL_FLESH, new ResourceLocation("biomancy", "full_flesh_door"));
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_FLESHKIN, new ResourceLocation("biomancy", "fleshkin_door"));
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FLESH, new ResourceLocation("biomancy", "flesh_door"), "tall_misc_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FULL_FLESH, new ResourceLocation("biomancy", "full_flesh_door"), "tall_misc_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FLESHKIN, new ResourceLocation("biomancy", "fleshkin_door"), "tall_misc_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "flesh_door"));
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_FULL_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "full_flesh_door"));
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_FLESHKIN, ResourceLocation.fromNamespaceAndPath("biomancy", "fleshkin_door"));
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "flesh_door"), "tall_misc_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FULL_FLESH, ResourceLocation.fromNamespaceAndPath("biomancy", "full_flesh_door"), "tall_misc_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_FLESHKIN, ResourceLocation.fromNamespaceAndPath("biomancy", "fleshkin_door"), "tall_misc_door");
 	}
 }

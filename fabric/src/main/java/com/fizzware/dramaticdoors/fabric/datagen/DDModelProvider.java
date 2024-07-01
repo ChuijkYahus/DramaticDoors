@@ -77,7 +77,7 @@ public class DDModelProvider extends FabricModelProvider
     public static final ModelTemplate DOOR_MIDDLE_RIGHT_OPEN = create("door_middle_right_open", "_middle_right_open", TextureSlot.BOTTOM, MIDDLE, TextureSlot.TOP);
 
     private static ModelTemplate create(String blockModelLocation, String suffix, TextureSlot ... requiredSlots) {
-        return new ModelTemplate(Optional.of(new ResourceLocation("dramaticdoors", "block/" + blockModelLocation)), Optional.of(suffix), requiredSlots);
+        return new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("dramaticdoors", "block/" + blockModelLocation)), Optional.of(suffix), requiredSlots);
     }
     
     public void createTallDoor(Block doorBlock) {

@@ -22,6 +22,7 @@ public class Compats
     public static boolean QUARK_INSTALLED;
     public static boolean SUPPLEMENTARIES_INSTALLED;
     public static boolean STATEMENT_INSTALLED;
+    public static boolean IMMERSIVE_WEATHERING_INSTALLED;
     
     public static void registerCompats(CompatChecker checker) {
     	if (initializedCompat) {
@@ -39,6 +40,7 @@ public class Compats
     	QUARK_INSTALLED = isModLoaded("quark", checker);
     	SUPPLEMENTARIES_INSTALLED = isModLoaded("supplementaries", checker);
     	STATEMENT_INSTALLED = isModLoaded("statement", checker);
+    	IMMERSIVE_WEATHERING_INSTALLED = isModLoaded("immersive_weathering", checker);
     	DDRegistry.registerVanilla();
     	if (isModLoaded("blueprint", checker)) {
     		AbnormalsCompat.registerCompat(checker);
@@ -54,6 +56,9 @@ public class Compats
 		}
 		if (isModLoaded("aether_redux", checker)) {
 			AetherReduxCompat.registerCompat();
+		}
+		if (isModLoaded("theabyss", checker)) {
+			TheAbyss2Compat.registerCompat();
 		}
 		if (isModLoaded("alexscaves", checker)) {
 			AlexsCavesCompat.registerCompat(checker);
@@ -79,6 +84,9 @@ public class Compats
 		if (isModLoaded("betternether", checker)) {
 			BetterNetherCompat.registerCompat();
 		}
+		/*if (isModLoaded("thebetweenlands", checker)) {
+			BetweenlandsCompat.registerCompat(); // NYI: Not Yet Implemented
+		}*/
 		if (isModLoaded("bewitchment", checker)) {
 			BewitchmentCompat.registerCompat(checker);
 		}
@@ -97,11 +105,14 @@ public class Compats
 		if (isModLoaded("blockus", checker)) {
 			BlockusCompat.registerCompat();
 		}
+		if (isModLoaded("bloomingnature", checker)) {
+			BloomingNatureCompat.registerCompat();
+		}
 		if (isModLoaded("born_in_chaos_v1", checker)) {
 			BornInChaosCompat.registerCompat();
 		}
-    	if (isModLoaded("byg", checker)) {
-    		BYGCompat.registerCompat();
+    	if (isModLoaded("biomeswevegone", checker)) { // This replaces BYG.
+    		BWGCompat.registerCompat();
     	}
 		if (isModLoaded("caupona", checker)) {
 			CauponaCompat.registerCompat();
@@ -154,6 +165,12 @@ public class Compats
 		if (isModLoaded("ecologics", checker)) {
 			EcologicsCompat.registerCompat();
 		}
+		if (isModLoaded("edenring", checker)) {
+			EdenRingCompat.registerCompat();
+		}
+		if (isModLoaded("eldritch_end", checker)) {
+			EldritchEndCompat.registerCompat();
+		}
 		if (isModLoaded("endlessbiomes", checker)) {
 			EndlessBiomesCompat.registerCompat();
 		}
@@ -172,8 +189,8 @@ public class Compats
 		if (isModLoaded("extendedmushrooms", checker)) {
 			ExtendedMushroomsCompat.registerCompat();
 		}
-		if (isModLoaded("fruittrees", checker)) {
-			FruitTreesCompat.registerCompat();
+		if (isModLoaded("fruitfulfun", checker)) { // This replaces Fruit Trees.
+			FruitfulFunCompat.registerCompat();
 		}
 		if (isModLoaded("forbidden_arcanus", checker)) {
 			ForbiddenArcanusCompat.registerCompat();
@@ -199,6 +216,9 @@ public class Compats
 		if (isModLoaded("horizons", checker)) {
 			HorizonsCompat.registerCompat();
 		}
+		if (isModLoaded("immersive_weathering", checker)) {
+			ImmersiveWeatheringCompat.registerCompat();
+		}
 		if (isModLoaded("integrateddynamics", checker)) {
 			IntegratedDynamicsCompat.registerCompat();
 		}
@@ -216,6 +236,9 @@ public class Compats
 		}
 		if (isModLoaded("moredoors", checker)) {
 			MoreDoorsCompat.registerCompat();
+		}
+		if (isModLoaded("mynethersdelight", checker)) {
+			MyNethersDelightCompat.registerCompat();
 		}
 		if (isModLoaded("mysticsbiomes", checker)) {
 			MysticsBiomesCompat.registerCompat();
@@ -253,6 +276,9 @@ public class Compats
 		if (isModLoaded("silentgear", checker)) {
 			SilentGearCompat.registerCompat();
 		}
+		if (isModLoaded("flying_stuff", checker)) {
+			SkyLandsCompat.registerCompat();
+		}
 		if (isModLoaded("snowyspirit", checker)) {
 			SnowySpiritCompat.registerCompat();
 		}
@@ -274,8 +300,14 @@ public class Compats
     	if (isModLoaded("thermal_foundation", checker)) {
     		ThermalFoundationCompat.registerCompat();
     	}
+    	/*if (isModLoaded("thingamajigs", checker)) {
+    		ThingamajigsCompat.registerCompat(); // NYI: Not Yet Implemented
+    	}*/
     	if (isModLoaded("traverse", checker)) {
     		TraverseCompat.registerCompat();
+    	}
+    	if (isModLoaded("tropicraft", checker)) {
+    		TropicraftCompat.registerCompat();
     	}
     	if (isModLoaded("twilightforest", checker)) {
     		TwilightForestCompat.registerCompat(checker);

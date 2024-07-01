@@ -16,19 +16,19 @@ public class NethersExoticismCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_JABOTICABA, DDNames.SHORT_JABOTICABA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("nethers_exoticism", "jaboticaba_door")), BlockSetType.CRIMSON, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RAMBOUTAN, DDNames.SHORT_RAMBOUTAN, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("nethers_exoticism", "ramboutan_door")), BlockSetType.CRIMSON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_JABOTICABA, DDNames.SHORT_JABOTICABA, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "jaboticaba_door")), BlockSetType.CRIMSON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RAMBOUTAN, DDNames.SHORT_RAMBOUTAN, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "ramboutan_door")), BlockSetType.CRIMSON, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_JABOTICABA, new ResourceLocation("nethers_exoticism", "jaboticaba_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RAMBOUTAN, new ResourceLocation("nethers_exoticism", "ramboutan_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_JABOTICABA, new ResourceLocation("nethers_exoticism", "jaboticaba_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RAMBOUTAN, new ResourceLocation("nethers_exoticism", "ramboutan_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_JABOTICABA, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "jaboticaba_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RAMBOUTAN, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "ramboutan_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_JABOTICABA, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "jaboticaba_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RAMBOUTAN, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "ramboutan_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_JABOTICABA, new ResourceLocation("nethers_exoticism", "jaboticaba_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RAMBOUTAN, new ResourceLocation("nethers_exoticism", "ramboutan_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_JABOTICABA, new ResourceLocation("nethers_exoticism", "jaboticaba_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RAMBOUTAN, new ResourceLocation("nethers_exoticism", "ramboutan_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_JABOTICABA, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "jaboticaba_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RAMBOUTAN, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "ramboutan_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_JABOTICABA, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "jaboticaba_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RAMBOUTAN, ResourceLocation.fromNamespaceAndPath("nethers_exoticism", "ramboutan_door"), "tall_wooden_door");
 	}
 }

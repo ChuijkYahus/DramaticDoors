@@ -16,14 +16,14 @@ public class SnowySpiritCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GINGERBREAD, DDNames.SHORT_GINGERBREAD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("snowyspirit", "gingerbread_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GINGERBREAD, DDNames.SHORT_GINGERBREAD, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("snowyspirit", "gingerbread_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GINGERBREAD, new ResourceLocation("snowyspirit", "gingerbread_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GINGERBREAD, new ResourceLocation("snowyspirit", "gingerbread_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GINGERBREAD, ResourceLocation.fromNamespaceAndPath("snowyspirit", "gingerbread_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GINGERBREAD, ResourceLocation.fromNamespaceAndPath("snowyspirit", "gingerbread_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GINGERBREAD, new ResourceLocation("snowyspirit", "gingerbread_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GINGERBREAD, new ResourceLocation("snowyspirit", "gingerbread_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GINGERBREAD, ResourceLocation.fromNamespaceAndPath("snowyspirit", "gingerbread_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GINGERBREAD, ResourceLocation.fromNamespaceAndPath("snowyspirit", "gingerbread_door"), "tall_wooden_door");
 	}
 }

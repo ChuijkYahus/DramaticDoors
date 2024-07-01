@@ -28,24 +28,24 @@ public class DDBlockStateProvider extends BlockStateProvider
     	// Insert any blocks that need to be data-generated. Example below:
     	//shortDoorBlock(DDBlocks.SHORT_OAK_DOOR, "block/short_oak");
     	//tallDoorBlock(DDBlocks.TALL_OAK_DOOR, "block/tall_oak");
-    	shortDoorBlock(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_BIRCH)), "block/short_birch");
-    	tallDoorBlock(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_BIRCH)), "block/tall_birch");
+    	shortDoorBlock(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_BIRCH)), "block/short_birch");
+    	tallDoorBlock(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_BIRCH)), "block/tall_birch");
     }
     
     /*private void tallDoorBlockAlt(Block block, String baseName, String texName) {
-    	internalTallDoorBlockAlt((TallDoorBlock)block, baseName, new ResourceLocation(DramaticDoors.MOD_ID, "" + texName + "_lower"), new ResourceLocation(DramaticDoors.MOD_ID, "" + texName + "_middle"), new ResourceLocation(DramaticDoors.MOD_ID, "" + texName + "_upper"));
+    	internalTallDoorBlockAlt((TallDoorBlock)block, baseName, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + texName + "_lower"), ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + texName + "_middle"), ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + texName + "_upper"));
     }*/
     
     private void tallDoorBlock(Block block, String baseName) {
-    	internalTallDoorBlock((TallDoorBlock)block, baseName, new ResourceLocation(DramaticDoors.MOD_ID, "" + baseName + "_door_bottom"), new ResourceLocation(DramaticDoors.MOD_ID, "" + baseName + "_door_middle"), new ResourceLocation(DramaticDoors.MOD_ID, "" + baseName + "_door_top"));
+    	internalTallDoorBlock((TallDoorBlock)block, baseName, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + baseName + "_door_bottom"), ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + baseName + "_door_middle"), ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + baseName + "_door_top"));
     }
     
     /*private void shortDoorBlockAlt(Block block, String baseName, String texName) {
-    	internalShortDoorBlockAlt((ShortDoorBlock)block, baseName, new ResourceLocation(DramaticDoors.MOD_ID, "" + texName + "_door"));
+    	internalShortDoorBlockAlt((ShortDoorBlock)block, baseName, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + texName + "_door"));
     }*/
     
     private void shortDoorBlock(Block block, String baseName) {
-    	internalShortDoorBlock((ShortDoorBlock)block, baseName, new ResourceLocation(DramaticDoors.MOD_ID, "" + baseName + "_door"));
+    	internalShortDoorBlock((ShortDoorBlock)block, baseName, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "" + baseName + "_door"));
     }
     
     /*private void internalTallDoorBlockAlt(TallDoorBlock block, String baseName, ResourceLocation bottom, ResourceLocation middle, ResourceLocation top) {

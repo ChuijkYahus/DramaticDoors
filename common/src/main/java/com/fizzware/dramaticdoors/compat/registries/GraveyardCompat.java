@@ -16,14 +16,14 @@ public class GraveyardCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_DARK_IRON, DDNames.SHORT_DARK_IRON, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("graveyard", "dark_iron_door")), BlockSetType.IRON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_DARK_IRON, DDNames.SHORT_DARK_IRON, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("graveyard", "dark_iron_door")), BlockSetType.IRON, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_DARK_IRON, new ResourceLocation("graveyard", "dark_iron_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_DARK_IRON, new ResourceLocation("graveyard", "dark_iron_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_DARK_IRON, ResourceLocation.fromNamespaceAndPath("graveyard", "dark_iron_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_DARK_IRON, ResourceLocation.fromNamespaceAndPath("graveyard", "dark_iron_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_DARK_IRON, new ResourceLocation("graveyard", "dark_iron_door"));
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_DARK_IRON, new ResourceLocation("graveyard", "dark_iron_door"), "tall_metal_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_DARK_IRON, ResourceLocation.fromNamespaceAndPath("graveyard", "dark_iron_door"));
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_DARK_IRON, ResourceLocation.fromNamespaceAndPath("graveyard", "dark_iron_door"), "tall_metal_door");
 	}
 }

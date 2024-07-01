@@ -76,7 +76,7 @@ public class TallDoorBlock extends Block implements SimpleWaterloggedBlock {
     protected static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 3.0D, 16.0D, 16.0D);
     private final BlockSetType type;
 
-    public static final ResourceLocation TOOTH_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_TOOTH);
+    public static final ResourceLocation TOOTH_DOOR_RES = ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_TOOTH);
     
     //TODO: Look into trimming down on constructors.
     public TallDoorBlock(BlockSetType blockset, Block from) {
@@ -200,8 +200,8 @@ public class TallDoorBlock extends Block implements SimpleWaterloggedBlock {
     public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 		ItemStack itemstack = player.getItemInHand(InteractionHand.MAIN_HAND);
 		if (this.type() == BlockSetType.COPPER && itemstack.getItem() instanceof AxeItem && player.isCrouching()) {
-        	if (TallWeatheringCopperDoorBlock.getUnwaxed(state).isPresent()) {
-        		BlockState newstate = TallWeatheringCopperDoorBlock.getUnwaxed(state).get();
+        	if (TallWeatheringDoorBlock.getUnwaxed(state).isPresent()) {
+        		BlockState newstate = TallWeatheringDoorBlock.getUnwaxed(state).get();
 	            if (player instanceof ServerPlayer) {
 	                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, itemstack);
 	            }
@@ -212,7 +212,7 @@ public class TallDoorBlock extends Block implements SimpleWaterloggedBlock {
         		return InteractionResult.sidedSuccess(level.isClientSide());
         	}
 		}
-    	if (!this.type.canOpenByHand() && !state.is(DDBlockTags.HAND_OPENABLE_TALL_METAL_DOORS)) {
+    	if (!this.type.canOpenByHand() && !state.is(DDBlockTags.MOB_INTERACTABLE_TALL_DOORS)) {
             return InteractionResult.PASS;
         } 
     	else {

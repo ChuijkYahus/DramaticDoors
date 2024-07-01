@@ -16,14 +16,14 @@ public class YippeeCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MYSTICAL_OAK, DDNames.SHORT_MYSTICAL_OAK, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("yippee", "mystical_oak_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MYSTICAL_OAK, DDNames.SHORT_MYSTICAL_OAK, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("yippee", "mystical_oak_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MYSTICAL_OAK, new ResourceLocation("yippee", "mystical_oak_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MYSTICAL_OAK, new ResourceLocation("yippee", "mystical_oak_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MYSTICAL_OAK, ResourceLocation.fromNamespaceAndPath("yippee", "mystical_oak_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MYSTICAL_OAK, ResourceLocation.fromNamespaceAndPath("yippee", "mystical_oak_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MYSTICAL_OAK, new ResourceLocation("yippee", "mystical_oak_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MYSTICAL_OAK, new ResourceLocation("yippee", "mystical_oak_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MYSTICAL_OAK, ResourceLocation.fromNamespaceAndPath("yippee", "mystical_oak_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MYSTICAL_OAK, ResourceLocation.fromNamespaceAndPath("yippee", "mystical_oak_door"), "tall_wooden_door");
 	}
 }

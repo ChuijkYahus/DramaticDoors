@@ -4,8 +4,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import com.fizzware.dramaticdoors.blocks.ShortWeatheringCopperDoorBlock;
-import com.fizzware.dramaticdoors.blocks.TallWeatheringCopperDoorBlock;
+
+import com.fizzware.dramaticdoors.blocks.ShortWeatheringDoorBlock;
+import com.fizzware.dramaticdoors.blocks.TallWeatheringDoorBlock;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -27,13 +28,13 @@ public class HoneycombItemMixin
         Level levelDD = context.getLevel();
         BlockPos blockposDD = context.getClickedPos();
         BlockState blockstateDD = levelDD.getBlockState(blockposDD);
-		if (blockstateDD.getBlock() instanceof ShortWeatheringCopperDoorBlock || blockstateDD.getBlock() instanceof TallWeatheringCopperDoorBlock) {
+		if (blockstateDD.getBlock() instanceof ShortWeatheringDoorBlock || blockstateDD.getBlock() instanceof TallWeatheringDoorBlock) {
 			BlockState newstate = null;
-			if (ShortWeatheringCopperDoorBlock.getWaxed(blockstateDD).isPresent()) {
-        		newstate = ShortWeatheringCopperDoorBlock.getWaxed(blockstateDD).get();
+			if (ShortWeatheringDoorBlock.getWaxed(blockstateDD).isPresent()) {
+        		newstate = ShortWeatheringDoorBlock.getWaxed(blockstateDD).get();
 			}
-			if (TallWeatheringCopperDoorBlock.getWaxed(blockstateDD).isPresent()) {
-        		newstate = TallWeatheringCopperDoorBlock.getWaxed(blockstateDD).get();
+			if (TallWeatheringDoorBlock.getWaxed(blockstateDD).isPresent()) {
+        		newstate = TallWeatheringDoorBlock.getWaxed(blockstateDD).get();
 			}
 			if (newstate != null) {
 	            Player player = context.getPlayer();

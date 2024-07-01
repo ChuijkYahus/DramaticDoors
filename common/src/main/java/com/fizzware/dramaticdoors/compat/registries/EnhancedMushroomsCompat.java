@@ -16,19 +16,19 @@ public class EnhancedMushroomsCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BROWN_MUSHROOM, DDNames.SHORT_BROWN_MUSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("enhanced_mushrooms", "brown_mushroom_door")), BlockSetType.WARPED, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RED_MUSHROOM, DDNames.SHORT_RED_MUSHROOM, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("enhanced_mushrooms", "red_mushroom_door")), BlockSetType.CRIMSON, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_BROWN_MUSHROOM, DDNames.SHORT_BROWN_MUSHROOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "brown_mushroom_door")), BlockSetType.WARPED, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RED_MUSHROOM, DDNames.SHORT_RED_MUSHROOM, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "red_mushroom_door")), BlockSetType.CRIMSON, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BROWN_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "brown_mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RED_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "red_mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BROWN_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "brown_mushroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RED_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "red_mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BROWN_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "brown_mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RED_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "red_mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BROWN_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "brown_mushroom_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RED_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "red_mushroom_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BROWN_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "brown_mushroom_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RED_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "red_mushroom_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BROWN_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "brown_mushroom_door"), "tall_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RED_MUSHROOM, new ResourceLocation("enhanced_mushrooms", "red_mushroom_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BROWN_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "brown_mushroom_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RED_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "red_mushroom_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BROWN_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "brown_mushroom_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RED_MUSHROOM, ResourceLocation.fromNamespaceAndPath("enhanced_mushrooms", "red_mushroom_door"), "tall_wooden_door");
 	}
 }

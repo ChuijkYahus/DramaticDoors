@@ -16,14 +16,14 @@ public class VineryCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_VINERY_CHERRY, DDNames.SHORT_VINERY_CHERRY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("vinery", "cherry_door")), BlockSetType.CHERRY, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_VINERY_CHERRY, DDNames.SHORT_VINERY_CHERRY, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("vinery", "cherry_door")), BlockSetType.CHERRY, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_VINERY_CHERRY, new ResourceLocation("vinery", "cherry_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_VINERY_CHERRY, new ResourceLocation("vinery", "cherry_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_VINERY_CHERRY, ResourceLocation.fromNamespaceAndPath("vinery", "cherry_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_VINERY_CHERRY, ResourceLocation.fromNamespaceAndPath("vinery", "cherry_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_VINERY_CHERRY, new ResourceLocation("vinery", "cherry_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_VINERY_CHERRY, new ResourceLocation("vinery", "cherry_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_VINERY_CHERRY, ResourceLocation.fromNamespaceAndPath("vinery", "cherry_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_VINERY_CHERRY, ResourceLocation.fromNamespaceAndPath("vinery", "cherry_door"), "tall_wooden_door");
 	}
 }

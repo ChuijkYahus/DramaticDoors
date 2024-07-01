@@ -177,7 +177,7 @@ public class AutomaticDoorCompat
 			if (((TallDoorBlock)block).type().canOpenByHand()) {
 				return true;
 			}
-			if (!((TallDoorBlock)block).type().canOpenByHand() && state.is(DDBlockTags.HAND_OPENABLE_TALL_METAL_DOORS)) {
+			if (!((TallDoorBlock)block).type().canOpenByHand() && state.is(DDBlockTags.MOB_INTERACTABLE_TALL_DOORS)) {
 				return true;
 			}
 		}

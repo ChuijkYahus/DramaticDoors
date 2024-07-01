@@ -34,58 +34,58 @@ public class DDFabricRegistry
 		// Iterate through the blocks and items to register.
 		for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS_TO_REGISTER) {
 			// DramaticDoors.LOGGER.info("Registering: " + pair.getA());
-			Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
+			Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
 		}
 		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
-			Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
+			Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
 		}
 	}
 
 	public static void registerBlockEntities() {
 		if (Compats.isModLoaded("supplementaries", FabricUtils.INSTANCE)) {
 			DDBlockEntities.TALL_NETHERITE_DOOR = BlockEntityType.Builder.of(TallNetheriteDoorBlockEntity::new, SupplementariesCompat.SHORT_NETHERITE_DOOR, SupplementariesCompat.TALL_NETHERITE_DOOR).build();
-			Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, new ResourceLocation(DramaticDoors.MOD_ID, "tall_netherite_door"), DDBlockEntities.TALL_NETHERITE_DOOR);
+			Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "tall_netherite_door"), DDBlockEntities.TALL_NETHERITE_DOOR);
 		}
 		/*if (Compats.isModLoaded("create", FabricUtils.INSTANCE)) {
 			CreateFabricCompat.TALL_SLIDING_DOOR_BLOCK_ENTITY = BlockEntityType.Builder.of(TallFabricCreateSlidingDoorBlockEntity::new, CreateCompat.TALL_ANDESITE_DOOR, CreateCompat.TALL_BRASS_DOOR, CreateCompat.TALL_COPPER_DOOR, CreateCompat.TALL_FRAMED_GLASS_DOOR, CreateCompat.TALL_TRAIN_DOOR).build(null);
-			Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, new ResourceLocation(DramaticDoors.MOD_ID, "tall_sliding_door"), CreateFabricCompat.TALL_SLIDING_DOOR_BLOCK_ENTITY);
+			Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, "tall_sliding_door"), CreateFabricCompat.TALL_SLIDING_DOOR_BLOCK_ENTITY);
 		}*/
 	}
 
 	public static void registerCreativeTabs() {
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, DDCreativeTabs.MAIN_TAB.location(), FabricItemGroup.builder().title(Component.translatable("itemGroup.dramaticdoors")).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, DDCreativeTabs.MAIN_TAB.location(), FabricItemGroup.builder().title(Component.translatable("itemGroup.dramaticdoors")).icon(() -> { return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_OAK))); }).build());
 		if (Compats.isModLoaded("chipped", FabricUtils.INSTANCE)) {
 			Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, DDCreativeTabs.CHIPPED_TAB.location(), FabricItemGroup.builder().title(Component.translatable("itemGroup.dramaticdoors_chipped")).icon(() -> {
-				return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_CHIPPED_BIRCH_GATED)));
+				return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_CHIPPED_BIRCH_GATED)));
 			}).build());
 		}
 		if (Compats.isModLoaded("mcwdoors", FabricUtils.INSTANCE)) {
 			Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, DDCreativeTabs.MACAW_TAB.location(), FabricItemGroup.builder().title(Component.translatable("itemGroup.dramaticdoors_macaw")).icon(() -> {
-				return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MACAW_DARK_OAK_BARN)));
+				return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_MACAW_DARK_OAK_BARN)));
 			}).build());
 		}
 		if (Compats.isModLoaded("manyideas_doors", FabricUtils.INSTANCE)) {
 			Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, DDCreativeTabs.MANYIDEAS_TAB.location(), FabricItemGroup.builder().title(Component.translatable("itemGroup.dramaticdoors_manyideas")).icon(() -> {
-				return new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_MANYIDEAS_CRIMSON_BLANK)));
+				return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_MANYIDEAS_CRIMSON_BLANK)));
 			}).build());
 		}
 	}
 
 	public static void registerWeatherables() {
-		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)));
-		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)));
-		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)));
-		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)));
-		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)));
-		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_EXPOSED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_OXIDIZED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_EXPOSED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_WEATHERED_COPPER)));
-		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_OXIDIZED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerOxidizableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_OXIDIZED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_EXPOSED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_EXPOSED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WEATHERED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_WEATHERED_COPPER)));
+		OxidizableBlocksRegistry.registerWaxableBlockPair(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_OXIDIZED_COPPER)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_WAXED_OXIDIZED_COPPER)));
 	}
 	
 	public static void registerFuels() {

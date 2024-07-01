@@ -27,13 +27,11 @@ repositories {
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
     mappings loom.officialMojangMappings()
+    implementation project(":common")
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-    modImplementation "com.terraformersmc:modmenu:10.0.0-beta.1", {
-        exclude module: "fabric-api"
-    }
-    implementation project(":common")
-	// modImplementation("curse.maven:macaws-doors-378646:4974690")
+    modImplementation "com.terraformersmc:modmenu:11.0.1", { exclude module: "fabric-api" }
+	modImplementation "curse.maven:macaws-doors-378646:5439190"
     // modImplementation("com.simibubi.create:create-fabric-${rootProject.minecraft_version}:${rootProject.create_fabric_version}")
 }
 

@@ -73,7 +73,7 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
     protected static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 3.0D, 16.0D, 16.0D);
     private final BlockSetType type;
 	
-    public static final ResourceLocation TOOTH_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_TOOTH);
+    public static final ResourceLocation TOOTH_DOOR_RES = ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.SHORT_TOOTH);
     
     public ShortDoorBlock(BlockSetType blockset, Block from) {
         this(blockset, from, null);
@@ -157,8 +157,8 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
     public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 		ItemStack itemstack = player.getItemInHand(InteractionHand.MAIN_HAND);
 		if (this.type() == BlockSetType.COPPER && itemstack.getItem() instanceof AxeItem && player.isCrouching()) {
-        	if (ShortWeatheringCopperDoorBlock.getUnwaxed(state).isPresent()) {
-        		BlockState newstate = ShortWeatheringCopperDoorBlock.getUnwaxed(state).get();
+        	if (ShortWeatheringDoorBlock.getUnwaxed(state).isPresent()) {
+        		BlockState newstate = ShortWeatheringDoorBlock.getUnwaxed(state).get();
 	            if (player instanceof ServerPlayer) {
 	                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, itemstack);
 	            }
@@ -169,7 +169,7 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
         		return InteractionResult.sidedSuccess(level.isClientSide());
         	}
 		}
-    	if (!this.type.canOpenByHand() && !state.is(DDBlockTags.HAND_OPENABLE_SHORT_METAL_DOORS)) {
+    	if (!this.type.canOpenByHand() && !state.is(DDBlockTags.MOB_INTERACTABLE_SHORT_DOORS)) {
             return InteractionResult.PASS;
         } 
     	else {

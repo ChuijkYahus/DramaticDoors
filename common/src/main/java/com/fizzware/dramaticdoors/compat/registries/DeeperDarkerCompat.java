@@ -16,14 +16,14 @@ public class DeeperDarkerCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ECHO, DDNames.SHORT_ECHO, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("deeperdarker", "echo_door")), BlockSetType.DARK_OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ECHO, DDNames.SHORT_ECHO, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("deeperdarker", "echo_door")), BlockSetType.DARK_OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_ECHO, new ResourceLocation("deeperdarker", "echo_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_ECHO, new ResourceLocation("deeperdarker", "echo_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_ECHO, ResourceLocation.fromNamespaceAndPath("deeperdarker", "echo_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_ECHO, ResourceLocation.fromNamespaceAndPath("deeperdarker", "echo_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_ECHO, new ResourceLocation("deeperdarker", "echo_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_ECHO, new ResourceLocation("deeperdarker", "echo_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_ECHO, ResourceLocation.fromNamespaceAndPath("deeperdarker", "echo_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_ECHO, ResourceLocation.fromNamespaceAndPath("deeperdarker", "echo_door"), "tall_wooden_door");
 	}
 }

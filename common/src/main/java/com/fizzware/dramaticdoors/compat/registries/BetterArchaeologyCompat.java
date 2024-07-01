@@ -16,14 +16,14 @@ public class BetterArchaeologyCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ROTTEN, DDNames.SHORT_ROTTEN, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("betterarcheology", "rotten_door")), BlockSetType.SPRUCE, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ROTTEN, DDNames.SHORT_ROTTEN, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("betterarcheology", "rotten_door")), BlockSetType.SPRUCE, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_ROTTEN, new ResourceLocation("betterarcheology", "rotten_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_ROTTEN, new ResourceLocation("betterarcheology", "rotten_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_ROTTEN, ResourceLocation.fromNamespaceAndPath("betterarcheology", "rotten_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_ROTTEN, ResourceLocation.fromNamespaceAndPath("betterarcheology", "rotten_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_ROTTEN, new ResourceLocation("betterarcheology", "rotten_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_ROTTEN, new ResourceLocation("betterarcheology", "rotten_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_ROTTEN, ResourceLocation.fromNamespaceAndPath("betterarcheology", "rotten_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_ROTTEN, ResourceLocation.fromNamespaceAndPath("betterarcheology", "rotten_door"), "tall_wooden_door");
 	}
 }

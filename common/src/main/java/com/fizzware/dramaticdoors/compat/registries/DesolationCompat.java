@@ -16,14 +16,14 @@ public class DesolationCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHARRED, DDNames.SHORT_CHARRED, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("desolation", "charred_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CHARRED, DDNames.SHORT_CHARRED, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("desolation", "charred_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHARRED, new ResourceLocation("desolation", "charred_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHARRED, new ResourceLocation("desolation", "charred_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CHARRED, ResourceLocation.fromNamespaceAndPath("desolation", "charred_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CHARRED, ResourceLocation.fromNamespaceAndPath("desolation", "charred_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHARRED, new ResourceLocation("desolation", "charred_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHARRED, new ResourceLocation("desolation", "charred_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CHARRED, ResourceLocation.fromNamespaceAndPath("desolation", "charred_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CHARRED, ResourceLocation.fromNamespaceAndPath("desolation", "charred_door"), "tall_wooden_door");
 	}
 }

@@ -1,5 +1,4 @@
-//Disabled: Macaw's Doors not on 1.20.6 yet.
-/*package com.fizzware.dramaticdoors.fabric.mixin;
+package com.fizzware.dramaticdoors.fabric.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -7,9 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.fabricmc.loader.api.FabricLoader;
-
 import net.kikoz.mcwdoors.objects.JapaneseDoors;
-
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,4 +31,4 @@ public class JapaneseDoorBlockMixinFabric
 			builder.add(WATERLOGGED);
 		}
 	}
-}*/
+}

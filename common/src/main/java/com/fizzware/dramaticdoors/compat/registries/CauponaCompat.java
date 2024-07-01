@@ -16,14 +16,14 @@ public class CauponaCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WALNUT, DDNames.SHORT_WALNUT, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("caupona", "walnut_door")), BlockSetType.OAK, true);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WALNUT, DDNames.SHORT_WALNUT, DDRegistry.getBlockFromResourceLocation(ResourceLocation.fromNamespaceAndPath("caupona", "walnut_door")), BlockSetType.OAK, true);
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WALNUT, new ResourceLocation("caupona", "walnut_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WALNUT, new ResourceLocation("caupona", "walnut_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_WALNUT, ResourceLocation.fromNamespaceAndPath("caupona", "walnut_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_WALNUT, ResourceLocation.fromNamespaceAndPath("caupona", "walnut_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WALNUT, new ResourceLocation("caupona", "walnut_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WALNUT, new ResourceLocation("caupona", "walnut_door"), "tall_wooden_door");
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_WALNUT, ResourceLocation.fromNamespaceAndPath("caupona", "walnut_door"), true);
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_WALNUT, ResourceLocation.fromNamespaceAndPath("caupona", "walnut_door"), "tall_wooden_door");
 	}
 }

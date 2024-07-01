@@ -19,6 +19,6 @@ public class DDItemModelProvider extends ItemModelProvider
 	protected void registerModels() {
 		// Insert any items that needs to be data-generated. Example below:
 		//super.basicItem(DDItems.SHORT_OAK_DOOR);
-		super.basicItem(BuiltInRegistries.ITEM.get(new ResourceLocation(DramaticDoors.MOD_ID, DDNames.TALL_SPRUCE)));
+		super.basicItem(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, DDNames.TALL_SPRUCE)));
 	}
 }

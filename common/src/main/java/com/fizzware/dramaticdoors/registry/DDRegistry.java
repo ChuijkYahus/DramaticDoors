@@ -47,14 +47,13 @@ public class DDRegistry
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_CRIMSON, DDNames.SHORT_CRIMSON, Blocks.CRIMSON_DOOR, BlockSetType.CRIMSON, true);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WARPED, DDNames.SHORT_WARPED, Blocks.WARPED_DOOR, BlockSetType.WARPED, true);
 		// Register iron door.
-		if (Compats.IMMERSIVE_WEATHERING_INSTALLED) {
+		if (Compats.modChecker.isModLoaded("immersive_weathering")) {
 			DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_IRON, DDNames.SHORT_IRON, Blocks.IRON_DOOR.properties(), BlockSetType.IRON, true, WeatherState.UNAFFECTED);
 		}
 		else {
 			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_IRON, DDNames.SHORT_IRON, Blocks.IRON_DOOR, BlockSetType.IRON, true);
 		}
 		// Register copper doors.
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_IRON, DDNames.SHORT_IRON, Blocks.IRON_DOOR, BlockSetType.IRON, true);
 		DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_COPPER, DDNames.SHORT_COPPER, Blocks.COPPER_DOOR.properties(), BlockSetType.COPPER, true, WeatherState.UNAFFECTED);
 		DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_EXPOSED_COPPER, DDNames.SHORT_EXPOSED_COPPER, Blocks.EXPOSED_COPPER_DOOR.properties(), BlockSetType.COPPER, true, WeatherState.EXPOSED);
 		DDRegistry.registerWeatheringDoorBlockAndItem(DDNames.TALL_WEATHERED_COPPER, DDNames.SHORT_WEATHERED_COPPER, Blocks.WEATHERED_COPPER_DOOR.properties(), BlockSetType.COPPER, true, WeatherState.WEATHERED);

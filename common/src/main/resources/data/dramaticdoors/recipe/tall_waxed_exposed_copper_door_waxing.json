@@ -4,7 +4,7 @@
   "group": "tall_copper_door_waxing",
   "ingredients": [
     {
-      "id": "dramaticdoors:tall_exposed_copper_door"
+      "item": "dramaticdoors:tall_exposed_copper_door"
     },
     {
       "item": "minecraft:honeycomb"

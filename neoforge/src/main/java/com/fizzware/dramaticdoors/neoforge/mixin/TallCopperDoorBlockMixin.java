@@ -9,8 +9,8 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.neoforged.neoforge.common.ToolAction;
-import net.neoforged.neoforge.common.ToolActions;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 @Mixin(TallWeatheringDoorBlock.class)
 public class TallCopperDoorBlockMixin extends TallDoorBlock
@@ -20,8 +20,8 @@ public class TallCopperDoorBlockMixin extends TallDoorBlock
 	}
 
 	@Override
-	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-		if (ToolActions.AXE_SCRAPE == toolAction && !simulate) {
+	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility toolAction, boolean simulate) {
+		if (ItemAbilities.AXE_SCRAPE == toolAction && !simulate) {
             return TallWeatheringDoorBlock.getPrevious(state).orElse(null);
 		}
 		return super.getToolModifiedState(state, context, toolAction, simulate);

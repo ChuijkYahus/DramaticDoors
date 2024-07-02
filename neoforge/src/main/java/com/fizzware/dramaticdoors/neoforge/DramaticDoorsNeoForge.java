@@ -44,7 +44,6 @@ public class DramaticDoorsNeoForge
     	if (Compats.AUTOMATIC_DOORS_INSTALLED) {
     		NeoForge.EVENT_BUS.register(new AutomaticDoorCompat());
     	}
-    	DDNeoForgeRegistry.registerWeatheringBlocks();
     }
     
     private void setupClient(final FMLClientSetupEvent event) {

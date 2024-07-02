@@ -8,8 +8,8 @@ import com.fizzware.dramaticdoors.blocks.ShortWeatheringDoorBlock;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.ToolAction;
-import net.neoforged.neoforge.common.ToolActions;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 @Mixin(ShortDoorBlock.class)
 public class ShortDoorBlockMixin extends Block
@@ -19,8 +19,8 @@ public class ShortDoorBlockMixin extends Block
 	}
 
 	@Override
-	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-		if (ToolActions.AXE_WAX_OFF == toolAction && !simulate) {
+	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility toolAction, boolean simulate) {
+		if (ItemAbilities.AXE_WAX_OFF == toolAction && !simulate) {
             return ShortWeatheringDoorBlock.getUnwaxed(state).orElse(null);
 		}
 		return super.getToolModifiedState(state, context, toolAction, simulate);

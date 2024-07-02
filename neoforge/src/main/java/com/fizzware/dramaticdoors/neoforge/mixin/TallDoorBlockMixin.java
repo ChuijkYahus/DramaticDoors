@@ -8,8 +8,8 @@ import com.fizzware.dramaticdoors.blocks.TallWeatheringDoorBlock;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.ToolAction;
-import net.neoforged.neoforge.common.ToolActions;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 @Mixin(TallDoorBlock.class)
 public class TallDoorBlockMixin extends Block
@@ -19,8 +19,8 @@ public class TallDoorBlockMixin extends Block
 	}
 
 	@Override
-	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-		if (ToolActions.AXE_WAX_OFF == toolAction && !simulate) {
+	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility toolAction, boolean simulate) {
+		if (ItemAbilities.AXE_WAX_OFF == toolAction && !simulate) {
             return TallWeatheringDoorBlock.getUnwaxed(state).orElse(null);
 		}
 		return super.getToolModifiedState(state, context, toolAction, simulate);

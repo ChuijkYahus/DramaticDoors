@@ -5,8 +5,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.fizzware.dramaticdoors.fabric.entity.ai.goal.OpenShortDoorsTask;
-import com.fizzware.dramaticdoors.fabric.entity.ai.goal.OpenTallDoorsTask;
+import com.fizzware.dramaticdoors.entity.ai.goal.OpenShortDoorsTask;
+import com.fizzware.dramaticdoors.entity.ai.goal.OpenTallDoorsTask;
 import com.google.common.collect.ImmutableList;
 
 import net.minecraft.world.entity.ai.Brain;

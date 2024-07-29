@@ -17,7 +17,7 @@ public class DDMixinConfigNeoForge implements IMixinConfigPlugin
 
 	@Override
 	public void onLoad(String mixinPackage) {
-		DDConfigNF.loadConfig(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("dramaticdoors-common.toml"));
+		DDConfigNF.loadConfig(DDConfigNF.CONFIG, FMLPaths.CONFIGDIR.get().resolve("dramaticdoors-startup.toml"));
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class DDMixinConfigNeoForge implements IMixinConfigPlugin
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.neoforge.common.mixin.DoorBlockMixin")) {
 			return DDConfigNF.waterloggableDoors.get();
 		}
-		if (mixinClassName.equals("com.fizzware.dramaticdoors.neoforge.forge.mixin.JapaneseDoorBlockMixinForge")) {
+		if (mixinClassName.equals("com.fizzware.dramaticdoors.neoforge.forge.mixin.JapaneseDoorBlockMixinNeoForge")) {
 			return DDConfigNF.waterloggableDoors.get() && LoadingModList.get().getModFileById("mcwdoors") != null;
 		}
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.neoforge.common.mixin.FenceGateBlockMixin")) {

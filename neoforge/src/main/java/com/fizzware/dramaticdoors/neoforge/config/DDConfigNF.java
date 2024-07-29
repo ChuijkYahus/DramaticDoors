@@ -14,12 +14,7 @@ public class DDConfigNF
 	
 	public static ModConfigSpec CONFIG;
 
-	public static final String CATEGORY_EXPERIMENTAL = "Experimental";
-
 	public static ModConfigSpec.BooleanValue devMode;
-
-	public static final String CATEGORY_MIXINS = "Mixins";
-	
 	public static ModConfigSpec.BooleanValue waterloggableDoors;
 	public static ModConfigSpec.BooleanValue waterloggableFenceGates;
 	
@@ -31,7 +26,7 @@ public class DDConfigNF
 	
 	private static void initializeConfig()
 	{
-		BUILDER.comment("Dramatic Doors").push(CATEGORY_EXPERIMENTAL);
+		BUILDER.comment("Dramatic Doors").push(DDConfigCommon.CATEGORY_EXPERIMENTAL);
 		
         devMode = BUILDER
                 .comment("Development mode ensures that all compat doors are always registered regardless of whether mods are installed or not, for development purposes.  " + "Default: false")
@@ -39,7 +34,7 @@ public class DDConfigNF
 		
         BUILDER.pop();
         
-		BUILDER.push(CATEGORY_MIXINS);
+		BUILDER.push(DDConfigCommon.CATEGORY_MIXINS);
 		
         waterloggableDoors = BUILDER
                 .comment("Allow doors to be waterlogged. Enable to allow waterlogging. Disable for compatibility with certain mods. Requires restart after changing.  " + "Default: true")
@@ -55,7 +50,9 @@ public class DDConfigNF
     public static void loadConfig(ModConfigSpec spec, Path path) {
         final CommentedFileConfig configData = CommentedFileConfig.builder(path).sync().autosave().writingMode(WritingMode.REPLACE).build();
         configData.load();
-        spec.setConfig(configData);
+        if (!spec.isCorrect(configData)) {
+        	spec.correct(configData);
+        }
     }
 
     public static boolean getConfigBooleanValue(ModConfigSpec spec, Path path, String variable) {

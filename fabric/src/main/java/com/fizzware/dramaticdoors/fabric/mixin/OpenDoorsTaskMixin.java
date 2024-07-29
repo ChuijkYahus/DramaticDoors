@@ -30,11 +30,11 @@ public class OpenDoorsTaskMixin
 	@Inject(method = "closeDoorsThatIHaveOpenedOrPassedThrough(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/pathfinder/Node;Lnet/minecraft/world/level/pathfinder/Node;Ljava/util/Set;Ljava/util/Optional;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"), locals = LocalCapture.CAPTURE_FAILSOFT)
 	private static void injectPathToDoor(ServerLevel world, LivingEntity entity, @Nullable Node lastNode, @Nullable Node currentNode, Set<GlobalPos> doors, Optional<List<LivingEntity>> otherMobs, CallbackInfo ci, Iterator<GlobalPos> iterator, GlobalPos globalPos, BlockPos blockPos) {
 		BlockState blockStateDD = world.getBlockState(blockPos);
-        if (blockStateDD.is(DDBlockTags.TALL_WOODEN_DOORS, state -> state.getBlock() instanceof TallDoorBlock)) {
+        if (blockStateDD.is(DDBlockTags.MOB_INTERACTABLE_TALL_DOORS, state -> state.getBlock() instanceof TallDoorBlock)) {
         	TallDoorBlock tallDoorBlock = (TallDoorBlock)blockStateDD.getBlock();
         	tallDoorBlock.setOpen(entity, world, blockStateDD, blockPos, false);
         }
-        if (blockStateDD.is(DDBlockTags.SHORT_WOODEN_DOORS, state -> state.getBlock() instanceof ShortDoorBlock)) {
+        if (blockStateDD.is(DDBlockTags.MOB_INTERACTABLE_SHORT_DOORS, state -> state.getBlock() instanceof ShortDoorBlock)) {
         	ShortDoorBlock shortDoorBlock = (ShortDoorBlock)blockStateDD.getBlock();
         	shortDoorBlock.setOpen(entity, world, blockStateDD, blockPos, false);
         }

@@ -49,7 +49,7 @@ public class DoorInteractGoalMixin
 
 	@Inject(method = "canUse()Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/DoorBlock;isWoodenDoor(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Z", shift = At.Shift.AFTER), cancellable = true)
 	private void injectCanStart(CallbackInfoReturnable<Boolean> ci) {
-		this.hasDoor = TallDoorBlock.isWoodenDoor(this.mob.level(), this.doorPos) || ShortDoorBlock.isWoodenDoor(this.mob.level(), this.doorPos);
+		this.hasDoor = TallDoorBlock.isMobInteractable(this.mob.level(), this.doorPos) || ShortDoorBlock.isMobInteractable(this.mob.level(), this.doorPos);
 		if (this.hasDoor) {
 			ci.setReturnValue(true);
 		}

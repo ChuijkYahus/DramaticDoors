@@ -3,8 +3,8 @@
   "id": "dramaticdoors",
   "version": "${version}",
 
-  "name": "Dramatic Doors (NeoQuiFabrge)",
-  "description": "Dramatic Doors, the mod that adds three block tall doors and one block short doors! Compatible with Fabric, Forge, NeoForge, and Quilt. Supports over 80 mods!",
+  "name": "Dramatic Doors (NeoQuiFab)",
+  "description": "${description}",
   "authors": [
     "Fizzware (Original creator)", "Kitteh6660 (Fabric port)"
   ],

@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import com.fizzware.dramaticdoors.fabric.entity.ai.goal.DDVillagerTasks;
+import com.fizzware.dramaticdoors.entity.ai.goal.DDVillagerTasks;
 
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.npc.Villager;

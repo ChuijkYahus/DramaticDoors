@@ -50,6 +50,7 @@
       "registerBrainGoals(Lnet/minecraft/world/entity/ai/Brain;)V": "Lnet/minecraft/class_1646;method_19174(Lnet/minecraft/class_4095;)V"
     },
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/WalkNodeEvaluatorMixin": {
+      "Lnet/minecraft/world/level/block/state/BlockState;getBlock()Lnet/minecraft/world/level/block/Block;": "Lnet/minecraft/class_2680;method_26204()Lnet/minecraft/class_2248;",
       "getPathTypeFromState(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/PathType;": "Lnet/minecraft/class_14;method_58(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;)Lnet/minecraft/class_7;"
     },
     "com/fizzware/dramaticdoors/fabric/fabric/mixin/WitchMixin": {
@@ -109,6 +110,10 @@
       "com/fizzware/dramaticdoors/fabric/fabric/mixin/VillagerMixin": {
         "Lnet/minecraft/world/entity/ai/behavior/VillagerGoalPackages;getCorePackage(Lnet/minecraft/world/entity/npc/VillagerProfession;F)Lcom/google/common/collect/ImmutableList;": "Lnet/minecraft/class_4129;method_19020(Lnet/minecraft/class_3852;F)Lcom/google/common/collect/ImmutableList;",
         "registerBrainGoals(Lnet/minecraft/world/entity/ai/Brain;)V": "Lnet/minecraft/class_1646;method_19174(Lnet/minecraft/class_4095;)V"
+      },
+      "com/fizzware/dramaticdoors/fabric/fabric/mixin/WalkNodeEvaluatorMixin": {
+        "Lnet/minecraft/world/level/block/state/BlockState;getBlock()Lnet/minecraft/world/level/block/Block;": "Lnet/minecraft/class_2680;method_26204()Lnet/minecraft/class_2248;",
+        "getPathTypeFromState(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/PathType;": "Lnet/minecraft/class_14;method_58(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;)Lnet/minecraft/class_7;"
       },
       "com/fizzware/dramaticdoors/fabric/fabric/mixin/WitchMixin": {
         "registerGoals()V": "Lnet/minecraft/class_1640;method_5959()V"

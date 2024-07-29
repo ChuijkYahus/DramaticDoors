@@ -19,7 +19,7 @@ import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 @Mixin(WalkNodeEvaluator.class)
 public class WalkNodeEvaluatorMixin
 {
-	@Inject(at = @At("RETURN"), method = "getPathTypeFromState(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/PathType;", cancellable = true)
+	@Inject(method = "getPathTypeFromState(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/PathType;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getBlock()Lnet/minecraft/world/level/block/Block;"), cancellable = true)
 	private static void injectDoorType(BlockGetter world, BlockPos pos, CallbackInfoReturnable<PathType> callback) {
 		BlockState blockStateDDCheck = world.getBlockState(pos);
 		if ((blockStateDDCheck.getBlock() instanceof ShortDoorBlock) && !blockStateDDCheck.getValue(BlockStateProperties.OPEN).booleanValue()) {

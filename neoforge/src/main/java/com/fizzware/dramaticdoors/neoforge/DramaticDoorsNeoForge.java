@@ -15,6 +15,8 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(DramaticDoors.MOD_ID)
@@ -27,13 +29,14 @@ public class DramaticDoorsNeoForge
     	// Please let this be a normal field trip.    	
     	// With the Mr. Fizzware? No freakin' way! Register events for the Magic NeoForge Bus to take them on an extraordinary trip.
     	Compats.modChecker = NeoforgeUtils.INSTANCE;
-    	container.registerConfig(ModConfig.Type.COMMON, DDConfigNF.CONFIG);
+    	container.registerConfig(ModConfig.Type.STARTUP, DDConfigNF.CONFIG);
     	bus.register(DDNeoForgeRegistry.class);
     	bus.register(NeoforgeUtils.class);
     	
         bus.addListener(this::setupCommon);
         if (FMLEnvironment.dist == Dist.CLIENT) { 
         	bus.addListener(this::setupClient); 
+        	container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         }
     	if (Compats.QUARK_INSTALLED) {
     		bus.register(new QuarkDoubleDoorCompat());

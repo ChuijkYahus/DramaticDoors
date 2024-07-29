@@ -334,6 +334,14 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
 	public static boolean isWoodenDoor(BlockState state) {
 		return state.getBlock() instanceof ShortDoorBlock && (state.is(DDBlockTags.SHORT_WOODEN_DOORS));
 	}
+	
+	public static boolean isMobInteractable(Level level, BlockPos pos) {
+		return isMobInteractable(level.getBlockState(pos));
+	}
+	
+	public static boolean isMobInteractable(BlockState state) {
+		return state.getBlock() instanceof ShortDoorBlock && (state.is(DDBlockTags.MOB_INTERACTABLE_SHORT_DOORS));
+	}
     
     //Double Doors Compatibility
 	public static void tryOpenDoubleDoor(Level world, BlockState state, BlockPos pos) {

@@ -14,7 +14,7 @@ import net.minecraft.world.entity.monster.Witch;
 @Mixin(Witch.class)
 public class WitchMixin 
 {	
-	@Inject(at = @At("TAIL"), method = "registerGoals()V")
+	@Inject(method = "registerGoals()V", at = @At("TAIL"))
 	private void addDoorGoals(CallbackInfo info) {
 		((GroundPathNavigation)((Mob)(Object)this).getNavigation()).setCanOpenDoors(true);
 		((Mob)(Object)this).goalSelector.addGoal(1, new OpenDoorGoal((Mob)(Object)this, true));

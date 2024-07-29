@@ -388,13 +388,20 @@ public class TallDoorBlock extends Block implements SimpleWaterloggedBlock {
         return mirrorIn == Mirror.NONE ? state : state.rotate(mirrorIn.getRotation(state.getValue(FACING))).cycle(HINGE);
     }
 
-    // TODO: Figure out if Zombie breaking Tall Doors is feasible...
     public static boolean isWoodenDoor(Level level, BlockPos pos) {
     	return isWoodenDoor(level.getBlockState(pos));
     }
 
 	public static boolean isWoodenDoor(BlockState state) {
 		return state.getBlock() instanceof TallDoorBlock && (state.is(DDBlockTags.TALL_WOODEN_DOORS));
+	}
+	
+	public static boolean isMobInteractable(Level level, BlockPos pos) {
+		return isMobInteractable(level.getBlockState(pos));
+	}
+	
+	public static boolean isMobInteractable(BlockState state) {
+		return state.getBlock() instanceof TallDoorBlock && (state.is(DDBlockTags.MOB_INTERACTABLE_TALL_DOORS));
 	}
     
     //Double Doors Compatibility

@@ -19,12 +19,6 @@ repositories {
     }
 }
 
-// mixin {
-//    if (!file('src/main/resources/${rootProject.mod_id}_neoforge.refmap.json').exists()) {
-//        add(sourceSets.main, "${rootProject.mod_id}_neoforge.refmap.json")
-//    }
-// }
-
 minecraft.accessTransformers.file project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
 
 runs {
@@ -35,11 +29,9 @@ runs {
     }	
 	client {
 		systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-		// programArgument "-mixin.config=" + "dramaticdoors_neoforge.mixins.json"
 	}
 	server {
 		systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-		// programArgument "-mixin.config=" + "dramaticdoors_neoforge.mixins.json" + " --nogui"
 	}
 	data {
 		programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
@@ -51,7 +43,7 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 dependencies {
     implementation("net.neoforged:neoforge:${project.neoforge_version}")
     compileOnly project(":common")
-	// implementation("curse.maven:macaws-doors-378646:4781680")
+	implementation("curse.maven:macaws-doors-378646:5439155")
     // implementation("com.simibubi.create:create-${project.minecraft_version}:${project.create_version}:slim") { transitive = false }
     // implementation("com.jozufozu.flywheel:flywheel-forge-${project.minecraft_version}:${project.flywheel_version}")
     // implementation("com.tterrag.registrate:Registrate:${project.registrate_version}")

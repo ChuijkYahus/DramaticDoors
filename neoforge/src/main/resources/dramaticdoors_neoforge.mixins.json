@@ -16,6 +16,7 @@
     "ShortCopperDoorBlockMixin",
     "TallCopperDoorBlockMixin",
     "HoneycombItemMixin",
+    "JapaneseDoorBlockMixinNeoForge",
     "DoorInteractGoalMixin",
     "OpenDoorsTaskMixin",
     "PiglinBrainMixin",

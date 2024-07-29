@@ -1181,12 +1181,14 @@ public class DDNames
     public static final String SHORT_NS_MAPLE = "short_ns_maple_door";
     public static final String SHORT_NS_OLIVE = "short_ns_olive_door";
     public static final String SHORT_NS_PALO_VERDE = "short_ns_palo_verde_door";
-    public static final String SHORT_NS_PAPER = "short_ns_paper_door";
     public static final String SHORT_NS_REDWOOD = "short_ns_redwood_door";
     public static final String SHORT_NS_SAXAUL = "short_ns_saxaul_door";
     public static final String SHORT_NS_SUGI = "short_ns_sugi_door";
     public static final String SHORT_NS_WILLOW = "short_ns_willow_door";
     public static final String SHORT_NS_WISTERIA = "short_ns_wisteria_door";
+    public static final String SHORT_NS_PAPER = "short_ns_paper_door";
+    public static final String SHORT_NS_FRAMED_PAPER = "short_ns_framed_paper_door";
+    public static final String SHORT_NS_BLOOMING_PAPER = "short_ns_blooming_paper_door";
     
     public static final String TALL_NS_ASPEN = "tall_ns_aspen_door";
     public static final String TALL_NS_CEDAR = "tall_ns_cedar_door";
@@ -1199,13 +1201,15 @@ public class DDNames
     public static final String TALL_NS_MAHOGANY = "tall_ns_mahogany_door";
     public static final String TALL_NS_MAPLE = "tall_ns_maple_door";
     public static final String TALL_NS_OLIVE = "tall_ns_olive_door";
-    public static final String TALL_NS_PAPER = "tall_ns_paper_door";
     public static final String TALL_NS_PALO_VERDE = "tall_ns_palo_verde_door";
     public static final String TALL_NS_REDWOOD = "tall_ns_redwood_door";
     public static final String TALL_NS_SAXAUL = "tall_ns_saxaul_door";
     public static final String TALL_NS_SUGI = "tall_ns_sugi_door";
     public static final String TALL_NS_WILLOW = "tall_ns_willow_door";
     public static final String TALL_NS_WISTERIA = "tall_ns_wisteria_door";
+    public static final String TALL_NS_PAPER = "tall_ns_paper_door";
+    public static final String TALL_NS_FRAMED_PAPER = "tall_ns_framed_paper_door";
+    public static final String TALL_NS_BLOOMING_PAPER = "tall_ns_blooming_paper_door";
     
     //Nether's Exoticism
     public static final String SHORT_JABOTICABA = "short_jaboticaba_door";

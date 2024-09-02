@@ -13,6 +13,8 @@
     "FenceGateBlockMixin",
     "FenceGateFrameBlockMixinForge",
     "JapaneseDoorBlockMixinForge",
+    "DoTBDoorBlockMixin",
+    "DoTBFenceGateBlockMixin",
     "DoorInteractGoalMixin",
     "OpenDoorsTaskMixin",
     "WitchMixin"
@@ -23,8 +25,8 @@
   "server": [
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 1,
+    "maxShiftBy": 2
   },
-  "maxShiftBy": 2,
   "refmap": "dramaticdoors_forge.refmap.json"
 }

@@ -27,20 +27,28 @@ public class DDMixinConfigForge implements IMixinConfigPlugin
 
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+		// Mixin into vanilla
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.DoorBlockMixin")) {
 			return DDConfigForge.waterloggableDoors.get();
+		}
+		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.FenceGateBlockMixin")) {
+			return DDConfigForge.waterloggableFenceGates.get();
+		}
+		// Mixin into compats
+		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.DoTBDoorBlockMixin")) {
+			return DDConfigForge.waterloggableDoors.get() && LoadingModList.get().getModFileById("dawnoftimebuilder") != null;
 		}
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.JapaneseDoorBlockMixinForge")) {
 			return DDConfigForge.waterloggableDoors.get() && LoadingModList.get().getModFileById("mcwdoors") != null;
 		}
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.FramedGateBlockMixinForge")) {
-			return DDConfigForge.waterloggableDoors.get() && LoadingModList.get().getModFileById("framedblocks") != null;
+			return DDConfigForge.waterloggableFenceGates.get() && LoadingModList.get().getModFileById("framedblocks") != null;
+		}
+		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.DoTBFenceGateBlockMixin")) {
+			return DDConfigForge.waterloggableFenceGates.get() && LoadingModList.get().getModFileById("dawnoftimebuilder") != null;
 		}
 		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.FenceGateFrameBlockMixinForge")) {
 			return DDConfigForge.waterloggableFenceGates.get() && LoadingModList.get().getModFileById("blockcarpentry") != null;
-		}
-		if (mixinClassName.equals("com.fizzware.dramaticdoors.forge.mixin.FenceGateBlockMixin")) {
-			return DDConfigForge.waterloggableFenceGates.get();
 		}
 		return true;
 	}

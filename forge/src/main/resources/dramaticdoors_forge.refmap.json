@@ -22,6 +22,14 @@
       "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lmod/pianomanu/blockcarpentry/block/FenceGateFrameBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
       "Lnet/minecraft/world/level/block/FenceGateBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
     },
+    "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBDoorBlockMixin": {
+      "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/DoorBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+      "Lnet/minecraft/world/level/block/DoorBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/DoorBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
+    },
+    "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBFenceGateBlockMixin": {
+      "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/FenceGateBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+      "Lnet/minecraft/world/level/block/FenceGateBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
+    },
     "com/fizzware/dramaticdoors/forge/forge/mixin/LandPathNodeMakerMixin": {
       "getBlockPathTypeRaw(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;": "Lnet/minecraft/world/level/pathfinder/WalkNodeEvaluator;m_77643_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;"
     },
@@ -72,6 +80,14 @@
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/FenceGateFrameBlockMixinForge": {
         "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lmod/pianomanu/blockcarpentry/block/FenceGateFrameBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+        "Lnet/minecraft/world/level/block/FenceGateBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
+      },
+      "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBDoorBlockMixin": {
+        "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/DoorBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+        "Lnet/minecraft/world/level/block/DoorBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/DoorBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
+      },
+      "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBFenceGateBlockMixin": {
+        "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/FenceGateBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
         "Lnet/minecraft/world/level/block/FenceGateBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/LandPathNodeMakerMixin": {

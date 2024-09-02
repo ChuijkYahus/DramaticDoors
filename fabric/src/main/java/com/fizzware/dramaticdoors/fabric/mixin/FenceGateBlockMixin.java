@@ -6,9 +6,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.fizzware.dramaticdoors.DramaticDoors;
-import com.fizzware.dramaticdoors.fabric.config.DDConfigFabric;
-
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -43,13 +40,6 @@ public class FenceGateBlockMixin extends Block implements SimpleWaterloggedBlock
 
 	@Inject(at = @At("TAIL"), method = "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V")
 	protected void injectBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder, CallbackInfo callback) {
-    	if (FabricLoader.getInstance().isModLoaded("supplementaries") && !FabricLoader.getInstance().isModLoaded("statement")) {
-    		if (DDConfigFabric.waterloggableFenceGates) {
-    			DramaticDoors.LOGGER.warn("You are using Dramatic Doors and Supplementaries together while having waterlogged fence gates enabled without having Statement mod installed."); 
-    			DramaticDoors.LOGGER.warn("Statement mod is HIGHLY recommended for better compatiblity! Grab the mod here: https://www.curseforge.com/minecraft/mc-mods/statement");
-    			DramaticDoors.LOGGER.warn("Alternatively, you can disable fence gate waterlogging within dramaticdoors-fabric config file located within config folder.");
-    		}
-    	}
 		if (!FabricLoader.getInstance().isModLoaded("fixedwaterlogging") && !FabricLoader.getInstance().isModLoaded("statement")) {
 			builder.add(WATERLOGGED);
 		}

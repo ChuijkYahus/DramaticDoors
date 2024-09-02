@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
+    {"id": "dramaticdoors:tall_copper_door", "required": false},
+    {"id": "dramaticdoors:tall_exposed_copper_door", "required": false},
+    {"id": "dramaticdoors:tall_weathered_copper_door", "required": false},
+    {"id": "dramaticdoors:tall_oxidized_copper_door", "required": false},
+    {"id": "dramaticdoors:tall_waxed_copper_door", "required": false},
+    {"id": "dramaticdoors:tall_waxed_exposed_copper_door", "required": false},
+    {"id": "dramaticdoors:tall_waxed_weathered_copper_door", "required": false},
+    {"id": "dramaticdoors:tall_waxed_oxidized_copper_door", "required": false},
     {"id": "dramaticdoors:tall_gold_door", "required": false}, 
     {"id": "dramaticdoors:tall_silver_door", "required": false}, 
     {"id": "dramaticdoors:tall_lead_door", "required": false}, 
@@ -13,6 +21,7 @@
     {"id": "dramaticdoors:tall_andesite_door", "required": false}, 
     {"id": "dramaticdoors:tall_brass_door", "required": false}, 
     {"id": "dramaticdoors:tall_copper_door", "required": false}, 
+    {"id": "dramaticdoors:tall_cd_industrial_iron_door", "required": false}, 
     {"id": "dramaticdoors:tall_zinc_door", "required": false}, 
     {"id": "dramaticdoors:tall_steel_door", "required": false}, 
     {"id": "dramaticdoors:tall_chain_door", "required": false}, 

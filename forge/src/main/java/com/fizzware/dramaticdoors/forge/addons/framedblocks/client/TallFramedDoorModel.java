@@ -17,6 +17,7 @@ import xfacthd.framedblocks.api.model.quad.Modifiers;
 import xfacthd.framedblocks.api.model.quad.QuadModifier;
 import xfacthd.framedblocks.api.util.Utils;
 
+@SuppressWarnings("deprecation")
 public class TallFramedDoorModel extends FramedBlockModel
 {
     private final Direction dir;
@@ -51,6 +52,7 @@ public class TallFramedDoorModel extends FramedBlockModel
 		}
     }
 
+	
 	@Override
 	public List<BakedQuad> getQuads(BlockState state, Direction direction, RandomSource random) {
 		return baseModel.getQuads(state, direction, random);

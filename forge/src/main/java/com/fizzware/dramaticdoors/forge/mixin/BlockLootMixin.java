@@ -28,6 +28,7 @@ public abstract class BlockLootMixin
 {
 	@Shadow 
 	public abstract Item asItem();
+	@SuppressWarnings("deprecation")
 	@Inject(method = "getDrops(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/storage/loot/LootContext$Builder;)Ljava/util/List;", cancellable = true, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/storage/loot/LootTable;getRandomItems(Lnet/minecraft/world/level/storage/loot/LootContext;)Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"))    
 	public void alterDrops(BlockState state, LootContext.Builder builder, CallbackInfoReturnable<List<ItemStack>> cir) {
 		if ((state.getBlock() instanceof TallDoorBlock || state.getBlock() instanceof ShortDoorBlock) && Registry.BLOCK.getKey(state.getBlock()).getNamespace().equals(DramaticDoors.MOD_ID)) {

@@ -24,26 +24,26 @@ public class AetherReduxCompat
 	}
 	
 	private static void registerRecipes() {
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BLIGHTWILLOW, new ResourceLocation("aether_redux", "skyroot_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_BLIGHTWILLOW, new ResourceLocation("aether_redux", "blightwillow_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CLOUDCAP, new ResourceLocation("aether_redux", "cloudcap_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_CRYSTAL, new ResourceLocation("aether_redux", "crystal_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_GLACIA, new ResourceLocation("aether_redux", "glacia_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_PRISMATIC, new ResourceLocation("aether_redux", "prismatic_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_SPRINGSHROOM, new ResourceLocation("aether_redux", "springshroom_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BLIGHTWILLOW, new ResourceLocation("aether_redux", "skyroot_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_BLIGHTWILLOW, new ResourceLocation("aether_redux", "blightwillow_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CLOUDCAP, new ResourceLocation("aether_redux", "cloudcap_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_CRYSTAL, new ResourceLocation("aether_redux", "crystal_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_GLACIA, new ResourceLocation("aether_redux", "glacia_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_PRISMATIC, new ResourceLocation("aether_redux", "prismatic_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_SPRINGSHROOM, new ResourceLocation("aether_redux", "springshroom_door"));
 		
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BLIGHTWILLOW, new ResourceLocation("aether_redux", "skyroot_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_BLIGHTWILLOW, new ResourceLocation("aether_redux", "blightwillow_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CLOUDCAP, new ResourceLocation("aether_redux", "cloudcap_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_CRYSTAL, new ResourceLocation("aether_redux", "crystal_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_GLACIA, new ResourceLocation("aether_redux", "glacia_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_PRISMATIC, new ResourceLocation("aether_redux", "prismatic_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_SPRINGSHROOM, new ResourceLocation("aether_redux", "springshroom_door"), true);
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BLIGHTWILLOW, new ResourceLocation("aether_redux", "skyroot_door"), "tall_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_BLIGHTWILLOW, new ResourceLocation("aether_redux", "blightwillow_door"), "tall_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CLOUDCAP, new ResourceLocation("aether_redux", "cloudcap_door"), "tall_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_CRYSTAL, new ResourceLocation("aether_redux", "crystal_door"), "tall_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_GLACIA, new ResourceLocation("aether_redux", "glacia_door"), "tall_wooden_door");

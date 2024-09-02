@@ -2,6 +2,7 @@ package com.fizzware.dramaticdoors.forge.addons.blockcarpentry;
 
 import com.fizzware.dramaticdoors.blocks.ShortDoorBlock;
 import com.fizzware.dramaticdoors.blocks.ShortFrameDoorBlock;
+
 import mod.pianomanu.blockcarpentry.block.DoorFrameBlock;
 import mod.pianomanu.blockcarpentry.block.IFrameBlock;
 import mod.pianomanu.blockcarpentry.tileentity.FrameBlockTile;

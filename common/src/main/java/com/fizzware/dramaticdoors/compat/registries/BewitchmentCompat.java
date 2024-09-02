@@ -3,6 +3,7 @@ package com.fizzware.dramaticdoors.compat.registries;
 import com.fizzware.dramaticdoors.DDNames;
 import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.compat.CompatChecker;
+import com.fizzware.dramaticdoors.compat.Compats;
 import com.fizzware.dramaticdoors.compat.DDCompatAdvancement;
 import com.fizzware.dramaticdoors.compat.DDCompatRecipe;
 
@@ -21,7 +22,7 @@ public class BewitchmentCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ELDER, DDNames.SHORT_ELDER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("bewitchment", "elder_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_JUNIPER, DDNames.SHORT_JUNIPER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("bewitchment", "juniper_door")), true, DDRegistry.MAIN_TAB);
 		
-		if (checker.isModLoaded("bwplus")) {
+		if (Compats.isModLoaded("bwplus", checker)) {
 			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_YEW, DDNames.SHORT_YEW, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("bwplus", "yew_door")), true, DDRegistry.MAIN_TAB);
 		}
 	}
@@ -45,7 +46,7 @@ public class BewitchmentCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_ELDER, new ResourceLocation("bewitchment", "elder_door"), "tall_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_JUNIPER, new ResourceLocation("bewitchment", "juniper_door"), "tall_wooden_door");
 		
-		if (checker.isModLoaded("bwplus")) {
+		if (Compats.isModLoaded("bwplus", checker)) {
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_YEW, new ResourceLocation("bwplus", "yew_door"));
 			DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_YEW, new ResourceLocation("bwplus", "yew_door"));
 			

@@ -59,6 +59,9 @@ public class Compats
 		if (isModLoaded("aether_redux", checker)) {
 			AetherReduxCompat.registerCompat();
 		}
+		if (isModLoaded("theabyss", checker)) {
+			TheAbyss2Compat.registerCompat();
+		}
 		if (isModLoaded("architects_palette", checker)) {
 			ArchitectsPaletteCompat.registerCompat();
 		}
@@ -101,6 +104,12 @@ public class Compats
 		if (isModLoaded("blockus", checker)) {
 			BlockusCompat.registerCompat();
 		}
+		if (isModLoaded("borninchaos", checker)) {
+			BornInChaosCompat.registerCompat();
+		}
+		if (isModLoaded("bountifulfares", checker)) {
+			BountifulFaresCompat.registerCompat();
+		}
     	if (isModLoaded("byg", checker)) {
     		BYGCompat.registerCompat();
     	}
@@ -122,6 +131,9 @@ public class Compats
 		if (isModLoaded("colorfulazaleas", checker)) {
 			ColorfulAzaleasCompat.registerCompat();
 		}
+		if (isModLoaded("copperative", checker)) {
+			CopperativeCompat.registerCompat();
+		}
 		if (isModLoaded("copperoverhaul", checker)) {
 			CopperOverhaulCompat.registerCompat();
 		}
@@ -140,6 +152,9 @@ public class Compats
 		if (isModLoaded("darkerdepths", checker)) {
 			DarkerDepthsCompat.registerCompat();
 		}
+		if (isModLoaded("dawnoftimebuilder", checker)) {
+			DawnOfTimeBuilderCompat.registerCompat();
+		}
 		if (isModLoaded("deep_aether", checker)) {
 			DeepAetherCompat.registerCompat();
 		}
@@ -155,17 +170,23 @@ public class Compats
 		if (isModLoaded("ecologics", checker)) {
 			EcologicsCompat.registerCompat();
 		}
+		if (isModLoaded("edenring", checker)) {
+			EdenRingCompat.registerCompat();
+		}
+		if (isModLoaded("eldritch_end", checker)) {
+			EldritchEndCompat.registerCompat();
+		}
 		if (isModLoaded("endlessbiomes", checker)) {
 			EndlessBiomesCompat.registerCompat();
-		}
-		if (isModLoaded("enhanced_mushrooms", checker)) {
-			EnhancedMushroomsCompat.registerCompat();
 		}
 		if (isModLoaded("phantasm", checker)) {
 			EndPhantasmCompat.registerCompat();
 		}
 		if (isModLoaded("enderscape", checker)) {
 			EnderscapeCompat.registerCompat();
+		}
+		if (isModLoaded("enhanced_mushrooms", checker)) {
+			EnhancedMushroomsCompat.registerCompat();
 		}
 		if (isModLoaded("enlightened_end", checker)) {
 			EnlightenedEndCompat.registerCompat();
@@ -203,8 +224,14 @@ public class Compats
 		if (isModLoaded("horizons", checker)) {
 			HorizonsCompat.registerCompat();
 		}
+		if (isModLoaded("immersive_weathering", checker)) {
+			ImmersiveWeatheringCompat.registerCompat();
+		}
 		if (isModLoaded("integrateddynamics", checker)) {
 			IntegratedDynamicsCompat.registerCompat();
+		}
+		if (isModLoaded("doapi", checker)) {
+			LetsDoCompat.registerCompat(checker);
 		}
 		if (isModLoaded("malum", checker)) {
 			MalumCompat.registerCompat();
@@ -218,8 +245,14 @@ public class Compats
 		if (isModLoaded("morecraft", checker)) {
 			MorecraftCompat.registerCompat();
 		}
+		if (isModLoaded("mynethersdelight", checker)) {
+			MyNethersDelightCompat.registerCompat();
+		}
 		if (isModLoaded("mysticsbiomes", checker)) {
 			MysticsBiomesCompat.registerCompat();
+		}
+		if (isModLoaded("natures_spirit", checker)) {
+			NaturesSpiritCompat.registerCompat();
 		}
 		if (isModLoaded("nethers_exoticism", checker)) {
 			NethersExoticismCompat.registerCompat();
@@ -251,6 +284,9 @@ public class Compats
 		if (isModLoaded("silentgear", checker)) {
 			SilentGearCompat.registerCompat();
 		}
+		if (isModLoaded("flying_stuff", checker)) {
+			SkyLandsCompat.registerCompat();
+		}
 		if (isModLoaded("snowyspirit", checker)) {
 			SnowySpiritCompat.registerCompat();
 		}
@@ -278,14 +314,14 @@ public class Compats
 		if (isModLoaded("twigs", checker)) {
 			TwigsCompat.registerCompat();
 		}
+    	if (isModLoaded("tropicraft", checker)) {
+    		TropicraftCompat.registerCompat();
+    	}
     	if (isModLoaded("twilightforest", checker)) {
     		TwilightForestCompat.registerCompat(checker);
     	}
 		if (isModLoaded("undergarden", checker)) {
 			UndergardenCompat.registerCompat();
-		}
-		if (isModLoaded("vinery", checker)) {
-			VineryCompat.registerCompat();
 		}
 		if (isModLoaded("wilderwild", checker)) {
 			WilderWildCompat.registerCompat();
@@ -311,7 +347,10 @@ public class Compats
     	}
     	// Backport mods.
     	if (isModLoaded("quark", checker) || isModLoaded("biomebackport", checker) || isModLoaded("onetwenty", checker) || isModLoaded("trails_and_tales", checker) || isModLoaded("various_update", checker)) {
-    		TrailsTalesBackportCompat.registerCompat(checker);
+    		TrailsTalesBackportCompat.registerCompat(checker); // 1.20
+    	}
+    	if (isModLoaded("tricky_trials", checker) || isModLoaded("trials", checker) || isModLoaded("copperandtuffbackport", checker)) {
+    		TrickyTrialsBackportCompat.registerCompat(checker); // 1.21
     	}
     	initializedCompat = true;
     }

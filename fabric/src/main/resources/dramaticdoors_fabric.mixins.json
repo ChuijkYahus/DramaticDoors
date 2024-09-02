@@ -23,8 +23,8 @@
     "SPIMMixin"  
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 1,
+    "maxShiftBy": 2
   },
-  "maxShiftBy": 2,
   "refmap": "dramaticdoors_fabric.refmap.json"
 }

@@ -18,7 +18,7 @@ public class RegionsUnexploredCompat
 	private static void registerBlocksItems() {
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUE_BAOBAB, DDNames.SHORT_RUE_BAOBAB, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("regions_unexplored", "baobab_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUE_BLACKWOOD, DDNames.SHORT_RUE_BLACKWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("regions_unexplored", "blackwood_door")), true, DDRegistry.MAIN_TAB);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUE_BRIMWOOD, DDNames.SHORT_RUE_BRIMWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("regions_unexplored", "brimwood_door")), true, DDRegistry.MAIN_TAB);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUE_BRIMWOOD, DDNames.SHORT_RUE_BRIMWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("regions_unexplored", "sculkwood_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUE_CHERRY, DDNames.SHORT_RUE_CHERRY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("regions_unexplored", "cherry_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUE_CYPRESS, DDNames.SHORT_RUE_CYPRESS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("regions_unexplored", "cypress_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RUE_DEAD, DDNames.SHORT_RUE_DEAD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("regions_unexplored", "dead_door")), true, DDRegistry.MAIN_TAB);
@@ -36,7 +36,7 @@ public class RegionsUnexploredCompat
 	private static void registerRecipes() {
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_BAOBAB, new ResourceLocation("regions_unexplored", "baobab_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_BLACKWOOD, new ResourceLocation("regions_unexplored", "blackwood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "brimwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "sculkwood_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_CHERRY, new ResourceLocation("regions_unexplored", "cherry_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_CYPRESS, new ResourceLocation("regions_unexplored", "cypress_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_DEAD, new ResourceLocation("regions_unexplored", "dead_door"));
@@ -51,7 +51,7 @@ public class RegionsUnexploredCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_RUE_WILLOW, new ResourceLocation("regions_unexplored", "willow_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUE_BAOBAB, new ResourceLocation("regions_unexplored", "baobab_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUE_BLACKWOOD, new ResourceLocation("regions_unexplored", "blackwood_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "brimwood_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "sculkwood_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUE_CHERRY, new ResourceLocation("regions_unexplored", "cherry_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUE_CYPRESS, new ResourceLocation("regions_unexplored", "cypress_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_RUE_DEAD, new ResourceLocation("regions_unexplored", "dead_door"));
@@ -67,7 +67,7 @@ public class RegionsUnexploredCompat
 		
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_BAOBAB, new ResourceLocation("regions_unexplored", "baobab_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_BLACKWOOD, new ResourceLocation("regions_unexplored", "blackwood_door"), true);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "brimwood_door"), true);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "sculkwood_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_CHERRY, new ResourceLocation("regions_unexplored", "cherry_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_CYPRESS, new ResourceLocation("regions_unexplored", "cypress_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_DEAD, new ResourceLocation("regions_unexplored", "dead_door"), true);
@@ -82,7 +82,7 @@ public class RegionsUnexploredCompat
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_RUE_WILLOW, new ResourceLocation("regions_unexplored", "willow_door"), true);
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUE_BAOBAB, new ResourceLocation("regions_unexplored", "baobab_door"), "tall_rue_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUE_BLACKWOOD, new ResourceLocation("regions_unexplored", "blackwood_door"), "tall_rue_wooden_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "brimwood_door"), "tall_rue_wooden_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUE_BRIMWOOD, new ResourceLocation("regions_unexplored", "sculkwood_door"), "tall_rue_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUE_CHERRY, new ResourceLocation("regions_unexplored", "cherry_door"), "tall_rue_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUE_CYPRESS, new ResourceLocation("regions_unexplored", "cypress_door"), "tall_rue_wooden_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_RUE_DEAD, new ResourceLocation("regions_unexplored", "dead_door"), "tall_rue_wooden_door");

@@ -187,6 +187,9 @@ public class Compats
 		}
 		if (isModLoaded("enhanced_mushrooms", checker)) {
 			EnhancedMushroomsCompat.registerCompat();
+			if (isModLoaded("habitat", checker)) {
+				HabitatCompat.registerCompat();
+			}
 		}
 		if (isModLoaded("enlightened_end", checker)) {
 			EnlightenedEndCompat.registerCompat();
@@ -244,6 +247,9 @@ public class Compats
 		}
 		if (isModLoaded("morecraft", checker)) {
 			MorecraftCompat.registerCompat();
+		}
+		if (isModLoaded("moredoors", checker)) {
+			MoreDoorsCompat.registerCompat();
 		}
 		if (isModLoaded("mynethersdelight", checker)) {
 			MyNethersDelightCompat.registerCompat();

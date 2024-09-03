@@ -17,7 +17,7 @@ public class MoreDoorsCompat
 	
 	private static void registerBlocksItems() {
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_GLASS, DDNames.SHORT_MD_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "glass_door")), true, DDRegistry.MAIN_TAB);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_TINTED_GLASS, DDNames.SHORT_MD_TINTED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "tinted_glass_door")), true, DDRegistry.MAIN_TAB);
+		/*DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_TINTED_GLASS, DDNames.SHORT_MD_TINTED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "tinted_glass_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_BLACK_STAINED_GLASS, DDNames.SHORT_MD_BLACK_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "black_stained_glass_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_GRAY_STAINED_GLASS, DDNames.SHORT_MD_GRAY_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "gray_stained_glass_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_LIGHT_GRAY_STAINED_GLASS, DDNames.SHORT_MD_LIGHT_GRAY_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "light_gray_stained_glass_door")), true, DDRegistry.MAIN_TAB);
@@ -33,7 +33,7 @@ public class MoreDoorsCompat
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_MAGENTA_STAINED_GLASS, DDNames.SHORT_MD_MAGENTA_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "magenta_stained_glass_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_PINK_STAINED_GLASS, DDNames.SHORT_MD_PINK_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "pink_stained_glass_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_LIGHT_BLUE_STAINED_GLASS, DDNames.SHORT_MD_LIGHT_BLUE_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "light_blue_stained_glass_door")), true, DDRegistry.MAIN_TAB);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_BROWN_STAINED_GLASS, DDNames.SHORT_MD_BROWN_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "brown_stained_glass_door")), true, DDRegistry.MAIN_TAB);
+		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_BROWN_STAINED_GLASS, DDNames.SHORT_MD_BROWN_STAINED_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "brown_stained_glass_door")), true, DDRegistry.MAIN_TAB);*/
 
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_COAL, DDNames.SHORT_MD_COAL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "coal_door")), true, DDRegistry.MAIN_TAB);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MD_COPPER, DDNames.SHORT_MD_COPPER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("moredoors", "copper_door"), Blocks.IRON_DOOR), true, DDRegistry.MAIN_TAB);
@@ -79,7 +79,7 @@ public class MoreDoorsCompat
 	
 	private static void registerRecipes() {
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_GLASS, new ResourceLocation("moredoors", "glass_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"));
+		/*DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_BLACK_STAINED_GLASS, new ResourceLocation("moredoors", "black_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "gray_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_LIGHT_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "light_gray_stained_glass_door"));
@@ -95,7 +95,7 @@ public class MoreDoorsCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_MAGENTA_STAINED_GLASS, new ResourceLocation("moredoors", "magenta_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_PINK_STAINED_GLASS, new ResourceLocation("moredoors", "pink_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_LIGHT_BLUE_STAINED_GLASS, new ResourceLocation("moredoors", "light_blue_stained_glass_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"));*/
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_COAL, new ResourceLocation("moredoors", "coal_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_COPPER, new ResourceLocation("moredoors", "copper_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_GOLD, new ResourceLocation("moredoors", "gold_door"));
@@ -132,10 +132,10 @@ public class MoreDoorsCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_MUD_BRICK, new ResourceLocation("moredoors", "mud_brick_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_ICE, new ResourceLocation("moredoors", "ice_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_MUD, new ResourceLocation("moredoors", "mud_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"));
+		//DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_SPONGE, new ResourceLocation("moredoors", "sponge_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.SHORT_MD_GLASS, new ResourceLocation("moredoors", "glass_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_GLASS, new ResourceLocation("moredoors", "glass_door"));
+		/*DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_BLACK_STAINED_GLASS, new ResourceLocation("moredoors", "black_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "gray_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_LIGHT_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "light_gray_stained_glass_door"));
@@ -151,7 +151,7 @@ public class MoreDoorsCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_MAGENTA_STAINED_GLASS, new ResourceLocation("moredoors", "magenta_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_PINK_STAINED_GLASS, new ResourceLocation("moredoors", "pink_stained_glass_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_LIGHT_BLUE_STAINED_GLASS, new ResourceLocation("moredoors", "light_blue_stained_glass_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"));
+		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"));*/
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_COAL, new ResourceLocation("moredoors", "coal_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_COPPER, new ResourceLocation("moredoors", "copper_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_GOLD, new ResourceLocation("moredoors", "gold_door"));
@@ -188,11 +188,11 @@ public class MoreDoorsCompat
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_MUD_BRICK, new ResourceLocation("moredoors", "mud_brick_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_ICE, new ResourceLocation("moredoors", "ice_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_MUD, new ResourceLocation("moredoors", "mud_door"));
-		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"));
+		//DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"));
 		DDCompatAdvancement.createRecipeAdvancement(DDNames.TALL_MD_SPONGE, new ResourceLocation("moredoors", "sponge_door"));
 		
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_GLASS, new ResourceLocation("moredoors", "glass_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"), false);
+		/*DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_BLACK_STAINED_GLASS, new ResourceLocation("moredoors", "black_stained_glass_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "gray_stained_glass_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_LIGHT_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "light_gray_stained_glass_door"), false);
@@ -208,7 +208,7 @@ public class MoreDoorsCompat
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_MAGENTA_STAINED_GLASS, new ResourceLocation("moredoors", "magenta_stained_glass_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_PINK_STAINED_GLASS, new ResourceLocation("moredoors", "pink_stained_glass_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_LIGHT_BLUE_STAINED_GLASS, new ResourceLocation("moredoors", "light_blue_stained_glass_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"), false);
+		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"), false);*/
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_COAL, new ResourceLocation("moredoors", "coal_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_COPPER, new ResourceLocation("moredoors", "copper_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_GOLD, new ResourceLocation("moredoors", "gold_door"), false);
@@ -245,10 +245,10 @@ public class MoreDoorsCompat
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_MUD_BRICK, new ResourceLocation("moredoors", "mud_brick_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_ICE, new ResourceLocation("moredoors", "ice_door"), false);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_MUD, new ResourceLocation("moredoors", "mud_door"), false);
-		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"), true);
+		//DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"), true);
 		DDCompatRecipe.createShortDoorRecipe(DDNames.SHORT_MD_SPONGE, new ResourceLocation("moredoors", "sponge_door"), true);
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_GLASS, new ResourceLocation("moredoors", "glass_door"), "tall_md_glass_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"), "tall_md_glass_door");
+		/*DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_TINTED_GLASS, new ResourceLocation("moredoors", "tinted_glass_door"), "tall_md_glass_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_BLACK_STAINED_GLASS, new ResourceLocation("moredoors", "black_stained_glass_door"), "tall_md_glass_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "gray_stained_glass_door"), "tall_md_glass_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_LIGHT_GRAY_STAINED_GLASS, new ResourceLocation("moredoors", "light_gray_stained_glass_door"), "tall_md_glass_door");
@@ -264,7 +264,7 @@ public class MoreDoorsCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_MAGENTA_STAINED_GLASS, new ResourceLocation("moredoors", "magenta_stained_glass_door"), "tall_md_glass_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_PINK_STAINED_GLASS, new ResourceLocation("moredoors", "pink_stained_glass_door"), "tall_md_glass_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_LIGHT_BLUE_STAINED_GLASS, new ResourceLocation("moredoors", "light_blue_stained_glass_door"), "tall_md_glass_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"), "tall_md_glass_door");
+		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_BROWN_STAINED_GLASS, new ResourceLocation("moredoors", "brown_stained_glass_door"), "tall_md_glass_door")*/
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_COAL, new ResourceLocation("moredoors", "coal_door"), "tall_md_stone_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_COPPER, new ResourceLocation("moredoors", "copper_door"), "tall_md_stone_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_GOLD, new ResourceLocation("moredoors", "gold_door"), "tall_md_stone_door");
@@ -301,7 +301,7 @@ public class MoreDoorsCompat
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_MUD_BRICK, new ResourceLocation("moredoors", "mud_brick_door"), "tall_brick_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_ICE, new ResourceLocation("moredoors", "ice_door"), "tall_misc_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_MUD, new ResourceLocation("moredoors", "mud_door"), "tall_misc_door");
-		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"), "tall_misc_door");
+		//DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_SCULK, new ResourceLocation("moredoors", "sculk_door"), "tall_misc_door");
 		DDCompatRecipe.createTallDoorRecipe(DDNames.TALL_MD_SPONGE, new ResourceLocation("moredoors", "sponge_door"), "tall_misc_door");
 	}
 }

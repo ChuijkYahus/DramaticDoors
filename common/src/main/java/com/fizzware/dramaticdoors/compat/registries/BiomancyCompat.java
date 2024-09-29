@@ -8,12 +8,11 @@ import com.fizzware.dramaticdoors.blocks.TallFleshDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallFullFleshDoorBlock;
 import com.fizzware.dramaticdoors.compat.DDCompatAdvancement;
 import com.fizzware.dramaticdoors.compat.DDCompatRecipe;
-import com.fizzware.dramaticdoors.items.ShortDoorItem;
-import com.fizzware.dramaticdoors.items.TallDoorItem;
 import com.fizzware.dramaticdoors.registry.DDNames;
 import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -35,19 +34,19 @@ public class BiomancyCompat
 	}
 	
 	private static void registerBlocksItems() {
-		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_FLESH, SHORT_FLESH_DOOR));
-		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_FULL_FLESH, SHORT_FULL_FLESH_DOOR));
-		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_FLESHKIN, SHORT_FLESHKIN_DOOR));
-		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_FLESH, TALL_FLESH_DOOR));
-		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_FULL_FLESH, TALL_FULL_FLESH_DOOR));
-		DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_FLESHKIN, TALL_FLESHKIN_DOOR));
+		DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.SHORT_FLESH, SHORT_FLESH_DOOR));
+		DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.SHORT_FULL_FLESH, SHORT_FULL_FLESH_DOOR));
+		DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.SHORT_FLESHKIN, SHORT_FLESHKIN_DOOR));
+		DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_FLESH, TALL_FLESH_DOOR));
+		DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_FULL_FLESH, TALL_FULL_FLESH_DOOR));
+		DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_FLESHKIN, TALL_FLESHKIN_DOOR));
 
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_FLESH, new ShortDoorItem(SHORT_FLESH_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_FULL_FLESH, new ShortDoorItem(SHORT_FULL_FLESH_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_FLESHKIN, new ShortDoorItem(SHORT_FLESHKIN_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_FLESH, new TallDoorItem(TALL_FLESH_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_FULL_FLESH, new TallDoorItem(TALL_FULL_FLESH_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_FLESHKIN, new TallDoorItem(TALL_FLESHKIN_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.SHORT_FLESH, new BlockItem(SHORT_FLESH_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.SHORT_FULL_FLESH, new BlockItem(SHORT_FULL_FLESH_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.SHORT_FLESHKIN, new BlockItem(SHORT_FLESHKIN_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_FLESH, new BlockItem(TALL_FLESH_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_FULL_FLESH, new BlockItem(TALL_FULL_FLESH_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_FLESHKIN, new BlockItem(TALL_FLESHKIN_DOOR, DDRegistry.PROPERTIES)));
 	}
 	
 	private static void registerRecipes() {

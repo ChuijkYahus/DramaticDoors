@@ -3,8 +3,7 @@
 modLoader="javafml"
 loaderVersion="[1,)"
 
-# License Schmicense
-license="MIT"
+license="MIT" # License Schmicense
 
 [[mods]]
     modId="${mod_id}"

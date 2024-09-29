@@ -261,6 +261,12 @@ public class DDNames
     public static final String TALL_BN_SWAMP_CYPRESS = "tall_bn_swamp_cypress_door";
     public static final String TALL_BN_SWAMP_OAK = "tall_bn_swamp_oak_door";
     
+    // Meadow
+    public static final String SHORT_MEADOW_PINE = "short_meadow_pine_door";
+    public static final String SHORT_MEADOW_PINE_BARN = "short_meadow_pine_barn_door";
+    public static final String TALL_MEADOW_PINE = "tall_meadow_pine_door";
+    public static final String TALL_MEADOW_PINE_BARN = "tall_meadow_pine_barn_door";
+    
     // Vinery
     public static final String SHORT_VINERY_CHERRY = "short_vinery_cherry_door";
     public static final String TALL_VINERY_CHERRY = "tall_vinery_cherry_door";
@@ -558,6 +564,15 @@ public class DDNames
     
     public static final String TALL_MESH = "tall_mesh_door";    
     public static final String TALL_SCORCHED_PLANKS = "tall_scorched_planks_door";
+    
+    // Bountiful Fares
+    public static final String SHORT_BF_CERAMIC = "short_bf_ceramic_door";
+    public static final String SHORT_BF_HOARY = "short_bf_hoary_door";
+    public static final String SHORT_BF_WALNUT = "short_bf_walnut_door";
+    
+    public static final String TALL_BF_CERAMIC = "tall_bf_ceramic_door";
+    public static final String TALL_BF_HOARY = "tall_bf_hoary_door";
+    public static final String TALL_BF_WALNUT = "tall_bf_walnut_door";
     
     //Caupona
     public static final String SHORT_WALNUT = "short_walnut_door";

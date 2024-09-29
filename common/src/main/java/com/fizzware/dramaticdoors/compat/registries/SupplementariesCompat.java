@@ -8,12 +8,11 @@ import com.fizzware.dramaticdoors.compat.CompatChecker;
 import com.fizzware.dramaticdoors.compat.Compats;
 import com.fizzware.dramaticdoors.compat.DDCompatAdvancement;
 import com.fizzware.dramaticdoors.compat.DDCompatRecipe;
-import com.fizzware.dramaticdoors.items.ShortDoorItem;
-import com.fizzware.dramaticdoors.items.TallDoorItem;
 import com.fizzware.dramaticdoors.registry.DDNames;
 import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -32,25 +31,25 @@ public class SupplementariesCompat
 	}
 	
 	private static void registerBlocksItems() {
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_GOLD, SHORT_GOLD_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_NETHERITE, SHORT_NETHERITE_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_GOLD, TALL_GOLD_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_NETHERITE, TALL_NETHERITE_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.SHORT_GOLD, SHORT_GOLD_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.SHORT_NETHERITE, SHORT_NETHERITE_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_GOLD, TALL_GOLD_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_NETHERITE, TALL_NETHERITE_DOOR));
     	
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_GOLD, new ShortDoorItem(SHORT_GOLD_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_NETHERITE, new ShortDoorItem(SHORT_NETHERITE_DOOR, DDRegistry.PROPERTIES.fireResistant())));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_GOLD, new TallDoorItem(TALL_GOLD_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_NETHERITE, new TallDoorItem(TALL_NETHERITE_DOOR, DDRegistry.PROPERTIES.fireResistant())));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.SHORT_GOLD, new BlockItem(SHORT_GOLD_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.SHORT_NETHERITE, new BlockItem(SHORT_NETHERITE_DOOR, DDRegistry.PROPERTIES.fireResistant())));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_GOLD, new BlockItem(TALL_GOLD_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_NETHERITE, new BlockItem(TALL_NETHERITE_DOOR, DDRegistry.PROPERTIES.fireResistant())));
 		/*if (checker.isModLoaded("forge")) {
     	    DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_SILVER, SHORT_SILVER_DOOR));
     	    DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.SHORT_LEAD, SHORT_LEAD_DOOR));
 	    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_SILVER, TALL_SILVER_DOOR));
 	    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_LEAD, TALL_LEAD_DOOR));	
 	    	
-	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_SILVER, new ShortDoorItem(SHORT_SILVER_DOOR, DDRegistry.PROPERTIES)));
-	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_LEAD, new ShortDoorItem(SHORT_LEAD_DOOR, DDRegistry.PROPERTIES)));
-	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_SILVER, new TallDoorItem(TALL_SILVER_DOOR, DDRegistry.PROPERTIES)));
-	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_LEAD, new TallDoorItem(TALL_LEAD_DOOR, DDRegistry.PROPERTIES)));
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_SILVER, new BlockItem(SHORT_SILVER_DOOR, DDRegistry.PROPERTIES)));
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.SHORT_LEAD, new BlockItem(SHORT_LEAD_DOOR, DDRegistry.PROPERTIES)));
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_SILVER, new BlockItem(TALL_SILVER_DOOR, DDRegistry.PROPERTIES)));
+	    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_LEAD, new BlockItem(TALL_LEAD_DOOR, DDRegistry.PROPERTIES)));
 		}*/
 	}
 	

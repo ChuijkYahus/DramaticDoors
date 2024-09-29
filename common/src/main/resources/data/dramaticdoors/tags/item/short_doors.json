@@ -54,6 +54,7 @@
     {"id": "dramaticdoors:short_bp_emerald_door", "required": false}, 
     {"id": "dramaticdoors:short_bp_diamond_door", "required": false}, 
     {"id": "dramaticdoors:short_bp_netherite_door", "required": false}, 
+    {"id": "dramaticdoors:short_bf_ceramic_door", "required": false},
     {"id": "dramaticdoors:short_co_copper_door", "required": false}, 
     {"id": "dramaticdoors:short_co_exposed_copper_door", "required": false}, 
     {"id": "dramaticdoors:short_co_weathered_copper_door", "required": false}, 

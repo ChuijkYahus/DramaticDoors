@@ -12,11 +12,9 @@ import com.fizzware.dramaticdoors.blocks.TallSlidingDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallStableDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallWeatheringDoorBlock;
 import com.fizzware.dramaticdoors.compat.Compats;
-import com.fizzware.dramaticdoors.items.ShortDoorItem;
-import com.fizzware.dramaticdoors.items.TallDoorItem;
-
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -28,8 +26,8 @@ import oshi.util.tuples.Pair;
 
 public class DDRegistry
 {
-	public static final List<Pair<String, Block>> DOOR_BLOCKS_TO_REGISTER = new ArrayList<Pair<String, Block>>();
-	public static final List<Pair<String, Item>> DOOR_ITEMS_TO_REGISTER = new ArrayList<Pair<String, Item>>();
+	public static final List<Pair<String, Block>> DOOR_BLOCKS = new ArrayList<Pair<String, Block>>();
+	public static final List<Pair<String, Item>> DOOR_ITEMS = new ArrayList<Pair<String, Item>>();
 	
 	public static final Item.Properties PROPERTIES = new Item.Properties();
 		
@@ -70,14 +68,14 @@ public class DDRegistry
 		Item tempItem;
 		if (includeShort) {
 			tempBlock = createDoorBlock(block, blocksettype, false);
-			tempItem = createDoorItem(tempBlock, false);
-			DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(shortname, tempBlock));
-			DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(shortname, tempItem));
+			tempItem = createDoorItem(tempBlock);
+			DOOR_BLOCKS.add(new Pair<String, Block>(shortname, tempBlock));
+			DOOR_ITEMS.add(new Pair<String, Item>(shortname, tempItem));
 		}
 		tempBlock = createDoorBlock(block, blocksettype, true);
-		tempItem = createDoorItem(tempBlock, true);
-		DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(tallname, tempBlock));
-		DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(tallname, tempItem));
+		tempItem = createDoorItem(tempBlock);
+		DOOR_BLOCKS.add(new Pair<String, Block>(tallname, tempBlock));
+		DOOR_ITEMS.add(new Pair<String, Item>(tallname, tempItem));
 	}
 	
 	public static void registerDoorBlockAndItem(String tallname, @Nullable String shortname, Properties properties, BlockSetType blocksettype, boolean includeShort) {
@@ -85,14 +83,14 @@ public class DDRegistry
 		Item tempItem;
 		if (includeShort) {
 			tempBlock = createDoorBlock(properties, blocksettype, false);
-			tempItem = createDoorItem(tempBlock, false);
-			DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(shortname, tempBlock));
-			DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(shortname, tempItem));
+			tempItem = createDoorItem(tempBlock);
+			DOOR_BLOCKS.add(new Pair<String, Block>(shortname, tempBlock));
+			DOOR_ITEMS.add(new Pair<String, Item>(shortname, tempItem));
 		}
 		tempBlock = createDoorBlock(properties, blocksettype, true);
-		tempItem = createDoorItem(tempBlock, true);
-		DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(tallname, tempBlock));
-		DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(tallname, tempItem));
+		tempItem = createDoorItem(tempBlock);
+		DOOR_BLOCKS.add(new Pair<String, Block>(tallname, tempBlock));
+		DOOR_ITEMS.add(new Pair<String, Item>(tallname, tempItem));
 	}
 	
 	public static void registerWeatheringDoorBlockAndItem(String tallname, @Nullable String shortname, Properties properties, BlockSetType blocksettype, boolean includeShort, WeatheringCopper.WeatherState state) {
@@ -100,14 +98,14 @@ public class DDRegistry
 		Item tempItem;
 		if (includeShort) {
 			tempBlock = createCopperDoorBlock(properties, blocksettype, false, state);
-			tempItem = createDoorItem(tempBlock, false);
-			DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(shortname, tempBlock));
-			DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(shortname, tempItem));
+			tempItem = createDoorItem(tempBlock);
+			DOOR_BLOCKS.add(new Pair<String, Block>(shortname, tempBlock));
+			DOOR_ITEMS.add(new Pair<String, Item>(shortname, tempItem));
 		}
 		tempBlock = createCopperDoorBlock(properties, blocksettype, true, state);
-		tempItem = createDoorItem(tempBlock, true);
-		DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(tallname, tempBlock));
-		DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(tallname, tempItem));
+		tempItem = createDoorItem(tempBlock);
+		DOOR_BLOCKS.add(new Pair<String, Block>(tallname, tempBlock));
+		DOOR_ITEMS.add(new Pair<String, Item>(tallname, tempItem));
 	}
 	
 	public static void registerSlidingDoorBlockAndItem(String tallname, @Nullable String shortname, Block block, BlockSetType blocksettype, boolean includeShort) {
@@ -115,26 +113,26 @@ public class DDRegistry
 		Item tempItem;
 		if (includeShort) {
 			tempBlock = createSlidingDoorBlock(block, blocksettype, false);
-			tempItem = createDoorItem(tempBlock, false);
-			DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(shortname, tempBlock));
-			DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(shortname, tempItem));
+			tempItem = createDoorItem(tempBlock);
+			DOOR_BLOCKS.add(new Pair<String, Block>(shortname, tempBlock));
+			DOOR_ITEMS.add(new Pair<String, Item>(shortname, tempItem));
 		}
 		tempBlock = createSlidingDoorBlock(block, blocksettype, true);
-		tempItem = createDoorItem(tempBlock, true);
-		DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(tallname, tempBlock));
-		DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(tallname, tempItem));
+		tempItem = createDoorItem(tempBlock);
+		DOOR_BLOCKS.add(new Pair<String, Block>(tallname, tempBlock));
+		DOOR_ITEMS.add(new Pair<String, Item>(tallname, tempItem));
 	}
 	
 	public static void registerStableDoorBlockAndItem(String tallname, @Nullable String shortname, Block block, BlockSetType blocksettype, boolean includeShort) {
 		Block tempBlock = createStableDoorBlock(block, blocksettype, true);
-		Item tempItem = createDoorItem(tempBlock, true);
-		DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(tallname, tempBlock));
-		DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(tallname, tempItem));
+		Item tempItem = createDoorItem(tempBlock);
+		DOOR_BLOCKS.add(new Pair<String, Block>(tallname, tempBlock));
+		DOOR_ITEMS.add(new Pair<String, Item>(tallname, tempItem));
 		if (includeShort) {
 			tempBlock = createStableDoorBlock(block, blocksettype, false);
-			tempItem = createDoorItem(tempBlock, false);
-			DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(shortname, tempBlock));
-			DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(shortname, tempItem));
+			tempItem = createDoorItem(tempBlock);
+			DOOR_BLOCKS.add(new Pair<String, Block>(shortname, tempBlock));
+			DOOR_ITEMS.add(new Pair<String, Item>(shortname, tempItem));
 		}
 	}
 	
@@ -165,8 +163,8 @@ public class DDRegistry
 		return isTall ? new TallDoorBlock(blocksettype, properties) : new ShortDoorBlock(blocksettype, properties);
 	}
 	
-	protected static Item createDoorItem(Block block, boolean isTall) {
-		return isTall ? new TallDoorItem(block, PROPERTIES) : new ShortDoorItem(block, PROPERTIES);
+	protected static Item createDoorItem(Block block) {
+		return new BlockItem(block, PROPERTIES);
 	}
 	
 	/* Utility functions for getting blocks by key. */

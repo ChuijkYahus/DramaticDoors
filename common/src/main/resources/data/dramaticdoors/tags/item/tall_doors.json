@@ -57,6 +57,7 @@
     {"id": "dramaticdoors:tall_bp_emerald_door", "required": false}, 
     {"id": "dramaticdoors:tall_bp_diamond_door", "required": false}, 
     {"id": "dramaticdoors:tall_bp_netherite_door", "required": false}, 
+    {"id": "dramaticdoors:tall_bf_ceramic_door", "required": false},
     {"id": "dramaticdoors:tall_co_copper_door", "required": false}, 
     {"id": "dramaticdoors:tall_co_exposed_copper_door", "required": false}, 
     {"id": "dramaticdoors:tall_co_weathered_copper_door", "required": false}, 

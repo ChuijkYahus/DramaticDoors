@@ -3,11 +3,11 @@ package com.fizzware.dramaticdoors.compat.registries;
 import com.fizzware.dramaticdoors.blocks.TallCreateSlidingDoorBlock;
 import com.fizzware.dramaticdoors.compat.DDCompatAdvancement;
 import com.fizzware.dramaticdoors.compat.DDCompatRecipe;
-import com.fizzware.dramaticdoors.items.TallDoorItem;
 import com.fizzware.dramaticdoors.registry.DDNames;
 import com.fizzware.dramaticdoors.registry.DDRegistry;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import oshi.util.tuples.Pair;
@@ -32,17 +32,17 @@ public class CreateCompat
 	}
 	
 	private static void registerBlocksItems() {
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_CREATE_ANDESITE, CreateCompat.TALL_ANDESITE_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_CREATE_BRASS, CreateCompat.TALL_BRASS_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_CREATE_COPPER, CreateCompat.TALL_COPPER_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_CREATE_FRAMED_GLASS, CreateCompat.TALL_FRAMED_GLASS_DOOR));
-    	DDRegistry.DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(DDNames.TALL_CREATE_TRAIN, CreateCompat.TALL_TRAIN_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_CREATE_ANDESITE, CreateCompat.TALL_ANDESITE_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_CREATE_BRASS, CreateCompat.TALL_BRASS_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_CREATE_COPPER, CreateCompat.TALL_COPPER_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_CREATE_FRAMED_GLASS, CreateCompat.TALL_FRAMED_GLASS_DOOR));
+    	DDRegistry.DOOR_BLOCKS.add(new Pair<String, Block>(DDNames.TALL_CREATE_TRAIN, CreateCompat.TALL_TRAIN_DOOR));
 
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_CREATE_ANDESITE, new TallDoorItem(CreateCompat.TALL_ANDESITE_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_CREATE_BRASS, new TallDoorItem(CreateCompat.TALL_BRASS_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_CREATE_COPPER, new TallDoorItem(CreateCompat.TALL_COPPER_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_CREATE_FRAMED_GLASS, new TallDoorItem(CreateCompat.TALL_FRAMED_GLASS_DOOR, DDRegistry.PROPERTIES)));
-    	DDRegistry.DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(DDNames.TALL_CREATE_TRAIN, new TallDoorItem(CreateCompat.TALL_TRAIN_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_CREATE_ANDESITE, new BlockItem(CreateCompat.TALL_ANDESITE_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_CREATE_BRASS, new BlockItem(CreateCompat.TALL_BRASS_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_CREATE_COPPER, new BlockItem(CreateCompat.TALL_COPPER_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_CREATE_FRAMED_GLASS, new BlockItem(CreateCompat.TALL_FRAMED_GLASS_DOOR, DDRegistry.PROPERTIES)));
+    	DDRegistry.DOOR_ITEMS.add(new Pair<String, Item>(DDNames.TALL_CREATE_TRAIN, new BlockItem(CreateCompat.TALL_TRAIN_DOOR, DDRegistry.PROPERTIES)));
 	}
 	
 	private static void registerRecipes() {

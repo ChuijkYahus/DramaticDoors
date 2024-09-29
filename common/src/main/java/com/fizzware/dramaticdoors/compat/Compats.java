@@ -84,9 +84,9 @@ public class Compats
 		if (isModLoaded("betternether", checker)) {
 			BetterNetherCompat.registerCompat();
 		}
-		/*if (isModLoaded("thebetweenlands", checker)) {
-			BetweenlandsCompat.registerCompat(); // NYI: Not Yet Implemented
-		}*/
+		if (isModLoaded("thebetweenlands", checker)) {
+			BetweenlandsCompat.registerCompat();
+		}
 		if (isModLoaded("bewitchment", checker)) {
 			BewitchmentCompat.registerCompat(checker);
 		}
@@ -105,8 +105,8 @@ public class Compats
 		if (isModLoaded("blockus", checker)) {
 			BlockusCompat.registerCompat();
 		}
-		if (isModLoaded("bloomingnature", checker)) {
-			BloomingNatureCompat.registerCompat();
+		if (isModLoaded("bountifulfares", checker)) {
+			BountifulFaresCompat.registerCompat();
 		}
 		if (isModLoaded("born_in_chaos_v1", checker)) {
 			BornInChaosCompat.registerCompat();
@@ -176,6 +176,9 @@ public class Compats
 		}
 		if (isModLoaded("enhanced_mushrooms", checker)) {
 			EnhancedMushroomsCompat.registerCompat();
+			if (isModLoaded("habitat", checker)) {
+				HabitatCompat.registerCompat();
+			}
 		}
 		if (isModLoaded("phantasm", checker)) {
 			EndPhantasmCompat.registerCompat();
@@ -221,6 +224,9 @@ public class Compats
 		}
 		if (isModLoaded("integrateddynamics", checker)) {
 			IntegratedDynamicsCompat.registerCompat();
+		}
+		if (isModLoaded("doapi", checker)) {
+			LetsDoCompat.registerCompat(checker);
 		}
 		if (isModLoaded("malum", checker)) {
 			MalumCompat.registerCompat();
@@ -314,9 +320,6 @@ public class Compats
     	}
 		if (isModLoaded("undergarden", checker)) {
 			UndergardenCompat.registerCompat();
-		}
-		if (isModLoaded("vinery", checker)) {
-			VineryCompat.registerCompat();
 		}
 		if (isModLoaded("wilderwild", checker)) {
 			WilderWildCompat.registerCompat();

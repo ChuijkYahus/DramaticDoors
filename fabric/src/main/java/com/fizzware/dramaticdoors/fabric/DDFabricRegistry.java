@@ -32,11 +32,10 @@ public class DDFabricRegistry
 	
 	public static void registerBlocksItems() {
 		// Iterate through the blocks and items to register.
-		for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS_TO_REGISTER) {
-			// DramaticDoors.LOGGER.info("Registering: " + pair.getA());
+		for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS) {
 			Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
 		}
-		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 			Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(DramaticDoors.MOD_ID, pair.getA()), pair.getB());
 		}
 	}

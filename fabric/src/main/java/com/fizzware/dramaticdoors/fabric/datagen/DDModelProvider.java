@@ -7,8 +7,7 @@ import java.util.function.Supplier;
 
 import com.fizzware.dramaticdoors.blocks.ShortDoorBlock;
 import com.fizzware.dramaticdoors.blocks.TallDoorBlock;
-import com.fizzware.dramaticdoors.items.ShortDoorItem;
-import com.fizzware.dramaticdoors.items.TallDoorItem;
+import com.fizzware.dramaticdoors.registry.DDRegistry;
 import com.fizzware.dramaticdoors.state.properties.DDBlockStateProperties;
 import com.fizzware.dramaticdoors.state.properties.TripleBlockPart;
 import com.google.gson.JsonElement;
@@ -33,6 +32,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import oshi.util.tuples.Pair;
 
 public class DDModelProvider extends FabricModelProvider
 {
@@ -61,8 +61,8 @@ public class DDModelProvider extends FabricModelProvider
 
 	@Override
 	public void generateItemModels(ItemModelGenerators itemModelGenerator) {
-		for (Item item : BuiltInRegistries.ITEM.stream().filter(item -> item instanceof ShortDoorItem || item instanceof TallDoorItem).toList()) {
-			itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
+		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
+			itemModelGenerator.generateFlatItem(pair.getB(), ModelTemplates.FLAT_ITEM);
 		}
 	}
 

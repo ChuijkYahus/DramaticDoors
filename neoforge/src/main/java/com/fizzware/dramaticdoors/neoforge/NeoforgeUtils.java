@@ -1,7 +1,5 @@
 package com.fizzware.dramaticdoors.neoforge;
 
-import java.util.Objects;
-
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.compat.CompatChecker;
 import com.fizzware.dramaticdoors.neoforge.config.DDConfigNF;
@@ -13,11 +11,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab.TabVisibility;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.WeatheringCopper;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLEnvironment;
@@ -48,18 +43,6 @@ public class NeoforgeUtils implements CompatChecker
 	@Override
 	public boolean isQuarkModuleEnabled() {
 		return INSTANCE.isModLoaded("quark");
-	}
-	
-	public static void registerOxidizableBlockPair(Block less, Block more) {
-		Objects.requireNonNull(less, "Oxidizable block cannot be null!");
-		Objects.requireNonNull(more, "Oxidizable block cannot be null!");
-		WeatheringCopper.NEXT_BY_BLOCK.get().put(less, more);
-	}
-
-	public static void registerWaxableBlockPair(Block unwaxed, Block waxed) {
-		Objects.requireNonNull(unwaxed, "Unwaxed block cannot be null!");
-		Objects.requireNonNull(waxed, "Waxed block cannot be null!");
-		HoneycombItem.WAXABLES.get().put(unwaxed, waxed);
 	}
 	
 	@SubscribeEvent
@@ -116,28 +99,28 @@ public class NeoforgeUtils implements CompatChecker
     	}
     	// Insert into Dramatic Doors tabs.
     	if (event.getTabKey() == DDCreativeTabs.MAIN_TAB) {
-	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 	        	if (!(pair.getA().contains("chipped") || pair.getA().contains("macaw") || pair.getA().contains("manyideas"))) {
 	        		event.accept(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        	}
 	        }
     	}
     	if (event.getTabKey() == DDCreativeTabs.CHIPPED_TAB) {
-	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 	        	if (pair.getA().contains("chipped")) {
 	        		event.accept(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        	}
 	        }
     	}
     	if (event.getTabKey() == DDCreativeTabs.MACAW_TAB) {
-	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 	        	if (pair.getA().contains("macaw")) {
 	        		event.accept(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        	}
 	        }
     	}
     	if (event.getTabKey() == DDCreativeTabs.MANYIDEAS_TAB) {
-	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+	        for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 	        	if (pair.getA().contains("manyideas")) {
 	        		event.accept(pair.getB().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 	        	}

@@ -100,7 +100,7 @@ public class FabricUtils implements CompatChecker
 
 	// Add to mod tabs.
 	private static void addMainTabEntries(FabricItemGroupEntries entries) {
-		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 			if (!(pair.getA().contains("chipped") || pair.getA().contains("macaw") || pair.getA().contains("manyideas"))) {
 				entries.accept(pair.getB(), TabVisibility.PARENT_AND_SEARCH_TABS);
 			}
@@ -108,7 +108,7 @@ public class FabricUtils implements CompatChecker
 	}
 
 	private static void addChippedTabEntries(FabricItemGroupEntries entries) {
-		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 			if (pair.getA().contains("chipped")) {
 				entries.accept(pair.getB(), TabVisibility.PARENT_AND_SEARCH_TABS);
 			}
@@ -116,7 +116,7 @@ public class FabricUtils implements CompatChecker
 	}
 
 	private static void addMacawTabEntries(FabricItemGroupEntries entries) {
-		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 			if (pair.getA().contains("macaw")) {
 				entries.accept(pair.getB(), TabVisibility.PARENT_AND_SEARCH_TABS);
 			}
@@ -124,7 +124,7 @@ public class FabricUtils implements CompatChecker
 	}
 
 	private static void addManyIdeasTabEntries(FabricItemGroupEntries entries) {
-		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS_TO_REGISTER) {
+		for (Pair<String, Item> pair : DDRegistry.DOOR_ITEMS) {
 			if (pair.getA().contains("manyideas")) {
 				entries.accept(pair.getB(), TabVisibility.PARENT_AND_SEARCH_TABS);
 			}

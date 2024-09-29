@@ -13,7 +13,7 @@ public class RenderHandler implements ClientModInitializer
 {
 	@Override
 	public void onInitializeClient() {
-		for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS_TO_REGISTER) {
+		for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS) {
 			if (SpecialDoorRenderList.TRANSLUCENT_DOORS.contains(pair.getA())) {
 				BlockRenderLayerMap.INSTANCE.putBlock(pair.getB(), RenderType.translucent());
 			}

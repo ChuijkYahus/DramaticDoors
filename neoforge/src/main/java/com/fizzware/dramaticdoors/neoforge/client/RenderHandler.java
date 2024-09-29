@@ -13,7 +13,7 @@ public class RenderHandler
 {
 	@SuppressWarnings("deprecation")
 	public static void onInitializeClient() {
-		for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS_TO_REGISTER) {
+		for (Pair<String, Block> pair : DDRegistry.DOOR_BLOCKS) {
 			if (SpecialDoorRenderList.TRANSLUCENT_DOORS.contains(pair.getA())) {
 				ItemBlockRenderTypes.setRenderLayer(pair.getB(), RenderType.translucent());
 			}

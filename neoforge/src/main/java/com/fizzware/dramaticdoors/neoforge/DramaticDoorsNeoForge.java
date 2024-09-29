@@ -23,9 +23,6 @@ import net.neoforged.neoforge.common.NeoForge;
 public class DramaticDoorsNeoForge
 {
     public DramaticDoorsNeoForge(IEventBus bus, ModContainer container) {
-    	if (NeoforgeUtils.INSTANCE.isModLoaded("connector")) { // Let Fabric side take over if Sinytra Connector is installed.
-    		return;
-    	}
     	// Please let this be a normal field trip.    	
     	// With the Mr. Fizzware? No freakin' way! Register events for the Magic NeoForge Bus to take them on an extraordinary trip.
     	Compats.modChecker = NeoforgeUtils.INSTANCE;

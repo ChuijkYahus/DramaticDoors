@@ -13,8 +13,6 @@
     "FenceGateBlockMixin",
     "ShortDoorBlockMixin",
     "TallDoorBlockMixin",
-    "ShortCopperDoorBlockMixin",
-    "TallCopperDoorBlockMixin",
     "HoneycombItemMixin",
     "JapaneseDoorBlockMixinNeoForge",
     "DoorInteractGoalMixin",

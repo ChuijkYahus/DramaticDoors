@@ -1,6 +1,6 @@
 {
   "parent": "dramaticdoors:block/door_short_right_open",
   "textures": {
-    "texture": "atum:block/limestone_brick_cracked"
+    "texture": "dramaticdoors:block/short_limestone_brick_cracked_brick_door"
   }
 }

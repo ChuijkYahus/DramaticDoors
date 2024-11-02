@@ -9,6 +9,7 @@ import com.fizzware.dramaticdoors.compat.registries.SupplementariesCompat;
 import com.fizzware.dramaticdoors.state.properties.DDBlockStateProperties;
 import com.fizzware.dramaticdoors.state.properties.TripleBlockPart;
 import com.fizzware.dramaticdoors.tags.DDBlockTags;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -53,8 +54,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 @SuppressWarnings("deprecation")
-public class TallDoorBlock extends Block implements SimpleWaterloggedBlock {
-
+public class TallDoorBlock extends Block implements SimpleWaterloggedBlock 
+{
     public static final EnumProperty<TripleBlockPart> THIRD = DDBlockStateProperties.TRIPLE_BLOCK_THIRD;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
@@ -88,6 +89,10 @@ public class TallDoorBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         TripleBlockPart tripleblockpart = stateIn.getValue(THIRD);
+		stateIn = stateIn.setValue(WATERLOGGED, level.getFluidState(currentPos).getType() == Fluids.WATER);
+		if (stateIn.getValue(WATERLOGGED)) {
+			level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+		}
         if (facing.getAxis() == Direction.Axis.Y && ((tripleblockpart == TripleBlockPart.LOWER == (facing == Direction.UP)) || tripleblockpart == TripleBlockPart.MIDDLE)) {
             if (facingState.getBlock() == this && facingState.getValue(THIRD) != tripleblockpart) {
                 return stateIn.setValue(FACING, facingState.getValue(FACING)).setValue(OPEN, facingState.getValue(OPEN)).setValue(HINGE, facingState.getValue(HINGE)).setValue(POWERED, facingState.getValue(POWERED));
@@ -101,6 +106,7 @@ public class TallDoorBlock extends Block implements SimpleWaterloggedBlock {
                 return super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
             }
         }
+
     }
 
     @Override

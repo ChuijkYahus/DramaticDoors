@@ -97,12 +97,21 @@ public class TallSlidingDoorMovementBehaviour implements MovementBehaviour
 	private void toggleDoor(BlockPos pos, Contraption contraption, StructureBlockInfo info) {
 		BlockState newState = info.state().cycle(TallDoorBlock.OPEN);
 		contraption.entity.setBlock(pos, new StructureBlockInfo(info.pos(), newState, info.nbt()));
-
-		BlockPos otherPos = newState.getValue(TallDoorBlock.THIRD) == TripleBlockPart.LOWER ? pos.above() : pos.below();
+		if (newState.getValue(TallDoorBlock.THIRD) != TripleBlockPart.LOWER) {
+			return;
+		}
+		BlockPos otherPos = pos.above(1);
+		BlockPos otherPos2 = pos.above(2);
 		info = contraption.getBlocks().get(otherPos);
 		if (info != null && info.state().hasProperty(TallDoorBlock.OPEN)) {
 			newState = info.state().cycle(TallDoorBlock.OPEN);
 			contraption.entity.setBlock(otherPos, new StructureBlockInfo(info.pos(), newState, info.nbt()));
+			contraption.invalidateColliders();
+		}
+		info = contraption.getBlocks().get(otherPos2);
+		if (info != null && info.state().hasProperty(TallDoorBlock.OPEN)) {
+			newState = info.state().cycle(TallDoorBlock.OPEN);
+			contraption.entity.setBlock(otherPos2, new StructureBlockInfo(info.pos(), newState, info.nbt()));
 			contraption.invalidateColliders();
 		}
 	}

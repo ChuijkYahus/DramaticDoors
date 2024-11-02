@@ -85,6 +85,10 @@ public class ShortDoorBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+		stateIn = stateIn.setValue(WATERLOGGED, level.getFluidState(currentPos).getType() == Fluids.WATER);
+		if (stateIn.getValue(WATERLOGGED)) {
+			level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+		}
         return !canSurvive(stateIn, level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
     }
 

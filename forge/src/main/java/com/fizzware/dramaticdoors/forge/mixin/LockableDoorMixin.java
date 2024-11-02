@@ -1,30 +1,25 @@
 package com.fizzware.dramaticdoors.forge.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.material.Fluids;
 import net.rk.thingamajigs.xtrablock.LockableDoor;
 
-@Mixin(LockableDoor.class)
-public class LockableDoorMixin
+@Mixin(value = LockableDoor.class, remap = true)
+public class LockableDoorMixin extends DoorBlock
 {
-	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	
-	@Inject(at = @At("TAIL"), method = "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V")
-	private void enhanceConstructor(BlockBehaviour.Properties properties, CallbackInfo callback) {
-		((LockableDoor)(Object)this).registerDefaultState(((LockableDoor)(Object)this).defaultBlockState().setValue(WATERLOGGED, false));
+	public LockableDoorMixin(Properties properties, BlockSetType blockset) {
+		super(properties, blockset); // Not used...		
 	}
 	
-	@Inject(at = @At("TAIL"), method = "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V")
-	protected void injectBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder, CallbackInfo callback) {
-		builder.add(WATERLOGGED);
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		boolean waterfilled = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
+		return super.getStateForPlacement(context).setValue(LockableDoor.LOCKED, false).setValue(BlockStateProperties.WATERLOGGED, waterfilled);
 	}
 }

@@ -38,7 +38,6 @@ dependencies {
     modImplementation("com.simibubi.create:create-fabric-${rootProject.minecraft_version}:${rootProject.create_fabric_version}")
 	modImplementation "curse.maven:architectury-api-419699:4663009"
     modImplementation "curse.maven:cloth-config-348521:4633442"
-	modImplementation "curse.maven:pandas-extra-details-883585:5258175"
 }
 
 var commonAW = project(":common").file("src/main/resources/dramaticdoors.accesswidener")

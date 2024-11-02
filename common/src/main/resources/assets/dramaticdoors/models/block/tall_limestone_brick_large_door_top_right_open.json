@@ -1,8 +1,7 @@
 {
-    "parent": "block/door_top_right_open",
-    "textures": {
-        "bottom": "atum:block/limestone_brick_large",
-        "middle": "atum:block/limestone_brick_large",
-        "top": "atum:block/limestone_brick_large"
-    }
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "dramaticdoors:block/tall_limestone_brick_large_door_bottom",
+    "top": "dramaticdoors:block/tall_limestone_brick_large_door_top"
+  }
 }

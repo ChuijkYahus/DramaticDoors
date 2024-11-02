@@ -13,43 +13,44 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 public class AbnormalsCompat
 {
 	public static void registerCompat(CompatChecker checker) {
-		registerBlocksItems();
+		registerBlocksItems(checker);
 		registerRecipes(checker);
 	}
 	
-	private static void registerBlocksItems() {
-		// Atmospheric
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ASPEN, DDNames.SHORT_ASPEN, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "aspen_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GRIMWOOD, DDNames.SHORT_GRIMWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "grimwood_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_KOUSA, DDNames.SHORT_KOUSA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "kousa_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_LAUREL, DDNames.SHORT_LAUREL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "laurel_door")), BlockSetType.SPRUCE, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MORADO, DDNames.SHORT_MORADO, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "morado_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ROSEWOOD, DDNames.SHORT_ROSEWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "rosewood_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_YUCCA, DDNames.SHORT_YUCCA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "yucca_door")), BlockSetType.OAK, true);
-
-		// Autumnity
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MAPLE, DDNames.SHORT_MAPLE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("autumnity", "maple_door")), BlockSetType.OAK, true);
-		
-		// Buzzier Bees
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_HONEYCOMB, DDNames.SHORT_HONEYCOMB, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("buzzier_bees", "honeycomb_door")), BlockSetType.OAK, true);
-
-		// Caverns & Chasms
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_AZALEA, DDNames.SHORT_AZALEA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("caverns_and_chasms", "azalea_door")), BlockSetType.OAK, true);
-
-		// Endergetic Expansion
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_POISE, DDNames.SHORT_POISE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("endergetic", "poise_door")), BlockSetType.WARPED, true);
-
-		// Environmental
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_DARK_CHERRY, DDNames.SHORT_DARK_CHERRY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "cherry_door")), BlockSetType.CHERRY, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_PINE, DDNames.SHORT_PINE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "pine_door")), BlockSetType.SPRUCE, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WILLOW, DDNames.SHORT_WILLOW, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "willow_door")), BlockSetType.MANGROVE, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WISTERIA, DDNames.SHORT_WISTERIA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "wisteria_door")), BlockSetType.CHERRY, true);
-		
-		// Upgrade Aquatic
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_DRIFTWOOD, DDNames.SHORT_DRIFTWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "driftwood_door")), BlockSetType.SPRUCE, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RIVER, DDNames.SHORT_RIVER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "river_door")), BlockSetType.OAK, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GLASS, DDNames.SHORT_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "glass_door")), BlockSetType.STONE, true);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_TOOTH, DDNames.SHORT_TOOTH, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "tooth_door")), BlockSetType.STONE, true);
+	private static void registerBlocksItems(CompatChecker checker) {
+		if (Compats.isModLoaded("atmospheric", checker)) { // Atmospheric
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ASPEN, DDNames.SHORT_ASPEN, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "aspen_door")), BlockSetType.OAK, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GRIMWOOD, DDNames.SHORT_GRIMWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "grimwood_door")), BlockSetType.OAK, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_KOUSA, DDNames.SHORT_KOUSA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "kousa_door")), BlockSetType.OAK, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_LAUREL, DDNames.SHORT_LAUREL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "laurel_door")), BlockSetType.SPRUCE, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MORADO, DDNames.SHORT_MORADO, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "morado_door")), BlockSetType.OAK, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_ROSEWOOD, DDNames.SHORT_ROSEWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "rosewood_door")), BlockSetType.OAK, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_YUCCA, DDNames.SHORT_YUCCA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("atmospheric", "yucca_door")), BlockSetType.OAK, true);
+		}
+		if (Compats.isModLoaded("autumnity", checker)) { // Autumnity
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MAPLE, DDNames.SHORT_MAPLE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("autumnity", "maple_door")), BlockSetType.OAK, true);
+		}
+		if (Compats.isModLoaded("buzzier_bees", checker)) { // Buzzier Bees
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_HONEYCOMB, DDNames.SHORT_HONEYCOMB, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("buzzier_bees", "honeycomb_door")), BlockSetType.OAK, true);
+		}
+		if (Compats.isModLoaded("caverns_and_chasms", checker)) { // Caverns & Chasms
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_AZALEA, DDNames.SHORT_AZALEA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("caverns_and_chasms", "azalea_door")), BlockSetType.OAK, true);
+		}
+		if (Compats.isModLoaded("endergetic", checker)) { // Endergetic Expansion
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_POISE, DDNames.SHORT_POISE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("endergetic", "poise_door")), BlockSetType.WARPED, true);
+		}
+		if (Compats.isModLoaded("environmental", checker)) { // Environmental
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_DARK_CHERRY, DDNames.SHORT_DARK_CHERRY, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "cherry_door")), BlockSetType.CHERRY, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_PINE, DDNames.SHORT_PINE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "pine_door")), BlockSetType.SPRUCE, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WILLOW, DDNames.SHORT_WILLOW, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "willow_door")), BlockSetType.MANGROVE, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_WISTERIA, DDNames.SHORT_WISTERIA, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("environmental", "wisteria_door")), BlockSetType.CHERRY, true);
+		}
+		if (Compats.isModLoaded("upgrade_aquatic", checker)) { // Upgrade Aquatic
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_DRIFTWOOD, DDNames.SHORT_DRIFTWOOD, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "driftwood_door")), BlockSetType.SPRUCE, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_RIVER, DDNames.SHORT_RIVER, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "river_door")), BlockSetType.OAK, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_GLASS, DDNames.SHORT_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "glass_door")), BlockSetType.STONE, true);
+			DDRegistry.registerDoorBlockAndItem(DDNames.TALL_TOOTH, DDNames.SHORT_TOOTH, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("upgrade_aquatic", "tooth_door")), BlockSetType.STONE, true);
+		}
 	}
 	 
 	private static void registerRecipes(CompatChecker checker) {

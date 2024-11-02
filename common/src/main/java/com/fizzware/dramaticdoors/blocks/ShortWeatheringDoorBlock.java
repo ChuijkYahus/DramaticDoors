@@ -1,7 +1,5 @@
 package com.fizzware.dramaticdoors.blocks;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -40,14 +38,23 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ShortWeatheringDoorBlock extends ShortDoorBlock implements WeatheringCopper
 {
 	// Set up database of oxidizable and waxable doors.
-    public static final ResourceLocation COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_COPPER);
-    public static final ResourceLocation EXPOSED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_EXPOSED_COPPER);
-    public static final ResourceLocation WEATHERED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WEATHERED_COPPER);
-    public static final ResourceLocation OXIDIZED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_OXIDIZED_COPPER);
-    public static final ResourceLocation WAXED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_COPPER);
-    public static final ResourceLocation WAXED_EXPOSED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_EXPOSED_COPPER);
-    public static final ResourceLocation WAXED_WEATHERED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_WEATHERED_COPPER);
-    public static final ResourceLocation WAXED_OXIDIZED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_OXIDIZED_COPPER);
+    public static final ResourceLocation COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_COPPER);
+    public static final ResourceLocation EXPOSED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_COPPER);
+    public static final ResourceLocation WEATHERED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WEATHERED_COPPER);
+    public static final ResourceLocation OXIDIZED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_OXIDIZED_COPPER);
+    public static final ResourceLocation WAXED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_COPPER);
+    public static final ResourceLocation WAXED_EXPOSED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_EXPOSED_COPPER);
+    public static final ResourceLocation WAXED_WEATHERED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_COPPER);
+    public static final ResourceLocation WAXED_OXIDIZED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_OXIDIZED_COPPER);
+	
+    public static final ResourceLocation EC_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_COPPER);
+    public static final ResourceLocation EC_EXPOSED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_EXPOSED_COPPER);
+    public static final ResourceLocation EC_WEATHERED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WEATHERED_COPPER);
+    public static final ResourceLocation EC_OXIDIZED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_OXIDIZED_COPPER);
+    public static final ResourceLocation EC_WAXED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_COPPER);
+    public static final ResourceLocation EC_WAXED_EXPOSED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_EXPOSED_COPPER);
+    public static final ResourceLocation EC_WAXED_WEATHERED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_WEATHERED_COPPER);
+    public static final ResourceLocation EC_WAXED_OXIDIZED_COPPER_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EC_WAXED_OXIDIZED_COPPER);
     
     public static final ResourceLocation IRON_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_IRON);
     public static final ResourceLocation EXPOSED_IRON_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_EXPOSED_IRON);
@@ -58,18 +65,23 @@ public class ShortWeatheringDoorBlock extends ShortDoorBlock implements Weatheri
     public static final ResourceLocation WAXED_WEATHERED_IRON_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_WEATHERED_IRON);
     public static final ResourceLocation WAXED_RUSTED_IRON_DOOR_RES = new ResourceLocation(DramaticDoors.MOD_ID, DDNames.SHORT_WAXED_RUSTED_IRON);
     
-    private static final List<ResourceLocation> WAXED_BLOCKS = Arrays.asList(WAXED_COPPER_DOOR_RES, WAXED_EXPOSED_COPPER_DOOR_RES, WAXED_WEATHERED_COPPER_DOOR_RES, WAXED_OXIDIZED_COPPER_DOOR_RES, WAXED_IRON_DOOR_RES, WAXED_EXPOSED_IRON_DOOR_RES, WAXED_WEATHERED_IRON_DOOR_RES, WAXED_RUSTED_IRON_DOOR_RES);
-    private static final List<ResourceLocation> DEOXIDIZABLE_BLOCKS = Arrays.asList(EXPOSED_COPPER_DOOR_RES, WEATHERED_COPPER_DOOR_RES, OXIDIZED_COPPER_DOOR_RES, EXPOSED_IRON_DOOR_RES, WEATHERED_IRON_DOOR_RES, RUSTED_IRON_DOOR_RES);
+    public static final Supplier<BiMap<Block, Block>> WAXABLES = Suppliers.memoize(() -> buildWaxingList().build());
+    public static final Supplier<BiMap<Block, Block>> WAX_OFF_BY_BLOCK = Suppliers.memoize(() -> WAXABLES.get().inverse());
+    
+    public static final Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> buildWeatheringList().build());
+    public static final Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> NEXT_BY_BLOCK.get().inverse());
 
-	private static Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> { return buildList().build(); });
-	private static Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> { return NEXT_BY_BLOCK.get().inverse(); });
-	
-	private static ImmutableBiMap.Builder<Block, Block> buildList() {
+	private static ImmutableBiMap.Builder<Block, Block> buildWeatheringList() {
 		ImmutableBiMap.Builder<Block, Block> builder = ImmutableBiMap.<Block, Block>builder();
-		if (Compats.modChecker.isModLoaded("everythingcopper")) {
+		if (Compats.modChecker.isModLoaded("tricky_trials") || Compats.modChecker.isModLoaded("trials") || Compats.modChecker.isModLoaded("copperandtuffbackport")) {
 			builder.put(BuiltInRegistries.BLOCK.get(COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EXPOSED_COPPER_DOOR_RES));
 			builder.put(BuiltInRegistries.BLOCK.get(EXPOSED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(WEATHERED_COPPER_DOOR_RES));
 			builder.put(BuiltInRegistries.BLOCK.get(WEATHERED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(OXIDIZED_COPPER_DOOR_RES));
+		}
+		if (Compats.modChecker.isModLoaded("everythingcopper")) {
+			builder.put(BuiltInRegistries.BLOCK.get(EC_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EC_EXPOSED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(EC_EXPOSED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EC_WEATHERED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(EC_WEATHERED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EC_OXIDIZED_COPPER_DOOR_RES));
 		}
 		if (Compats.modChecker.isModLoaded("immersive_weathering")) {
 			builder.put(BuiltInRegistries.BLOCK.get(IRON_DOOR_RES), BuiltInRegistries.BLOCK.get(EXPOSED_IRON_DOOR_RES));
@@ -77,6 +89,28 @@ public class ShortWeatheringDoorBlock extends ShortDoorBlock implements Weatheri
 			builder.put(BuiltInRegistries.BLOCK.get(WEATHERED_IRON_DOOR_RES), BuiltInRegistries.BLOCK.get(RUSTED_IRON_DOOR_RES));
 		}
 		return builder;
+	}
+	private static ImmutableBiMap.Builder<Block, Block> buildWaxingList() {
+		ImmutableBiMap.Builder<Block, Block> builder = ImmutableBiMap.<Block, Block>builder();
+		if (Compats.modChecker.isModLoaded("tricky_trials") || Compats.modChecker.isModLoaded("trials") || Compats.modChecker.isModLoaded("copperandtuffbackport")) {
+			builder.put(BuiltInRegistries.BLOCK.get(COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(EXPOSED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_EXPOSED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(WEATHERED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_WEATHERED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(OXIDIZED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_OXIDIZED_COPPER_DOOR_RES));
+		}
+		if (Compats.modChecker.isModLoaded("everythingcopper")) {
+			builder.put(BuiltInRegistries.BLOCK.get(EC_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EC_WAXED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(EC_EXPOSED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EC_WAXED_EXPOSED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(EC_WEATHERED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EC_WAXED_WEATHERED_COPPER_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(EC_OXIDIZED_COPPER_DOOR_RES), BuiltInRegistries.BLOCK.get(EC_WAXED_OXIDIZED_COPPER_DOOR_RES));
+		}
+		if (Compats.modChecker.isModLoaded("immersive_weathering")) {
+			builder.put(BuiltInRegistries.BLOCK.get(IRON_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_IRON_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(EXPOSED_IRON_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_EXPOSED_IRON_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(WEATHERED_IRON_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_WEATHERED_IRON_DOOR_RES));
+			builder.put(BuiltInRegistries.BLOCK.get(RUSTED_IRON_DOOR_RES), BuiltInRegistries.BLOCK.get(WAXED_RUSTED_IRON_DOOR_RES));
+		}
+    	return builder;
 	}
 
 	private final WeatheringCopper.WeatherState weatherState;
@@ -87,13 +121,12 @@ public class ShortWeatheringDoorBlock extends ShortDoorBlock implements Weatheri
 		this.weatherState = state;
 	}
 
-	@Override
+   	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		ItemStack itemstack = player.getItemInHand(handIn);
-		Block block = state.getBlock();
 		// Wax on
 		if (itemstack != null && itemstack.getItem() == Items.HONEYCOMB) {
-			if (WAXED_BLOCKS.contains(BuiltInRegistries.BLOCK.getKey(block))) {
+			if (!getWaxed(state).isPresent()) {
 				return InteractionResult.PASS;
 			}
 			if (player instanceof ServerPlayer) {
@@ -108,12 +141,12 @@ public class ShortWeatheringDoorBlock extends ShortDoorBlock implements Weatheri
 		}
 		// Wax off
 		if (itemstack != null && itemstack.getItem() instanceof AxeItem) {
-			if (WAXED_BLOCKS.contains(BuiltInRegistries.BLOCK.getKey(block))) {
+			if (getUnwaxed(state).isPresent()) {
 				level.playSound(player, pos, SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
 				level.levelEvent(player, 3004, pos, 0);
 				removeWaxFromDoor(state, level, pos);
 			}
-			else if (DEOXIDIZABLE_BLOCKS.contains(BuiltInRegistries.BLOCK.getKey(block))) {
+			else if (getPrevious(state).isPresent()) {
 				level.playSound(player, pos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0F, 1.0F);
 				level.levelEvent(player, 3005, pos, 0);
 				deoxidizeDoor(state, level, pos);
@@ -126,47 +159,30 @@ public class ShortWeatheringDoorBlock extends ShortDoorBlock implements Weatheri
 			}
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		}
-		return InteractionResult.PASS;
+		return super.use(state, level, pos, player, handIn, hit);
 	}
 
 	private void applyWaxOnDoor(BlockState state, Level level, BlockPos pos) {
 		BlockState newState = state;
-		boolean waterfilled0 = level.getFluidState(pos).getType() == Fluids.WATER;
-		if (state.getBlock() == BuiltInRegistries.BLOCK.get(COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(WAXED_COPPER_DOOR_RES), state);
-		} else if (state.getBlock() == BuiltInRegistries.BLOCK.get(EXPOSED_COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(WAXED_EXPOSED_COPPER_DOOR_RES), state);
-		} else if (state.getBlock() == BuiltInRegistries.BLOCK.get(WEATHERED_COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(WAXED_WEATHERED_COPPER_DOOR_RES), state);
-		} else if (state.getBlock() == BuiltInRegistries.BLOCK.get(OXIDIZED_COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(WAXED_OXIDIZED_COPPER_DOOR_RES), state);
+		boolean waterfilled = level.getFluidState(pos).getType() == Fluids.WATER;
+		if (getWaxed(state).isPresent()) {
+			newState = copyProperties(getWaxed(state).get().getBlock(), state);
 		}
-		level.removeBlock(pos, false);
-		level.setBlock(pos, newState.setValue(WATERLOGGED, waterfilled0), 35);
+		level.setBlock(pos, newState.setValue(WATERLOGGED, waterfilled), 35);
 	}
 
 	private void removeWaxFromDoor(BlockState state, Level level, BlockPos pos) {
 		BlockState newState = state;
-		boolean waterfilled0 = level.getFluidState(pos).getType() == Fluids.WATER;
-		if (state.getBlock() == BuiltInRegistries.BLOCK.get(WAXED_COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(COPPER_DOOR_RES), state);
-		} else if (state.getBlock() == BuiltInRegistries.BLOCK.get(WAXED_EXPOSED_COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(EXPOSED_COPPER_DOOR_RES), state);
-		} else if (state.getBlock() == BuiltInRegistries.BLOCK.get(WAXED_WEATHERED_COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(WEATHERED_COPPER_DOOR_RES), state);
-		} else if (state.getBlock() == BuiltInRegistries.BLOCK.get(WAXED_OXIDIZED_COPPER_DOOR_RES)) {
-			newState = copyProperties(BuiltInRegistries.BLOCK.get(OXIDIZED_COPPER_DOOR_RES), state);
+		boolean waterfilled = level.getFluidState(pos).getType() == Fluids.WATER;
+		if (getUnwaxed(state).isPresent()) {
+			newState = copyProperties(getUnwaxed(state).get().getBlock(), state);
 		}
-		level.removeBlock(pos, false);
-		level.removeBlock(pos.above(1), false);
-		level.removeBlock(pos.above(2), false);
-		level.setBlock(pos, newState.setValue(WATERLOGGED, waterfilled0), 35);
+		level.setBlock(pos, newState.setValue(WATERLOGGED, waterfilled), 35);
 	}
 	
 	private void deoxidizeDoor(BlockState state, Level level, BlockPos pos) {
 		boolean waterfilled0 = level.getFluidState(pos).getType() == Fluids.WATER;
 		getPrevious(state).ifPresent((newState) ->  {
-            level.setBlock(pos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
             level.setBlock(pos, newState.setValue(WATERLOGGED, waterfilled0), Block.UPDATE_CLIENTS);
 		});
 	}
@@ -210,6 +226,15 @@ public class ShortWeatheringDoorBlock extends ShortDoorBlock implements Weatheri
 		return Optional.ofNullable(NEXT_BY_BLOCK.get().get(state));
 	}
 
+	// Code for waxing on and off.
+    public static Optional<BlockState> getWaxed(BlockState state) {
+        return Optional.ofNullable(WAXABLES.get().get(state.getBlock())).map(block -> block.withPropertiesOf(state));
+    }
+    public static Optional<BlockState> getUnwaxed(BlockState state) {
+    	DramaticDoors.LOGGER.info("Attempt to get unwaxed.");
+        return Optional.ofNullable(WAX_OFF_BY_BLOCK.get().get(state.getBlock())).map(block -> block.withPropertiesOf(state));
+    }
+	
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		this.onRandomTick(state, level, pos, random);

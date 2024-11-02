@@ -97,17 +97,16 @@ dependencies {
     minecraft "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
-	implementation fg.deobf("net.potionstudios:Oh-The-Biomes-Weve-Gone-Common:1.0.0-Alpha")
+	implementation fg.deobf("net.potionstudios:Oh-The-Biomes-Weve-Gone-Common:1.0.5-Beta")
     implementation fg.deobf("curse.maven:macaws-doors-378646:4649910")
     implementation fg.deobf("com.simibubi.create:create-${rootProject.minecraft_version}:${rootProject.create_version}:slim") { transitive = false }
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${rootProject.minecraft_version}:${rootProject.flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${rootProject.registrate_version}")
-    implementation fg.deobf("curse.maven:dawn-of-time-312359:5199362")
+    implementation fg.deobf("curse.maven:dawn-of-time-312359:5374048")
     implementation fg.deobf("curse.maven:framedblocks-441647:4793884")
     implementation fg.deobf("curse.maven:cloth-config-348521:4633444")
     implementation fg.deobf("curse.maven:architectury-api-419699:4663010")
-    implementation fg.deobf("curse.maven:pandas-extra-details-883585:5258176")
-	implementation fg.deobf("curse.maven:blueys-thingamajigs-404380:5283587")
+	implementation fg.deobf("curse.maven:blueys-thingamajigs-404380:5650466")
 	implementation fg.deobf("curse.maven:sliding-doors-994764:5294850")
 }
 

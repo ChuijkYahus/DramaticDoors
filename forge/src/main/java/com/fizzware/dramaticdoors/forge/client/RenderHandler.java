@@ -6,6 +6,7 @@ import com.fizzware.dramaticdoors.forge.ForgeUtils;
 import com.fizzware.dramaticdoors.forge.addons.create.client.TallSlidingDoorBlockRenderer;
 import com.fizzware.dramaticdoors.forge.addons.framedblocks.client.DDFramedBlocksClient;
 import com.fizzware.dramaticdoors.forge.compat.CreateForgeCompat;
+
 //import com.fizzware.dramaticdoors.forge.compat.ExtraDetailsForgeCompat;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;

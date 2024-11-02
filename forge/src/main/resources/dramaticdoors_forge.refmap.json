@@ -18,9 +18,10 @@
       "Lnet/minecraft/world/level/block/DoorBlock;isWoodenDoor(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Z": "Lnet/minecraft/world/level/block/DoorBlock;m_52745_(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Z"
     },
     "com/fizzware/dramaticdoors/forge/forge/mixin/FenceGateBlockMixin": {
+      "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V",
       "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
       "getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/minecraft/world/level/block/FenceGateBlock;m_5573_(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;",
-      "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V"
+      "updateShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7417_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"
     },
     "com/fizzware/dramaticdoors/forge/forge/mixin/LandPathNodeMakerMixin": {
       "getBlockPathTypeRaw(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;": "Lnet/minecraft/world/level/pathfinder/WalkNodeEvaluator;m_77643_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;"
@@ -36,16 +37,15 @@
       "apply": "Lnet/minecraft/world/item/crafting/RecipeManager;m_5787_(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V"
     },
     "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBDoorBlockMixin": {
-      "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/DoorBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+      "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/DoorBlockAA;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
       "Lnet/minecraft/world/level/block/DoorBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/DoorBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"    
     },
     "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBFenceGateBlockMixin": {
-      "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/FenceGateBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+      "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/WaterloggedFenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
       "Lnet/minecraft/world/level/block/FenceGateBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"    
     },
     "com/fizzware/dramaticdoors/forge/forge/mixin/LockableDoorMixin": {
-      "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V": "Lnet/rk/thingamajigs/xtrablock/LockableDoor;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V",
-      "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/rk/thingamajigs/xtrablock/LockableDoor;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
+      "getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/rk/thingamajigs/xtrablock/LockableDoor;m_5573_(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;"
     },
     "com/fizzware/dramaticdoors/forge/forge/mixin/JapaneseDoorBlockMixinForge": {
       "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V": "Lcom/mcwdoors/kikoz/objects/JapaneseDoors;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V",
@@ -86,9 +86,10 @@
         "Lnet/minecraft/world/level/block/DoorBlock;isWoodenDoor(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Z": "Lnet/minecraft/world/level/block/DoorBlock;m_52745_(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Z"
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/FenceGateBlockMixin": {
+        "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V",
         "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
         "getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/minecraft/world/level/block/FenceGateBlock;m_5573_(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;",
-        "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/WoodType;)V"
+        "updateShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7417_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/LandPathNodeMakerMixin": {
         "getBlockPathTypeRaw(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;": "Lnet/minecraft/world/level/pathfinder/WalkNodeEvaluator;m_77643_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;"
@@ -104,16 +105,15 @@
         "apply": "Lnet/minecraft/world/item/crafting/RecipeManager;m_5787_(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V"
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBDoorBlockMixin": {
-        "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/DoorBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+        "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/DoorBlockAA;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
         "Lnet/minecraft/world/level/block/DoorBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/DoorBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/DoTBFenceGateBlockMixin": {
-        "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/FenceGateBlockDoTB;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+        "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lorg/dawnoftimebuilder/block/templates/WaterloggedFenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
         "Lnet/minecraft/world/level/block/FenceGateBlock;createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/minecraft/world/level/block/FenceGateBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/LockableDoorMixin": {
-        "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V": "Lnet/rk/thingamajigs/xtrablock/LockableDoor;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V",
-        "createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V": "Lnet/rk/thingamajigs/xtrablock/LockableDoor;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V"
+        "getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;": "Lnet/rk/thingamajigs/xtrablock/LockableDoor;m_5573_(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;"
       },
       "com/fizzware/dramaticdoors/forge/forge/mixin/JapaneseDoorBlockMixinForge": {
         "<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V": "Lcom/alexander8vkhz/slidingdoors/door/Slidingdoorconfig;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/world/level/block/state/properties/BlockSetType;)V",

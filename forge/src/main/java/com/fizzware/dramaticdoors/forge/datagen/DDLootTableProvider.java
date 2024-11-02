@@ -3,6 +3,7 @@ package com.fizzware.dramaticdoors.forge.datagen;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;

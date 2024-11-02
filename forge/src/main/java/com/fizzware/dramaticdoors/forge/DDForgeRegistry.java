@@ -1,7 +1,7 @@
 package com.fizzware.dramaticdoors.forge;
 
-import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.DDNames;
+import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.DramaticDoors;
 import com.fizzware.dramaticdoors.blockentities.DDBlockEntities;
 import com.fizzware.dramaticdoors.blockentities.TallNetheriteDoorBlockEntity;

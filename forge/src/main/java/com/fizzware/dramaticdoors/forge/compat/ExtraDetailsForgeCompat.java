@@ -1,17 +1,5 @@
 package com.fizzware.dramaticdoors.forge.compat;
 
-import com.fizzware.dramaticdoors.DramaticDoors;
-import com.fizzware.dramaticdoors.forge.addons.extradetails.client.ShortDoorClientBlock;
-import com.fizzware.dramaticdoors.forge.addons.extradetails.client.ShortDoorRenderer;
-import com.fizzware.dramaticdoors.forge.addons.extradetails.client.TallDoorClientBlock;
-import com.fizzware.dramaticdoors.forge.addons.extradetails.client.TallDoorRenderer;
-import com.fizzware.dramaticdoors.tags.DDBlockTags;
-
-import me.pandamods.extra_details.api.client.render.block.BlockRendererRegistry;
-import me.pandamods.extra_details.api.client.render.block.ClientBlockRegistry;
-import me.pandamods.extra_details.api.client.render.block.ClientBlockType;
-import net.minecraft.resources.ResourceLocation;
-
 public class ExtraDetailsForgeCompat
 {
 	// Disabled

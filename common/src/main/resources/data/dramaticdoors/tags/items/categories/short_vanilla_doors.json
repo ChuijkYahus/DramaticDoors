@@ -11,6 +11,7 @@
     "dramaticdoors:short_mangrove_door",
     "dramaticdoors:short_bamboo_door",
     "dramaticdoors:short_cherry_door",
+    {"id": "dramaticdoors:short_pale_oak_door", "required": false},
     "dramaticdoors:short_crimson_door",
     "dramaticdoors:short_warped_door"
   ]

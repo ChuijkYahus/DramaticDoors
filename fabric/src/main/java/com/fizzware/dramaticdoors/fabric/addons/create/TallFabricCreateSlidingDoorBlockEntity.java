@@ -39,9 +39,9 @@ public class TallFabricCreateSlidingDoorBlockEntity extends SmartBlockEntity
 
 		super.tick();
 		boolean open = isOpen(getBlockState());
-		boolean wasSettled = getAnimation().settled();
-		getAnimation().chase(open ? 1 : 0, .15f, Chaser.LINEAR);
-		getAnimation().tickChaser();
+		boolean wasSettled = animation.settled();
+		animation.chase(open ? 1 : 0, .15f, Chaser.LINEAR);
+		animation.tickChaser();
 
 		if (level.isClientSide()) {
 			if (bridgeTicks < 2 && open) {
@@ -53,7 +53,7 @@ public class TallFabricCreateSlidingDoorBlockEntity extends SmartBlockEntity
 			return;
 		}
 
-		if (!open && !wasSettled && getAnimation().settled() && !isVisible(getBlockState())) {
+		if (!open && !wasSettled && animation.settled() && !isVisible(getBlockState())) {
 			showBlockModel();
 		}
 	}

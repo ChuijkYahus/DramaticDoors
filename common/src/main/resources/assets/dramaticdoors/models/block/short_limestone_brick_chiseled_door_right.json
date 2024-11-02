@@ -1,6 +1,6 @@
 {
   "parent": "dramaticdoors:block/door_short_right",
   "textures": {
-    "texture": "atum:block/limestone_brick_chiseled"
+    "texture": "dramaticdoors:block/short_limestone_brick_chiseled_door"
   }
 }

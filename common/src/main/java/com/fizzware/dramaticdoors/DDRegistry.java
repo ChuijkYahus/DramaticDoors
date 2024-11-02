@@ -14,6 +14,7 @@ import com.fizzware.dramaticdoors.blocks.TallWeatheringDoorBlock;
 import com.fizzware.dramaticdoors.compat.Compats;
 import com.fizzware.dramaticdoors.items.ShortDoorItem;
 import com.fizzware.dramaticdoors.items.TallDoorItem;
+import com.fizzware.dramaticdoors.state.properties.SlidingDoorType;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -98,15 +99,19 @@ public class DDRegistry
 	}
 	
 	public static void registerSlidingDoorBlockAndItem(String tallname, @Nullable String shortname, Block block, BlockSetType blocksettype, boolean includeShort) {
+		registerSlidingDoorBlockAndItem(tallname, shortname, block, blocksettype, includeShort, SlidingDoorType.MACAW);
+	}
+	
+	public static void registerSlidingDoorBlockAndItem(String tallname, @Nullable String shortname, Block block, BlockSetType blocksettype, boolean includeShort, SlidingDoorType type) {
 		Block tempBlock;
 		Item tempItem;
 		if (includeShort) {
-			tempBlock = createSlidingDoorBlock(block, blocksettype, false);
+			tempBlock = createSlidingDoorBlock(block, blocksettype, false, type);
 			tempItem = createDoorItem(tempBlock, false);
 			DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(shortname, tempBlock));
 			DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(shortname, tempItem));
 		}
-		tempBlock = createSlidingDoorBlock(block, blocksettype, true);
+		tempBlock = createSlidingDoorBlock(block, blocksettype, true, type);
 		tempItem = createDoorItem(tempBlock, true);
 		DOOR_BLOCKS_TO_REGISTER.add(new Pair<String, Block>(tallname, tempBlock));
 		DOOR_ITEMS_TO_REGISTER.add(new Pair<String, Item>(tallname, tempItem));
@@ -139,11 +144,11 @@ public class DDRegistry
 	}
 	
 	/* Functions for creating special doors from Macaw's Doors. */
-	protected static Block createSlidingDoorBlock(Block block, BlockSetType blocksettype, boolean isTall) {
+	protected static Block createSlidingDoorBlock(Block block, BlockSetType blocksettype, boolean isTall, SlidingDoorType type) {
 		if (!isTall) {
 			throw new IllegalArgumentException("Short version of Macaw sliding doors are currently not supported.");
 		}
-		return isTall ? new TallSlidingDoorBlock(block, blocksettype) : null;
+		return isTall ? new TallSlidingDoorBlock(block, blocksettype, type) : null;
 	}
 	
 	protected static Block createStableDoorBlock(Block block, BlockSetType blocksettype, boolean isTall) {

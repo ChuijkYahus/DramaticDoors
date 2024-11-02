@@ -54,8 +54,14 @@ public class Compats
 		if (isModLoaded("aether", checker)) {
 			AetherCompat.registerCompat();
 		}
+		if (isModLoaded("gravitation", checker)) {
+			AetherGravitationCompat.registerCompat();
+		}
 		if (isModLoaded("aether_redux", checker)) {
 			AetherReduxCompat.registerCompat();
+		}
+		if (isModLoaded("ancient_aether", checker)) {
+			AncientAetherCompat.registerCompat();
 		}
 		if (isModLoaded("theabyss", checker)) {
 			TheAbyss2Compat.registerCompat();
@@ -105,8 +111,11 @@ public class Compats
 		if (isModLoaded("blockus", checker)) {
 			BlockusCompat.registerCompat();
 		}
-		if (isModLoaded("bloomingnature", checker)) {
-			BloomingNatureCompat.registerCompat();
+		if (isModLoaded("bountifulfares", checker)) {
+			BountifulFaresCompat.registerCompat();
+		}
+		if (isModLoaded("doapi", checker)) {
+			LetsDoCompat.registerCompat(checker);
 		}
 		if (isModLoaded("born_in_chaos_v1", checker)) {
 			BornInChaosCompat.registerCompat();
@@ -131,6 +140,9 @@ public class Compats
 		}
 		if (isModLoaded("colorfulazaleas", checker)) {
 			ColorfulAzaleasCompat.registerCompat();
+		}
+		if (isModLoaded("copperative", checker)) {
+			CopperativeCompat.registerCompat();
 		}
 		if (isModLoaded("copperoverhaul", checker)) {
 			CopperOverhaulCompat.registerCompat();
@@ -179,6 +191,9 @@ public class Compats
 		}
 		if (isModLoaded("enhanced_mushrooms", checker)) {
 			EnhancedMushroomsCompat.registerCompat();
+			if (isModLoaded("habitat", checker)) {
+				HabitatCompat.registerCompat();
+			}
 		}
 		if (isModLoaded("phantasm", checker)) {
 			EndPhantasmCompat.registerCompat();
@@ -230,6 +245,9 @@ public class Compats
 		}
 		if (isModLoaded("malum", checker)) {
 			MalumCompat.registerCompat();
+		}
+		if (isModLoaded("minestuck", checker)) {
+			MinestuckCompat.registerCompat();
 		}
 		if (isModLoaded("modern_glass_doors", checker)) {
 			ModernGlassDoorsCompat.registerCompat();
@@ -306,9 +324,9 @@ public class Compats
     	if (isModLoaded("thermal_foundation", checker)) {
     		ThermalFoundationCompat.registerCompat();
     	}
-    	/*if (isModLoaded("thingamajigs", checker)) {
-    		ThingamajigsCompat.registerCompat(); // NYI: Not Yet Implemented
-    	}*/
+    	if (isModLoaded("thingamajigs", checker)) {
+    		ThingamajigsCompat.registerCompat();
+    	}
     	if (isModLoaded("traverse", checker)) {
     		TraverseCompat.registerCompat();
     	}
@@ -320,9 +338,6 @@ public class Compats
     	}
 		if (isModLoaded("undergarden", checker)) {
 			UndergardenCompat.registerCompat();
-		}
-		if (isModLoaded("vinery", checker)) {
-			VineryCompat.registerCompat();
 		}
 		if (isModLoaded("wilderwild", checker)) {
 			WilderWildCompat.registerCompat();
@@ -345,6 +360,13 @@ public class Compats
     	}
     	if (isModLoaded("manyideas_doors", checker)) {
     		ManyIdeasCompat.registerCompat();
+    	}
+    	// Backport mods.
+    	if (isModLoaded("tricky_trials", checker) || isModLoaded("trials", checker) || isModLoaded("copperandtuffbackport", checker) || isModLoaded("minecraft_121_update", checker)) {
+    		TrickyTrialsBackportCompat.registerCompat(checker);
+    	}
+    	if (isModLoaded("earlyupdate_two", checker) || isModLoaded("palegardenbackport", checker)) {
+    		PaleGardenBackportCompat.registerCompat(checker);
     	}
     	initializedCompat = true;
     }

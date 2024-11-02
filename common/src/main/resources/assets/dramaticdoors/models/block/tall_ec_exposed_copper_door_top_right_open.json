@@ -2,7 +2,6 @@
   "parent": "minecraft:block/door_top_right_open",
   "textures": {
     "bottom": "dramaticdoors:block/tall_ec_exposed_copper_door_bottom",
-    "middle": "dramaticdoors:block/tall_ec_exposed_copper_door_middle",
     "top": "dramaticdoors:block/tall_ec_exposed_copper_door_top"
   }
 }

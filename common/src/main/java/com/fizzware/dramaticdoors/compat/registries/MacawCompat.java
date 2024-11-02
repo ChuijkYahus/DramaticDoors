@@ -4,6 +4,7 @@ import com.fizzware.dramaticdoors.DDNames;
 import com.fizzware.dramaticdoors.DDRegistry;
 import com.fizzware.dramaticdoors.compat.DDCompatAdvancement;
 import com.fizzware.dramaticdoors.compat.DDCompatRecipe;
+import com.fizzware.dramaticdoors.state.properties.SlidingDoorType;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -18,7 +19,7 @@ public class MacawCompat
 	
 	private static void registerBlocksItems() {
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MACAW_STORE, DDNames.SHORT_MACAW_STORE, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("mcwdoors", "store_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
-		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MACAW_SLIDING_GLASS, DDNames.SHORT_MACAW_SLIDING_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("mcwdoors", "store_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
+		DDRegistry.registerSlidingDoorBlockAndItem(DDNames.TALL_MACAW_SLIDING_GLASS, DDNames.SHORT_MACAW_SLIDING_GLASS, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("mcwdoors", "store_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false, SlidingDoorType.MACAW);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MACAW_JAIL, DDNames.SHORT_MACAW_JAIL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("mcwdoors", "jail_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MACAW_METAL, DDNames.SHORT_MACAW_METAL_REINFORCED, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("mcwdoors", "reinforced_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);
 		DDRegistry.registerDoorBlockAndItem(DDNames.TALL_MACAW_METAL_HOSPITAL, DDNames.SHORT_MACAW_METAL_HOSPITAL, DDRegistry.getBlockFromResourceLocation(new ResourceLocation("mcwdoors", "metal_hospital_door"), Blocks.IRON_DOOR), BlockSetType.IRON, false);

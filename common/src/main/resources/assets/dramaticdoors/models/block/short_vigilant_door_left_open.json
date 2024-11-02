@@ -1,6 +1,6 @@
 {
   "parent": "dramaticdoors:block/door_short_left_open",
   "textures": {
-    "texture": "theabyss:block/planks_vigilant"
+    "texture": "dramaticdoors:block/short_vigilant_door"
   }
 }

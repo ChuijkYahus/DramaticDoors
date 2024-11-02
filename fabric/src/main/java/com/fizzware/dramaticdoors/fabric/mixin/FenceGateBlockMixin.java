@@ -10,8 +10,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -22,7 +24,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
 @Mixin(FenceGateBlock.class)
-public class FenceGateBlockMixin extends Block
+public class FenceGateBlockMixin extends Block implements SimpleWaterloggedBlock 
 {
 	public FenceGateBlockMixin(Properties properties) {
 		super(properties); // Doesn't do anything here.
@@ -51,6 +53,14 @@ public class FenceGateBlockMixin extends Block
 		boolean flag1 = direction$axis == Direction.Axis.Z && (((FenceGateBlock)(Object)this).isWall(level.getBlockState(blockpos.west())) || ((FenceGateBlock)(Object)this).isWall(level.getBlockState(blockpos.east()))) || direction$axis == Direction.Axis.X && (((FenceGateBlock)(Object)this).isWall(level.getBlockState(blockpos.north())) || ((FenceGateBlock)(Object)this).isWall(level.getBlockState(blockpos.south())));
 		callback.setReturnValue(((FenceGateBlock)(Object)this).defaultBlockState().setValue(FenceGateBlock.FACING, direction).setValue(FenceGateBlock.OPEN, Boolean.valueOf(flag)).setValue(FenceGateBlock.POWERED, Boolean.valueOf(flag)).setValue(FenceGateBlock.IN_WALL, Boolean.valueOf(flag1)).setValue(WATERLOGGED, waterfilled));
 		callback.cancel();
+	}
+	
+	@Inject(at = @At("RETURN"), method = "updateShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;")
+	private void injectUpdateShape(BlockState stateIn, Direction direction, BlockState facingState, LevelAccessor accessor, BlockPos pos1, BlockPos pos2, CallbackInfoReturnable<BlockState> callback) {
+		stateIn = stateIn.setValue(WATERLOGGED, accessor.getFluidState(pos1).getType() == Fluids.WATER);
+		if (stateIn.getValue(WATERLOGGED)) {
+			accessor.scheduleTick(pos1, Fluids.WATER, Fluids.WATER.getTickDelay(accessor));
+		}
 	}
 
 	public FluidState getFluidState(BlockState state) {

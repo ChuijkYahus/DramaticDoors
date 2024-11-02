@@ -1,0 +1,71 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "dramaticdoors:block/tall_ff_redlove_sliding_door_bottom",
+		"bottom": "dramaticdoors:block/tall_ff_redlove_sliding_door_bottom"
+	},
+	"elements": [
+		{
+			"from": [
+				3,
+				0,
+				0
+			],
+			"to": [
+				4,
+				16,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						1,
+						0,
+						0,
+						16
+					],
+					"texture": "#bottom",
+					"cullface": "north"
+				},
+				"east": {
+					"uv": [
+						16,
+						0,
+						0,
+						16
+					],
+					"texture": "#bottom"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						1,
+						16
+					],
+					"texture": "#bottom",
+					"cullface": "south"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#bottom"
+				},
+				"down": {
+					"uv": [
+						15,
+						0,
+						16,
+						16
+					],
+					"texture": "#bottom",
+					"cullface": "down"
+				}
+			}
+		}
+	]
+}

@@ -11,6 +11,7 @@
     "dramaticdoors:tall_mangrove_door",
     "dramaticdoors:tall_bamboo_door",
     "dramaticdoors:tall_cherry_door",
+    {"id": "dramaticdoors:tall_pale_oak_door", "required": false},
     "dramaticdoors:tall_crimson_door",
     "dramaticdoors:tall_warped_door"
   ]
